@@ -10,7 +10,8 @@ const Navbar = () => {
     // <nav className="navbar navbar-light">
     <nav className="navbar navbar-dark">
       <div className="inner">
-        <div className="logo">lee ha neul</div>
+        {/* <div className="logo">lee ha neul</div> */}
+        <div className="logo">LEEHANEUL</div>
         <ul>
           {/* <li onClick={() => scrollToSection("about")}>소개</li>
           <li onClick={() => scrollToSection("skills")}>기술</li>
