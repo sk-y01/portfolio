@@ -1,0 +1,193 @@
+@import "../styles/index.scss";
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: $color-white;
+  width: 70%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2.4rem;
+  color: $color-dark-sub;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    color: $color-blue;
+    transform: scale(1.1);
+  }
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: $color-dark;
+}
+
+.modal-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  a {
+    background: $color-blue;
+    color: $color-white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: $fs-14;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: darken($color-blue, 10%);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.modal-body {
+  h3 {
+    margin-top: 1.8rem;
+    font-weight: 700;
+    color: $color-dark;
+    font-size: 1.8rem;
+  }
+
+  p {
+    margin-top: 0.8rem;
+    color: $color-dark-sub;
+    line-height: 1.6;
+    font-size: $fs-16;
+  }
+}
+
+/* 모달 등장 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+// 링크 없을 때 말풍선 나오게
+// @import "../styles/index.scss";
+
+// .modal-icons {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 1rem;
+//   margin-bottom: 2rem;
+
+//   a {
+//     position: relative;
+//     background: $color-blue;
+//     color: $color-white;
+//     padding: 0.5rem 1.2rem;
+//     border-radius: 6px;
+//     text-decoration: none;
+//     font-size: $fs-14;
+//     transition: all 0.3s ease;
+
+//     &:hover {
+//       background: darken($color-blue, 10%);
+//       transform: translateY(-2px);
+//     }
+
+//     /* 툴팁 */
+//     .tooltip {
+//       position: absolute;
+//       bottom: 130%;
+//       left: 50%;
+//       transform: translateX(-50%);
+//       background: $color-dark-sub;
+//       color: $color-white;
+//       font-size: $fs-12;
+//       padding: 0.4rem 0.8rem;
+//       border-radius: 4px;
+//       opacity: 0;
+//       pointer-events: none;
+//       transition: opacity 0.3s ease, transform 0.3s ease;
+//       white-space: nowrap;
+//       z-index: 10;
+
+//       /* 작은 화면일 때 — 위치 조정 */
+//       @media (max-width: $breakpoint-tablet) {
+//         bottom: auto;
+//         top: 120%;
+//         font-size: 1.1rem;
+//       }
+//     }
+
+//     &:hover .tooltip {
+//       opacity: 1;
+//       transform: translate(-50%, -2px);
+//     }
+
+//     /* 화살표 */
+//     .tooltip::after {
+//       content: "";
+//       position: absolute;
+//       top: 100%;
+//       left: 50%;
+//       transform: translateX(-50%);
+//       border-width: 6px;
+//       border-style: solid;
+//       border-color: $color-dark-sub transparent transparent transparent;
+
+//       @media (max-width: $breakpoint-tablet) {
+//         top: auto;
+//         bottom: 100%;
+//         border-color: transparent transparent $color-dark-sub transparent;
+//       }
+//     }
+
+//     /* 비활성화 상태 */
+//     &.disabled {
+//       background: $color-gray;
+//       color: $color-white;
+//       cursor: not-allowed;
+//       pointer-events: none;
+//       position: relative;
+
+//       .tooltip {
+//         opacity: 1;
+//         transform: translate(-50%, -4px);
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,123 @@
+@import "../styles/index.scss";
+
+.skills {
+  // padding: 8rem 0;
+  // background: $color-light;
+
+  .inner {
+    // text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 3rem;
+    color: $color-dark;
+  }
+
+  .desc {
+    font-size: $fs-16;
+    color: $color-dark-sub;
+    margin-bottom: 3rem;
+  }
+
+  .skill-groups {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-card {
+    background: $color-white;
+    border: 1px solid $color-gray;
+    border-radius: 8px;
+    padding: 3.5rem;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      // font-size: $fs-16;
+      margin-bottom: 1.5rem;
+      color: $color-blue;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 3rem 2rem;
+      justify-items: center;
+      margin-top: 2rem;
+    }
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+
+    .icon {
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    span {
+      font-size: $fs-14;
+      color: $color-dark-sub;
+      transition: color 0.2s ease;
+    }
+
+    &:hover {
+      .icon {
+        transform: scale(1.1);
+      }
+      span {
+        // color: $color-blue;
+      }
+    }
+
+    // 해시태그 뒤에 색상 넣고 싶은디
+    p {
+      font-size: $fs-14;
+      // background: $color-blue;
+      // color: $color-white;
+      display: inline-block;
+      padding: .2rem;
+
+      &::before {
+        content: '';
+        display: block;
+		    // clear: both;
+        width: 20px;
+        height: 20px;
+        color: $color-dark-sub;
+        border-radius: 6px;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // outline: 6px solid red;
+      }
+    }
+
+      
+      // font-size: $fs-14;
+      // line-height: 1.6;
+    
+
+    /* 브랜드 컬러 */
+    .html { color: #E34F26; }
+    .css { color: #1572B6; }
+    .sass { color: #CC6699; }
+    .js { color: #F7DF1E; }
+    .react { color: #61DAFB; }
+    .vue { color: #42B883; }
+    .github { color: #000000; }
+    .figma { color: #F24E1E; }
+    .notion { color: #000000; }
+  }
+}
+

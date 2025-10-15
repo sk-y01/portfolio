@@ -1,0 +1,305 @@
+// // index.scss
+
+// // 리셋
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+// // 반응형 기준
+// $breakpoint-mobile: 0px;
+// $breakpoint-tablet: 768px;
+// $breakpoint-desktop: 1200px;
+
+// html {
+//   font-size: 10px; // 데스크탑 기준 (1rem = 10px)
+//   max-width: 1920px;
+//   scroll-behavior: smooth; // 내부 링크 이동 시 부드러운 스크롤
+
+//   // // 모바일 (0~767px)
+//   // @media (max-width: $breakpoint-tablet - 1) {
+//   //   font-size: 8px;
+//   // }
+
+//   // // 태블릿 (768~1199px)
+//   // @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop - 1) {
+//   //   font-size: 9px;
+//   // }
+
+//   // // 데스크탑 (1200px 이상)
+//   // @media (min-width: $breakpoint-desktop) {
+//   //   font-size: 10px;
+//   // }
+// }
+
+// body {
+//   font-family: $font-family;
+//   font-size: 1.6rem;
+//   color: $color-dark;
+//   background-color: $color-white;
+//   line-height: 1.5; // 전체 라인 간격 통일
+// }
+
+// li { list-style: none; }
+// a { color: inherit; text-decoration: none; }
+
+// // 색상, 폰트, 변수 (Variables)
+// $color-white: #ffffff;  // 배경 또는 메인 텍스트 색상
+// $color-light: #f9f9f9;  // 서브 배경 또는 텍스트 색상
+// $color-gray: #b4b4b4;  // 서브 텍스트 색상
+// $color-blue: #2850bd;  // 포인트 색상
+// $color-dark: #282828;  // 배경 또는 메인 텍스트 색상
+// $color-dark-sub: #3e3e3e; // 서브 배경 또는 텍스트 색상
+
+// $font-family: 'Pretendard', sans-serif;
+
+// // 폰트 크기 (rem 단위)
+// h1 { font-size: 4rem; font-weight: 700; } // 제목 (h1)
+// h2 { font-size: 2.8rem; font-weight: 700; } // 제목 (h2)
+// h3 { font-size: 2.4rem; font-weight: 700; } // 제목 (h3)
+// h4 { font-size: 2.2rem; font-weight: 700; } // 제목 (h4)
+// h5 { font-size: 2rem; font-weight: 700; }   // 제목 (h5)
+// h6 { font-size: 1.8rem; font-weight: 700; } // 제목 (h6)
+
+// // 본문용 폰트 크기 변수
+// $fs-16: 1.6rem; // 기본 본문
+// $fs-14: 1.4rem; // 작은 텍스트 (예: 스킬)
+// $fs-12: 1.2rem; // 아주 작은 텍스트 (예: 푸터)
+
+// // 텍스트 강조(blue)
+// strong { color: $color-blue; }
+
+// // 믹스인 (Mixins)
+// @mixin flex-center {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// // 레이아웃
+// .inner {
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding: 0 1.6rem;
+//   position: relative;
+
+//   @media (min-width: $breakpoint-tablet) {
+//     padding: 0 3rem;
+//   }
+
+//   @media (min-width: $breakpoint-desktop) {
+//     padding: 0 4rem;
+//   }
+// }
+
+// // 버튼 (Blue / White)
+// .btn {
+//   display: inline-flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 0.8rem 1.6rem;
+//   border-radius: 6px;
+//   font-size: 1.6rem;
+//   font-weight: 600;
+//   cursor: pointer;
+//   border: 1px solid transparent;
+//   transition: 0.5s;
+//   user-select: none; // 버튼 글자 드래그 방지
+// }
+
+// // 파란 버튼
+// .blue-btn {
+//   @extend .btn;
+//   background: $color-blue;
+//   color: $color-white;
+
+//   &:hover {
+//     background: darken($color-blue, 10%);
+//   }
+// }
+
+// // 흰색 버튼
+// .white-btn {
+//   @extend .btn;
+//   background: transparent;
+//   color: $color-blue;
+//   border: 1px solid $color-blue;
+
+//   &:hover {
+//     background: $color-blue;
+//     color: $color-white;
+//   }
+// }
+
+// // 비활성화 상태
+// .btn:disabled,
+// .blue-btn:disabled,
+// .white-btn:disabled {
+//   opacity: 0.6;
+//   cursor: not-allowed;
+//   pointer-events: none; // hover 차단
+// }
+
+
+// index.scss
+
+// 1. 색상, 폰트, 변수 (Variables)
+$color-white: #ffffff;
+$color-light: #f9f9f9;
+$color-gray: #b4b4b4;
+$color-blue: #2850bd;
+$color-dark: #282828;
+$color-dark-sub: #3e3e3e;
+
+$font-family: 'Pretendard', sans-serif;
+
+// 반응형 기준
+$breakpoint-mobile: 0px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+
+
+// 2. 믹스인 (Mixins)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 3. 기본 리셋 (Reset & Base)
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px; // 데스크탑 기준 (1rem = 10px)
+  max-width: 1920px;
+  scroll-behavior: smooth; // 내부 링크 이동 시 부드러운 스크롤
+
+  // 모바일 (0~767px)
+  // @media (max-width: $breakpoint-tablet - 1) {
+  @media (max-width: 767px) {
+    font-size: 8px;
+  }
+
+  // 태블릿 (768~1199px)
+  // @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop - 1) {
+  @media (min-width: 768px) and (max-width: 1199px) {
+    font-size: 9px;
+  }
+
+  // 데스크탑 (1200px 이상)
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 10px;
+  }
+}
+
+body {
+  font-family: $font-family;
+  font-size: 1.6rem;
+  color: $color-dark;
+  background-color: $color-white;
+  font-weight: 400;
+  line-height: 1.5; // 전체 라인 간격 통일
+  word-break: keep-all; // 단어 기준으로 줄바꿈
+}
+
+li { list-style: none; }
+a { color: inherit; text-decoration: none; }
+strong { color: $color-blue; } // 텍스트 강조(blue) 
+
+// 4. 레이아웃 유틸리티
+.inner {
+  max-width: 1200px;
+  width: 1000px;
+  margin: 0 auto;
+  // padding: 0 1.6rem;
+  // position: relative;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 3rem;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0 4rem;
+  }
+}
+
+section {padding: 8rem 0; height: 100vh;}
+
+img {max-width: 100%;}
+
+// =========================================================
+// 5. 버튼 (Blue / White)
+// =========================================================
+.btn {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  display: inline-flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 6px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.5s;
+  user-select: none; // 버튼 글자 드래그 방지
+}
+
+// 파란 버튼
+.blue-btn {
+  @extend .btn;
+  background: $color-blue;
+  color: $color-white;
+  padding: 1rem 1.8rem;
+  // border: none; // 보더 안없애면 파란버튼이 커보이고 보더 없애면 하얀버튼이 커보임;;
+
+  &:hover {
+    background: darken($color-blue, 10%);
+  }
+}
+
+// 흰색 버튼
+.white-btn {
+  @extend .btn;
+  background: $color-white;
+  color: $color-blue;
+  padding: 1rem 1.8rem;
+  // border: 2px solid $color-blue; // 사이드 버튼(코멘트)이랑 통일된 느낌
+  border: 1px solid $color-blue;
+
+  &:hover {
+    background: $color-blue;
+    color: $color-white;
+  }
+}
+
+// 비활성화 상태
+.btn:disabled,
+.blue-btn:disabled,
+.white-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none; // hover 차단
+}
+
+// =========================================================
+// 6. 타이포그래피 (Typography)
+// =========================================================
+// 폰트 크기 (rem 단위)
+h1 { font-size: 4rem; font-weight: 700; } // 제목 (h1)
+h2 { font-size: 2.8rem; font-weight: 700; } // 제목 (h2)
+h3 { font-size: 2.4rem; font-weight: 700; } // 제목 (h3)
+h4 { font-size: 2.2rem; font-weight: 700; } // 제목 (h4)
+h5 { font-size: 2rem; font-weight: 700; }   // 제목 (h5)
+h6 { font-size: 1.8rem; font-weight: 700; } // 제목 (h6)
+
+// 본문용 폰트 크기 변수
+$fs-16: 1.6rem; // 기본 본문
+$fs-14: 1.4rem; // 작은 텍스트 (예: 스킬)
+$fs-12: 1.2rem; // 아주 작은 텍스트 (예: 푸터)

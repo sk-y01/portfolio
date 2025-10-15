@@ -1,0 +1,47 @@
+@import "../styles/index.scss";
+
+.projects {
+  // padding: 8rem 0;
+  background: $color-light;
+
+  h2 {
+    margin-bottom: 3rem;
+    // text-align: center;
+    color: $color-dark;
+  }
+
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: $color-white;
+    border: 1px solid $color-gray;
+    border-radius: 8px;
+    padding: 3.5rem;
+    text-align: left;
+    // text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    h3 {
+      font-size: 1.6rem; // !!! 글씨 크기 수정
+      margin-bottom: 1rem;
+      color: $color-blue;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+
+      .btn {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  }
+}

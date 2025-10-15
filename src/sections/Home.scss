@@ -1,0 +1,42 @@
+@import "../styles/index.scss";
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: $color-white;
+  color: $color-dark;
+  position: relative;
+
+  .subtitle {
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    color: $color-dark-sub;
+    font-weight: 500;
+  }
+
+  .down {
+    color: $color-blue;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    animation: bounce 1.5s ease-in-out infinite;
+
+    &:hover {
+      color: darken($color-blue, 10%);
+    }
+  }
+}
+
+/* 아이콘 위아래로 반복 애니메이션 */
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+}

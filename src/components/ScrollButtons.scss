@@ -1,0 +1,153 @@
+// .scroll-buttons {
+//   position: fixed;
+//   right: 25px;
+//   bottom: 35px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   gap: 10px;
+//   z-index: 1000;
+
+//   button {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-end; // 텍스트 → 아이콘 순으로 정렬
+//     width: auto;
+//     height: 50px;
+//     padding-right: 10px;
+//     background: transparent;
+//     border: none;
+//     cursor: pointer;
+//     color: #2850BD;
+//     font-size: 22px;
+//     transition: all 0.3s ease;
+
+//     // 텍스트 스타일
+//     .label {
+//       margin-right: 8px;
+//       opacity: 0;
+//       font-size: 1.2rem;
+//       color: #fff;
+//       background: #3E3e3e;
+//       // background: #2850BD;
+//       padding: .4rem .6rem;
+//       border-radius: 6px;
+//       transition: opacity 0.3s ease, transform 0.3s ease;
+//       transform: translateX(5px); // 약간 오른쪽에서 들어오게
+//     }
+
+//     // hover 시 텍스트만 부드럽게 나타남
+//     &:hover .label {
+//       opacity: 1;
+//       transform: translateX(0);
+//     }
+
+//     // 아이콘 기본 스타일
+//     svg {
+//       // width: 100%;
+//       // height: 100%;
+//       width: 50px;
+//       height: 5rem;
+//       border-radius: 50%;
+//       border: 2px solid #2850BD;
+//       padding: 15px;
+//       background-color: #fff;
+//       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+//       transition: all 0.2s ease;
+      
+//     }
+
+//     &:hover svg {
+//       background-color: #2850BD;
+//       color: #fff;
+//       transform: translateY(-2px);
+//     }
+//   }
+
+//   .top-btn svg {
+//     background-color: #2850BD;
+//     color: #fff;
+
+//     &:hover {
+//       background-color: #2850BD;
+//     }
+//   }
+// }
+
+// 인덱스 통합 버전
+@import "../styles/index.scss";
+
+.scroll-buttons {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  z-index: 1000;
+
+  button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; // 텍스트 → 아이콘 순
+    width: auto;
+    height: 5rem;
+    padding-right: 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $color-blue;
+    font-size: 2.2rem;
+    transition: all 0.3s ease;
+
+    // 텍스트 라벨
+    .label {
+      margin-right: 0.8rem;
+      opacity: 0;
+      font-size: $fs-12;
+      color: $color-white;
+      background: $color-dark-sub;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateX(5px);
+      white-space: nowrap;
+    }
+
+    &:hover .label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    // 아이콘 공통 스타일
+    svg {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      border: 2px solid $color-blue;
+      padding: 1.5rem;
+      background-color: $color-white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    &:hover svg {
+      background-color: $color-blue;
+      color: $color-white;
+      transform: translateY(-2px);
+    }
+  }
+
+  // 최상단 이동 버튼 (활성 상태)
+  .top-btn svg {
+    background-color: $color-blue;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-blue, 5%);
+    }
+  }
+}
