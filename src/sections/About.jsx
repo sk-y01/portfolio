@@ -89,47 +89,7 @@ const About = () => {
         return (
           <div className="education-content">
             <h3>🎓 교육 / 연수 경력</h3>
-            <p className="subtext">
-              민간자격증 등록 실무를 담당하며, 기획과 실행을 모두 경험
-            </p>
-
-            <table className="activity-table">
-              <thead>
-                <tr>
-                  <th>기간</th>
-                  <th>기관</th>
-                  <th>역할</th>
-                  <th>비고</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2023.09 ~ 2023.12</td>
-                  <td>㈜이든교육원</td>
-                  <td>기획 / 콘텐츠 제작</td>
-                  <td>민간자격증 등록 및 인증 프로세스 구축, 기업교육 보조 운영</td>
-                </tr>
-                <tr>
-                  <td>2024.07</td>
-                  <td>신용보증재단</td>
-                  <td>사무보조</td>
-                  <td>건축물대장 서류관리, 협업 프로세스 경험</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <p className="summary">
-              행정·기획 경험과 기술적 이해를 함께 쌓으며,  
-              체계적이고 책임감 있는 개발자로 성장 중입니다.
-            </p>
-          </div>
-        );
-
-      case "경력&자격증":
-        return (
-          <div className="career-content">
-            <h3>🧾 자격증 및 교육 과정</h3>
-
+            
             <table className="activity-table">
               <thead>
                 <tr>
@@ -160,13 +120,56 @@ const About = () => {
                 </tr>
               </tbody>
             </table>
+            
+            <p className="summary">🎯 멈추지 않고 꾸준히 배우며 성장하고 있습니다.</p>
+          </div>
+        );
+
+      case "경력&자격증":
+        return (
+          <div className="career-content">
+            <h3><i></i>경력 및 자격증</h3>
+
+            <p className="subtext">
+              민간자격증 등록 실무를 담당하며, 기획과 실행을 모두 경험
+            </p>
+
+            <table className="activity-table">
+              <thead>
+                <tr>
+                  <th>기간</th>
+                  <th>기관</th>
+                  <th>역할</th>
+                  <th>비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2023.09 ~ 2023.12</td>
+                  <td>㈜이든교육원</td>
+                  <td>기획 / 콘텐츠 제작</td>
+                  <td>민간자격증 등록 및 인증 프로세스 구축, 기업교육 보조 운영</td>
+                </tr>
+                <tr>
+                  <td>2024.07</td>
+                  <td>신용보증재단</td>
+                  <td>사무보조</td>
+                  <td>건축물대장 서류관리, 협업 프로세스 경험</td>
+                </tr>
+              </tbody>
+            </table>
+
+            {/* <p className="summary">
+              행정·기획 경험과 기술적 이해를 함께 쌓으며,  
+              체계적이고 책임감 있는 개발자로 성장 중입니다.
+            </p> */}
 
             <div className="license">
               <h4>📘 관련 자격증</h4>
               <ul>
-                <li>Google Analytics — UX 데이터 분석 역량</li>
+                <li>Google Analytics — <strong>UX 데이터 분석 역량</strong></li>
                 <li>개인정보관리사 1급, 네트워크전문가 1급 — 시스템 및 보안 이해</li>
-                <li>전산회계, 생활스포츠지도사 등 꾸준한 자기개발 활동</li>
+                <li>전산회계운용사, 생활스포츠지도사 자격증 등 - 꾸준한 자기개발 활동</li>
               </ul>
             </div>
 
@@ -175,7 +178,6 @@ const About = () => {
               이는 변화에 유연하게 대응하는 개발자로 성장하는 기반이 되고 있습니다.
             </p>
 
-            <p className="summary highlight">🎯 멈추지 않고 꾸준히 배우며 성장하고 있습니다.</p>
           </div>
         );
 
@@ -187,7 +189,7 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="inner">
-        <h2>About</h2>
+        {/* <h2>About</h2> */}
 
         <div className="tab-menu">
           {tabs.map((tab) => (

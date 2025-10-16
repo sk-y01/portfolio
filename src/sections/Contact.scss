@@ -1,10 +1,9 @@
 @import "../styles/index.scss";
 
 .contact {
-  padding: 8rem 0 0 0;
   background: $color-dark;
   color: $color-white;
-  // text-align: center;
+  text-align: center;
 
   h2 {
     margin-bottom: 2rem;
@@ -34,13 +33,14 @@
   .socials {
     display: flex;
     justify-content: center;
+
     gap: 2rem;
     margin-top: 2rem;
 
     a {
       color: $color-white;
       // font-size: 2.4rem;
-      // transition: color 0.3s ease, transform 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
 
       &:hover {
         color: $color-blue;

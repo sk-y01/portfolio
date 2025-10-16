@@ -34,8 +34,8 @@
 
   h2 {
     // text-align: center;
-    margin-bottom: 3rem;
-    color: $color-dark;
+    // margin-bottom: 3rem;
+    // color: $color-dark;
   }
 
   // 탭 메뉴 스타일
@@ -44,10 +44,10 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
     border: 1px solid $color-blue;
     border-radius: 50px;
-    padding: 1rem 1rem;
+    padding: .6rem 1rem;
     width: fit-content;
     margin: 3rem 0;
     background: $color-white;
@@ -75,12 +75,10 @@
     }
   }
 
-  // =====================================================
   // 탭 전환 콘텐츠 영역
-  // =====================================================
   .tab-content {
-    max-width: 900px;
-    margin: 0 auto;
+    // max-width: 900px;
+    // margin: 0 auto;
     font-size: 1.6rem;
     color: $color-dark-sub;
     line-height: 1.7;
@@ -88,23 +86,17 @@
     opacity: 0;
     animation: fadeIn 0.5s ease forwards;
 
-    strong {
-      color: $color-blue;
-    }
-
     p {
       margin-bottom: 1.6rem;
     }
 
     h3 {
-      font-size: 2rem;
-      margin-bottom: 1.2rem;
-      color: $color-blue;
+      color: $color-dark;
     }
 
     .subtext {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
+      font-size: $fs-16;
+      // margin-bottom: 2rem;
       color: $color-dark-sub;
     }
 
@@ -112,7 +104,6 @@
       font-size: 1.6rem;
       margin-top: 2rem;
       color: $color-dark;
-      line-height: 1.6;
 
       &.highlight {
         color: $color-blue;
@@ -121,49 +112,52 @@
     }
   }
 
-  // =====================================================
   // 표 기본 스타일 (활동 / 교육 / 자격증)
-  // =====================================================
   .activity-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 
     th,
     td {
       border-bottom: 1px solid $color-gray;
-      padding: 1.2rem 0.8rem;
+      padding: 1.5rem 1.2rem;
       text-align: left;
-      font-size: 1.4rem;
+      font-size: 1.4rem; // ? 16px
       vertical-align: top;
-      line-height: 1.5;
     }
 
     th {
       color: $color-blue;
       font-weight: 700;
+      & {
+        padding-left: 0;
+      }
     }
 
     td {
       color: $color-dark-sub;
+    & {
+        padding-left: 0;
+      }
     }
+    
   }
 
-  // =====================================================
   // 자격증 리스트
-  // =====================================================
   .license {
     margin-top: 2rem;
 
     h4 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: $color-blue;
+      // color: $color-blue;
+      color: $color-dark;
     }
 
     ul {
       list-style: disc;
-      margin-left: 2rem;
+      // margin-left: 2rem;
 
       li {
         margin-bottom: 0.6rem;
@@ -173,54 +167,52 @@
     }
   }
 
-  // =====================================================
-  // 반응형 대응
-  // =====================================================
-  @media (max-width: $breakpoint-tablet) {
-    .tab-menu {
-      gap: 1rem;
-      padding: 0.8rem 1.2rem;
-      border-radius: 40px;
+  // 반응형
+  // @media (max-width: $breakpoint-tablet) {
+  //   .tab-menu {
+  //     gap: 1rem;
+  //     padding: 0.8rem 1.2rem;
+  //     border-radius: 40px;
 
-      .tab {
-        font-size: 1.4rem;
-        padding: 0.6rem 1.2rem;
-      }
-    }
+  //     .tab {
+  //       font-size: 1.4rem;
+  //       padding: 0.6rem 1.2rem;
+  //     }
+  //   }
 
-    .tab-content {
-      padding: 0 1.6rem;
-    }
+  //   .tab-content {
+  //     padding: 0 1.6rem;
+  //   }
 
-    .activity-table {
-      font-size: 1.3rem;
+  //   .activity-table {
+  //     font-size: 1.3rem;
 
-      th,
-      td {
-        display: block;
-        padding: 0.6rem 0;
-      }
+  //     th,
+  //     td {
+  //       display: block;
+  //       padding: 0.6rem 0;
+  //     }
 
-      thead {
-        display: none;
-      }
+  //     thead {
+  //       display: none;
+  //     }
 
-      tbody tr {
-        margin-bottom: 1.6rem;
-        display: block;
-        border-bottom: 1px solid $color-gray;
-        padding-bottom: 1rem;
-      }
+  //     tbody tr {
+  //       margin-bottom: 1.6rem;
+  //       display: block;
+  //       border-bottom: 1px solid $color-gray;
+  //       padding-bottom: 1rem;
+  //     }
 
-      td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        color: $color-blue;
-        display: block;
-        margin-bottom: 0.4rem;
-      }
-    }
-  }
+  //     td::before {
+  //       content: attr(data-label);
+  //       font-weight: 600;
+  //       color: $color-blue;
+  //       display: block;
+  //       margin-bottom: 0.4rem;
+  //     }
+  //   }
+  // }
 
   // =====================================================
   // 애니메이션

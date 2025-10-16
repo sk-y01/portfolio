@@ -7,21 +7,18 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+  padding: 1.5rem 0;
 
   .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
-    max-width: 1200px;
-    width: 1200px;
-    margin: 0 auto;
   }
 
   .logo {
     font-weight: bold;
     font-size: 2rem;
-    color: $color-blue; // 이미지 해야돼///,...
+    color: $color-blue; // 이미지 말고 텍스트 하기러 함
   }
 
   ul {
@@ -36,7 +33,7 @@
 
       &:hover {
         color: $color-blue;
-        text-shadow: 1px 1px 4px rgba(255,255,255, .4);
+        // text-shadow: 1px 1px 4px rgba(255,255,255, .4); // 그림자
       }
     }
   }

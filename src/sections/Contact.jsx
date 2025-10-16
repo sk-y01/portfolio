@@ -1,7 +1,5 @@
 import "./Contact.scss";
 
-
-
 const Contact = () => {
   return (
     <section id="contact" className="contact">
@@ -22,10 +20,11 @@ const Contact = () => {
           <a href="#블로그하나도안썼는데어떡하지" target="_blank">Blog</a>
           <a href="#이력서파일열리게어떻게하는거지" target="_blank">Resume</a>
         </div>
-      </div>
+      
       <footer className="footer">
         <p>© 2025 Hanuel Lee Portfolio. All rights reserved.</p>
       </footer>
+      </div>
     </section>
   );
 };
