@@ -21,6 +21,7 @@ const Navbar = () => {
           <li onClick={() => scrollToSection("skills")}>Skills</li>
           <li onClick={() => scrollToSection("projects")}>Projects</li>
           <li onClick={() => scrollToSection("contact")}>Contact</li>
+          {/* a 태그 안써도 되나? */}
         </ul>
       </div>
     </nav>

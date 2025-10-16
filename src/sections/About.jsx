@@ -191,16 +191,18 @@ const About = () => {
       <div className="inner">
         {/* <h2>About</h2> */}
 
-        <div className="tab-menu">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              className={activeTab === tab ? "tab active" : "tab"}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
+        <div className="tab-area">
+          <div className="tab-menu">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                className={activeTab === tab ? "tab active" : "tab"}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="tab-content">{renderContent()}</div>

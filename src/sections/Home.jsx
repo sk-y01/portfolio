@@ -20,7 +20,7 @@ const Home = () => {
           배움으로 성장하는 프론트엔드 개발자 <strong>이하늘</strong>입니다.
         </p>
         <div className="btn">
-          <a href="#" className="blue-btn">github</a>
+          <a href="https://github.com/sk-y01" target="_blank" className="blue-btn">github</a>
           {/* <a href="#" className="white-btn">Resume</a> */}
           <a href="#" className="white-btn">이력서</a>
         </div>

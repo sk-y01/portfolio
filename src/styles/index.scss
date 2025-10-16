@@ -159,6 +159,10 @@ $breakpoint-mobile: 0px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1200px;
 
+// 모바일 (768px 미만)
+// 테블릿 (1100px)
+// 노트북 (1400px)
+// 데스크탑 (1920px)
 
 // 2. 믹스인 (Mixins)
 @mixin flex-center {
@@ -215,30 +219,23 @@ strong { color: $color-blue; } // 텍스트 강조(blue)
 
 // 4. 레이아웃 유틸리티
 .inner {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   // max-width: 1000px;
   // width: 1000px;
   // padding: 0 1.6rem;
-  // position: relative;
+  position: relative;
 
+  // max-width 가 pc기준(pc부터 한다는 뜻)
   @media (min-width: $breakpoint-mobile) {
     padding: 0 2rem;
     text-align: center;
-
-
-      .inner {
-        justify-content: center;
-        align-items: center;
-        // display: inline-block;
-        // text-align: center;
-        // 가운데에 놓고 싶음ㅡㅜㅜ
-      }
 
     .logo {
       display: none;
     }
   }
+
   @media (min-width: $breakpoint-tablet) {
     padding: 0 3rem;
     text-align: center;
@@ -260,9 +257,7 @@ section {padding: 8rem 0; min-height: 100vh;}
 
 img {max-width: 100%;}
 
-// =========================================================
 // 5. 버튼 (Blue / White)
-// =========================================================
 .btn {
   margin-top: 1.5rem;
   display: flex;
@@ -316,9 +311,9 @@ img {max-width: 100%;}
   pointer-events: none; // hover 차단
 }
 
-// =========================================================
+
 // 6. 타이포그래피 (Typography)
-// =========================================================
+
 // 폰트 크기 (rem 단위)
 h1 { font-size: 4rem; font-weight: 700; } // 제목 (h1)
 h2 { font-size: 2.8rem; font-weight: 700; } // 제목 (h2)
