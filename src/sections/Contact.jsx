@@ -23,7 +23,7 @@ const Contact = () => {
         </div>
       
       <footer className="footer">
-        <p>© 2025 Hanuel Lee Portfolio. All rights reserved.</p>
+        <p>© 2025 Hanuel Lee Portfolio. All rights reserved. v. 1.1.0</p>
       </footer>
       </div>
     </section>

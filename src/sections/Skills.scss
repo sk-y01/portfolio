@@ -1,11 +1,8 @@
 @import "../styles/index.scss";
 
 .skills {
-  // padding: 8rem 0;
-  // background: $color-light;
-
   .inner {
-    // text-align: center;
+
   }
 
   h2 {
@@ -39,7 +36,6 @@
     }
 
     h3 {
-      // font-size: $fs-16;
       margin-bottom: 1.5rem;
       color: $color-blue;
     }
@@ -75,38 +71,24 @@
       .icon {
         transform: scale(1.1);
       }
-      span {
-        // color: $color-blue;
-      }
     }
 
-    // 해시태그 뒤에 색상 넣고 싶은디
     p {
       font-size: $fs-14;
-      // background: $color-blue;
-      // color: $color-white;
       display: inline-block;
       padding: .2rem;
+      text-align: center; // 고민
 
       &::before {
         content: '';
         display: block;
-		    // clear: both;
+        clear: both;
         width: 20px;
         height: 20px;
         color: $color-dark-sub;
         border-radius: 6px;
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        // outline: 6px solid red;
       }
     }
-
-      
-      // font-size: $fs-14;
-      // line-height: 1.6;
-    
 
     /* 브랜드 컬러 */
     .html { color: #E34F26; }
@@ -115,9 +97,30 @@
     .js { color: #F7DF1E; }
     .react { color: #61DAFB; }
     .vue { color: #42B883; }
-    .github { color: #000000; }
+    .github { color: #282828; }
+    .figma { color: #F24E1E; }
+    .notion { color: #282828; }
+
+
+    /* 브랜드 컬러 */
+    .html { color: #E34F26; }
+    .css { color: #1572B6; }
+    .sass { color: #CC6699; }
+    .js { color: #F7DF1E; }
+    .react { color: #61DAFB; }
+    .vue { color: #42B883; }
+    .jquery { color: #0769AD; }
+    .node { color: #83CD29; }
+    .npm { color: #CB3837; } 
+    .vite { color: #646CFF; }
+    .vercel { color: #000000; }
+    .mysql { color: #4479A1; } 
+    .github { color: #181717; }
     .figma { color: #F24E1E; }
     .notion { color: #000000; }
+    .colab { color: #F9AB00; }
+    .vscode { color: #0078D7; }
+
   }
 }
 

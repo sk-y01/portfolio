@@ -19,6 +19,7 @@
 
 import { useState } from "react";
 import "./About.scss";
+import { FaZ } from 'react-icons/fa6';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("소개");
@@ -44,7 +45,7 @@ const About = () => {
       case "활동":
         return (
           <div className="activity-content">
-            <h3>💻 교내외 활동</h3>
+            <h2>💻 교내외 활동</h2>
             <p className="subtext">프론트엔드 관련 실무 중심 경험</p>
 
             <table className="activity-table">
@@ -79,7 +80,7 @@ const About = () => {
             </table>
 
             <p className="summary">
-              🧩 세 활동 모두 웹과 사용자 경험을 직접 다루며 콘텐츠 구조와 UI 개선 과정을
+              💬 세 활동 모두 웹과 사용자 경험을 직접 다루며 콘텐츠 구조와 UI 개선 과정을
               경험한 실무형 활동입니다.
             </p>
           </div>
@@ -88,7 +89,7 @@ const About = () => {
       case "교육":
         return (
           <div className="education-content">
-            <h3>🎓 교육 / 연수 경력</h3>
+            <h2>🎓 교육 / 연수 경력</h2>
             
             <table className="activity-table">
               <thead>
@@ -121,14 +122,14 @@ const About = () => {
               </tbody>
             </table>
             
-            <p className="summary">🎯 멈추지 않고 꾸준히 배우며 성장하고 있습니다.</p>
+            <p className="summary">💬 멈추지 않고 꾸준히 배우며 성장하고 있습니다.</p>
           </div>
         );
 
       case "경력&자격증":
         return (
           <div className="career-content">
-            <h3><i></i>경력 및 자격증</h3>
+            <h2><i></i>경력 및 자격증</h2>
 
             <p className="subtext">
               민간자격증 등록 실무를 담당하며, 기획과 실행을 모두 경험
@@ -165,7 +166,7 @@ const About = () => {
             </p> */}
 
             <div className="license">
-              <h4>📘 관련 자격증</h4>
+              <h2>관련 자격증</h2>
               <ul>
                 <li>Google Analytics — <strong>UX 데이터 분석 역량</strong></li>
                 <li>개인정보관리사 1급, 네트워크전문가 1급 — 시스템 및 보안 이해</li>
@@ -174,7 +175,7 @@ const About = () => {
             </div>
 
             <p className="summary">
-              💬 다양한 분야의 자격증 취득을 통해 새로운 개념을 빠르게 습득하고 적용하는 학습력을 키워왔습니다.  
+              💬 행정·기획 경험과 기술적 이해를 함께 쌓으며, 체계적이고 책임감 있는 개발자로 성장 중입니다. <br/> 또한 다양한 분야의 자격증 취득을 통해 새로운 개념을 빠르게 습득하고 적용하는 학습력을 키워왔습니다.  
               이는 변화에 유연하게 대응하는 개발자로 성장하는 기반이 되고 있습니다.
             </p>
 

@@ -130,10 +130,10 @@ const projectData = [
   {
     id: 1,
     title: "팀프로젝트 - 대전세잔직업전문학교 홈페이지 리뉴얼",
-    intro: "홈페이지 리뉴얼 프로젝트 소개 빌드는 parcel bundler 배포는 Vercel", //  두 줄 정도
+    intro: "대전세잔직업전문학교 홈페이지 리뉴얼을 팀 프로젝트로 진행했습니다. 기존의 포인트 색상과 구조를 참고하여 중복되는 내용은 일관성 있게 진행하려 노력했습니다.", //  두 줄 정도
     period: "2025.08.18 - 2025.08.29",
     process: "개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...개발 과정에서 겪은 문제와 해결 방법...",
-    stack: "HTML5, CSS3, Javascript",
+    stack: "HTML5, CSS3, Javascript 를 사용했고, build는 parcel bundler, Vercel로 배포했습니다.",
     result: "/images/project1_.png", // 결과물(스크린샷, 링크) 
     link: "https://renewal-cezanne.vercel.app/",
     insight: "얻은 경험과 배운 점",
@@ -202,6 +202,7 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="inner">
         <h2>Projects</h2>
+        <p></p>
 
         <div className="project-list">
           {projectData.map((proj) => (

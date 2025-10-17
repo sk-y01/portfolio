@@ -31,18 +31,18 @@ const ProjectModal = ({ project, onClose }) => {
           rel="noopener noreferrer" → 보안상 필수 (탭 간 접근 차단)
           if (project.github) 처럼 값이 있을 때만 버튼 렌더링 → 빈 링크 방지 */}
           <a href={project.plan} onClick={() => openLink(project.github)}>화면 설계서</a>
+          {/* <p className="period"><span>기간: </span>{project.period}</p> */}
         </div>
 
         <div className="modal-body">
-          <p className="period">{project.period}</p>
-          <h3>1. 프로젝트 소개</h3>
+          <p className="period"><span>기간: </span>{project.period}</p>
+          <h4>1. 프로젝트 소개</h4>
           <p>{project.intro}</p>
           <h3>2. 개발 과정</h3>
           <p>{project.process}</p>
           <h3>3. 기술 스택</h3>
           <p>{project.stack}</p>
           <h3>4. 결과물</h3> 
-          <p>{project.result}</p>
           {/* 프로젝트별 이미지 */}
           <img
             src={project.result}
