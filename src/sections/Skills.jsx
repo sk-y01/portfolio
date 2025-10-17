@@ -1,62 +1,10 @@
-// import "./Skills.scss";
-// import { FaHtml5, FaCss3Alt, FaReact, FaGithub, FaFigma } from "react-icons/fa";
-// import { SiJavascript, SiVuedotjs, SiSass, SiNotion } from "react-icons/si";
-
-// // 가로형이 좋을지도
-// const Skills = () => {
-//   return (
-//     <section id="skills" className="skills">
-//       <div className="inner">
-//         <h2>Skills</h2>
-//         <p className="desc">주요 프론트엔드 기술과 협업 도구를 정리했습니다. or 기술 역량과 사용 스택</p>
-
-//         <div className="skill-groups">
-
-//           {/* Frontend */}
-//           <div className="skill-card">
-//             <h3>Frontend</h3>
-//             <div className="skill-grid">
-//               <div className="skill-item"><FaHtml5 className="icon html" /><span>HTML5</span><p>#시멘틱 #마크업 #어쩌구</p></div>
-//               <div className="skill-item"><FaCss3Alt className="icon css" /><span>CSS3</span></div>
-//               <div className="skill-item"><SiSass className="icon sass" /><span>SCSS</span></div>
-//               <div className="skill-item"><SiJavascript className="icon js" /><span>JavaScript</span></div>
-//               <div className="skill-item"><SiVuedotjs className="icon vue" /><span>Vue.js</span></div>
-//               <div className="skill-item"><FaReact className="icon react" /><span>React.js</span></div>
-//             </div>
-//           </div>
-
-//           {/* back */}
-//           <div className="skill-card">
-//             <h3>분석??</h3>
-//             <div className="skill-grid">
-//               <div className="skill-item"><FaGithub className="icon github" /><span>node.js</span></div>
-//               <div className="skill-item"><FaFigma className="icon figma" /><span>MySQL</span></div>
-//               <div className="skill-item"><SiNotion className="icon notion" /><span>??</span></div>
-//             </div>
-//           </div>
-
-//           {/* Tools */}
-//           <div className="skill-card">
-//             <h3>Tools</h3>
-//             <div className="skill-grid">
-//               <div className="skill-item"><FaGithub className="icon github" /><span>GitHub</span></div>
-//               <div className="skill-item"><FaFigma className="icon figma" /><span>Figma</span></div>
-//               <div className="skill-item"><SiNotion className="icon notion" /><span>Notion</span></div>
-//             </div>
-//           </div>
-
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Skills;
-
-
 import "./Skills.scss";
-import { FaHtml5, FaCss3Alt, FaReact, FaGithub, FaFigma, FaNpm } from "react-icons/fa";
-import { SiJavascript, SiVuedotjs, SiSass, SiNotion, SiVite, SiVercel, SiJquery, SiNodedotjs, SiGooglecolab, SiMysql } from "react-icons/si";
+import {
+  FaHtml5, FaCss3Alt, FaReact, FaGithub, FaFigma, FaNpm
+} from "react-icons/fa";
+import {
+  SiJavascript, SiVuedotjs, SiSass, SiNotion, SiVite, SiVercel, SiJquery, SiNodedotjs, SiGooglecolab, SiMysql
+} from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 const Skills = () => {
@@ -64,13 +12,16 @@ const Skills = () => {
     <section id="skills" className="skills">
       <div className="inner">
         <h2>Skills</h2>
-        <p className="desc">주요 프론트엔드 기술과 개발 환경, 협업 도구를 정리했습니다.</p> {/* 직접 사용해보았거나 자주 사용하는 기술, 도구들 입니다..?? */}
+        <p className="desc">
+          {/* 주요 프론트엔드 기술과 개발 환경, 협업 도구를 정리했습니다. */}
+        </p>
 
         <div className="skill-groups">
 
           {/* Frontend */}
           <div className="skill-card">
-            <h3>Frontend</h3>
+            <h3>Frontend: <span>UI를 구성하고 사용자 인터랙션을 구현했습니다.</span></h3>
+            {/* <p className="category-desc">UI를 구성하고 사용자 인터랙션을 구현했습니다.</p> */}
             <div className="skill-grid">
 
               <div className="skill-item">
@@ -114,13 +65,13 @@ const Skills = () => {
                 <span>React.js</span>
                 <p>#Hooks #상태관리 #API연동</p>
               </div>
-
             </div>
           </div>
 
           {/* Environment */}
           <div className="skill-card">
             <h3>Environment</h3>
+            {/* <p className="category-desc">개발 환경 세팅부터 빌드, 배포까지 직접 경험했습니다.</p> */}
             <div className="skill-grid">
 
               <div className="skill-item">
@@ -152,13 +103,13 @@ const Skills = () => {
                 <span>MySQL</span>
                 <p>#데이터베이스 #CRUD #쿼리기초</p>
               </div>
-
             </div>
           </div>
 
           {/* Tools */}
           <div className="skill-card">
             <h3>Tools</h3>
+            {/* <p className="category-desc">협업과 작업 관리에 필요한 도구를 적극적으로 활용했습니다.</p> */}
             <div className="skill-grid">
 
               <div className="skill-item">
@@ -170,13 +121,13 @@ const Skills = () => {
               <div className="skill-item">
                 <FaFigma className="icon figma" />
                 <span>Figma</span>
-                <p>#UI디자인 #프로토타입 #..</p>
+                <p>#UI디자인 #프로토타입 #협업</p>
               </div>
 
               <div className="skill-item">
                 <SiNotion className="icon notion" />
                 <span>Notion</span>
-                <p>#작업관리 #문서정리 #프로젝트기록?? </p>
+                <p>#작업관리 #문서정리 #프로젝트기록</p>
               </div>
 
               <div className="skill-item">
@@ -190,7 +141,6 @@ const Skills = () => {
                 <span>VS Code</span>
                 <p>#개발환경 #디버깅 #익스텐션활용</p>
               </div>
-
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 @import "../styles/index.scss";
 
 .skills {
+  
   .inner {
 
   }
@@ -38,14 +39,26 @@
     h3 {
       margin-bottom: 1.5rem;
       color: $color-blue;
+      span {
+        font-size: $fs-14;
+        color: $color-dark-sub;
+        margin-bottom: 1.5rem;
+        font-weight: normal;
+      }
     }
+    .category-desc {
+      font-size: $fs-14;
+      color: $color-dark-sub;
+      margin-bottom: 1.5rem;
+    }
+
 
     .skill-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 3rem 2rem;
       justify-items: center;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
   }
 
@@ -78,6 +91,7 @@
       display: inline-block;
       padding: .2rem;
       text-align: center; // 고민
+      word-break: normal;
 
       &::before {
         content: '';
@@ -97,23 +111,11 @@
     .js { color: #F7DF1E; }
     .react { color: #61DAFB; }
     .vue { color: #42B883; }
-    .github { color: #282828; }
-    .figma { color: #F24E1E; }
-    .notion { color: #282828; }
-
-
-    /* 브랜드 컬러 */
-    .html { color: #E34F26; }
-    .css { color: #1572B6; }
-    .sass { color: #CC6699; }
-    .js { color: #F7DF1E; }
-    .react { color: #61DAFB; }
-    .vue { color: #42B883; }
     .jquery { color: #0769AD; }
     .node { color: #83CD29; }
     .npm { color: #CB3837; } 
-    .vite { color: #646CFF; }
-    .vercel { color: #000000; }
+    .vite { color: #646CFF; }  // svg나 다른 아이콘 사용....
+    .vercel { color: #000000; } // svg나 다른 아이콘 사용....
     .mysql { color: #4479A1; } 
     .github { color: #181717; }
     .figma { color: #F24E1E; }
