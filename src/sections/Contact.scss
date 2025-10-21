@@ -6,19 +6,19 @@
   text-align: center;
 
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     color: $color-white;
   }
 
   p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 5rem;
     color: $color-gray;
-    font-size: $fs-16;
+    line-height: 1.6;
   }
 
   .contact-link {
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     color: $color-blue;
     font-weight: 700;
     font-size: 1.8rem;
@@ -30,31 +30,114 @@
     }
   }
 
-  .socials {
+  .contact-closing {
+    margin-top: 6rem;
+    p {
+      margin-bottom: 2rem;
+      color: $color-gray;
+      line-height: 1.6;
+    }
+  }
+
+  .menu {
     display: flex;
     justify-content: center;
-
-    gap: 2rem;
-    margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-top: 3rem;
+    gap: 2.5rem;
 
     a {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       color: $color-white;
-      // font-size: 2.4rem;
+      font-size: $fs-16;
       transition: color 0.3s ease, transform 0.3s ease;
 
       &:hover {
-        // color: $color-blue;
-        transform: scale(1.1);
-        // transform: translateY(-3px);
+        color: $color-blue;
+        transform: scale(1.08);
       }
     }
   }
 
   .footer {
     text-align: center;
-    margin-top: 4rem;
-    padding: 4rem 0 1rem;
-    font-size: $fs-12;
+    margin-top: 5rem;
+    padding: 4rem 0 1.5rem;
     color: $color-gray;
+    
+    small {
+      font-size: $fs-14;
+    }
+    .version {
+      font-size: $fs-14;
+      margin-top: 0.4rem;
+      opacity: 0.8;
+    }
+  }
+
+  // 반응형
+  // 태블릿 (≥768px)
+  @media (min-width: $breakpoint-tablet) {
+    padding: 8rem 3rem;
+
+    h2 { font-size: 2.8rem; }
+    p { font-size: 1.7rem; }
+
+    .menu {
+      gap: 2rem;
+
+      a {
+        font-size: 1.8rem;
+      }
+    }
+
+    .footer {
+      font-size: $fs-14;
+    }
+  }
+
+  // 노트북 (≥1100px)
+  @media (min-width: $breakpoint-laptop) {
+    padding: 10rem 4rem;
+
+    h2 { font-size: 3rem; }
+    p { font-size: 1.8rem; }
+
+    .menu {
+      gap: 2.5rem;
+      justify-content: start;
+
+      a {
+        font-size: 2rem;
+      }
+    }
+
+    .footer {
+      margin-top: 6rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  // 데스크탑 (≥1400px)
+  @media (min-width: $breakpoint-desktop) {
+    padding: 12rem 6rem;
+
+    p { font-size: 1.9rem; }
+
+    .menu {
+      gap: 3rem;
+      margin-top: 4rem;
+
+      a {
+        font-size: 2.2rem;
+      }
+    }
+
+    .footer {
+      font-size: 1.5rem;
+    }
   }
 }

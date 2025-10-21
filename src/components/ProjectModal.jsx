@@ -3,7 +3,7 @@ import { CgClose } from "react-icons/cg";
 
 const ProjectModal = ({ project, onClose }) => {
 
-  // ✅ 새 탭에서 링크 열기 함수
+  // 새 탭에서 링크 열기 함수
   const openLink = (url) => {
     if (url && url !== "#") {
       window.open(url, "_blank" , "noopener,noreferrer" ); // rel="noopener noreferrer" → 보안상 필수 (탭 간 접근 차단)

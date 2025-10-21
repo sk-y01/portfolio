@@ -141,13 +141,13 @@
   // 반응형
   // 태블릿 (≥768px)
   @media (min-width: $breakpoint-tablet) {
-  .inner {
-      text-align: left;
-    }
+  // .inner {
+  //     text-align: left;
+  //   }
 
-    .tab-area {
-      justify-content: flex-start;
-    }
+  //   .tab-area {
+  //     justify-content: flex-start;
+  //   }
     .activity-table {
       display: table;
       width: 100%;

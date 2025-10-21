@@ -9,14 +9,14 @@ const Skills = () => {
       <div className="inner">
         <h2>Skills</h2>
         <p className="desc">
-          {/* 주요 프론트엔드 기술과 개발 환경, 협업 도구를 정리했습니다. */}
+          주요 프론트엔드 기술과 개발 환경, 협업 도구를 정리했습니다.
         </p>
 
         <div className="skill-groups">
 
           {/* Frontend */}
           <div className="skill-card">
-            <h3>Frontend: <span>UI를 구성하고 사용자 인터랙션을 구현했습니다.</span></h3>
+            <h3>Frontend</h3>
             {/* <p className="category-desc">UI를 구성하고 사용자 인터랙션을 구현했습니다.</p> */}
             <div className="skill-grid">
 
@@ -53,7 +53,7 @@ const Skills = () => {
               <div className="skill-item">
                 <SiVuedotjs className="icon vue" />
                 <span>Vue.js</span>
-                <p>#컴포넌트기반 #데이터바인딩 #SPA</p>
+                <p>#컴포넌트기반 #데이터바인딩</p>
               </div>
 
               <div className="skill-item">
@@ -91,7 +91,7 @@ const Skills = () => {
               <div className="skill-item">
                 <SiVercel className="icon vercel" />
                 <span>Vercel</span>
-                <p>#자동배포 #CI/CD #포트폴리오배포</p>
+                <p>#사이트배포 #포트폴리오배포</p>
               </div>
 
               <div className="skill-item">

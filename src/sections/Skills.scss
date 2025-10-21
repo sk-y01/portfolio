@@ -1,26 +1,27 @@
 @import "../styles/index.scss";
 
-// 모바일 기준으로 안함 수정해야함
+// 모바일 기준으로 수정 완료
 .skills {
-  
-  .inner {
 
-  }
+  .inner { }
 
   h2 {
     margin-bottom: 3rem;
     color: $color-dark;
+    text-align: center; // 모바일은 가운데
   }
 
   .desc {
-    font-size: $fs-16;
+    // font-size: $fs-16;
     color: $color-dark-sub;
     margin-bottom: 3rem;
+    text-align: center;
   }
 
+  // 모바일
   .skill-groups {
     display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
 
@@ -28,8 +29,8 @@
     background: $color-white;
     border: 1px solid $color-gray;
     border-radius: 8px;
-    padding: 3.5rem;
-    text-align: left;
+    padding: 3rem;
+    text-align: center; // 모바일은 가운데
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease;
 
@@ -47,13 +48,14 @@
         font-weight: normal;
       }
     }
+
     .category-desc {
       font-size: $fs-14;
       color: $color-dark-sub;
       margin-bottom: 1.5rem;
     }
 
-
+    // 아이콘 그리드
     .skill-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -90,19 +92,9 @@
     p {
       font-size: $fs-14;
       display: inline-block;
-      padding: .2rem;
-      text-align: center; // 고민
+      padding: 1.5rem 0 .2rem;
+      text-align: center;
       word-break: normal;
-
-      &::before {
-        content: '';
-        display: block;
-        clear: both;
-        width: 20px;
-        height: 20px;
-        color: $color-dark-sub;
-        border-radius: 6px;
-      }
     }
 
     /* 브랜드 컬러 */
@@ -114,16 +106,68 @@
     .vue { color: #42B883; }
     .jquery { color: #0769AD; }
     .node { color: #83CD29; }
-    .npm { color: #CB3837; } 
-    .vite { color: #646CFF; }  // svg나 다른 아이콘 사용....
-    .vercel { color: #000000; } // svg나 다른 아이콘 사용....
-    .mysql { color: #4479A1; } 
+    .npm { color: #CB3837; }
+    .vite { color: #646CFF; }
+    .vercel { color: #000000; }
+    .mysql { color: #4479A1; }
     .github { color: #181717; }
     .figma { color: #F24E1E; }
     .notion { color: #000000; }
     .colab { color: #F9AB00; }
     .vscode { color: #0078D7; }
+  }
 
+  // 반응형
+
+  // 태블릿 (≥768px)
+  @media (min-width: $breakpoint-tablet) {
+    .skill-card {
+      padding: 4rem;
+    }
+
+    .skill-grid {
+      grid-template-columns: repeat(3, 1fr); // 3개씩 정렬
+    }
+  }
+
+  // 노트북 (≥1100px)
+  @media (min-width: $breakpoint-laptop) {
+    h2 {
+      margin-bottom: 3rem;
+      color: $color-dark;
+      text-align: left; // 모바일은 가운데
+    }
+
+    .desc {
+      font-size: $fs-16;
+      color: $color-dark-sub;
+      margin-bottom: 5rem;
+      text-align: left;
+    }
+    .skill-groups {
+      grid-template-columns: 1fr; // 한 줄씩 쌓이는 구조
+    }
+
+    .skill-card {
+      text-align: left; // 제목/설명 왼쪽 정렬
+      padding: 4.5rem;
+    }
+
+    .skill-grid {
+      grid-template-columns: repeat(6, 1fr); // 한 줄 6개씩
+      justify-items: center;
+    }
+  }
+
+  // 데스크탑 (≥1400px)
+  @media (min-width: $breakpoint-desktop) {
+    .skill-card {
+      text-align: left;
+      padding: 5rem;
+    }
+
+    .skill-grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 }
-

@@ -22,27 +22,28 @@ const ScrollButtons = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 🔹 페이지 맨 위로 부드럽게 이동
+  // 페이지 맨 위로 부드럽게 이동
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // 🔹 구글 설문지로 이동
+  // 구글 설문지로 이동
   const goToComment = () => {
-    window.open("https://docs.google.com/forms/d/폼_ID_여기에", "_blank");
+    window.open("https://forms.gle/HddtoyAzai8csUsA6", "_blank");
   };
+  // https://forms.gle/HddtoyAzai8csUsA6
 
   if (!showButtons) return null; // 스크롤 전엔 버튼 숨김
 
   return (
     <div className="scroll-buttons">
-      {/* 💬 코멘트 버튼 */}
+      {/* 코멘트 버튼 */}
       <button className="comment-btn" onClick={goToComment}>
         <span className="label">코멘트 남기기</span>
         <FaCommentDots />
       </button>
 
-      {/* ⬆ 위로가기 버튼 */}
+      {/* 위로가기 버튼 */}
       <button className="top-btn" onClick={scrollToTop}>
         <span className="label">맨 위로 이동</span>
         <FaArrowUp />
