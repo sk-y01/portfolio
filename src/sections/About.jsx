@@ -1,22 +1,3 @@
-// import "./About.scss";
-
-// const About = () => {
-//   return (
-//     <section id="about" className="about">
-//       <div className="inner">
-//         <h2>소개</h2>
-//         {/* 샘플 문구임 */}
-//         <p>
-//           사용자 친화적인 UI/UX를 고민하며, <br/> React와 SCSS를 활용해  
-//           <strong> 깔끔하고 직관적인 웹</strong>을 만드는 프론트엔드 개발자입니다.
-//         </p>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default About;
-
 import { useState } from "react";
 import "./About.scss";
 import { FaZ } from 'react-icons/fa6';

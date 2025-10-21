@@ -187,3 +187,261 @@ hover effect 46
 
 3) 첫번째 숫자 : v. 1.1.0
 - 이전 버전과 호환되지 않는 새로운 큰 변화를 말한다. 가령 Windows 7에서 10로 업그레이드된 정도의 변화이다.
+
+
+```scss
+// @import "../styles/index.scss";
+
+// .about {
+//   padding: 8rem 0;
+//   background: $color-light; // 밝은 회색 배경
+//   height: 100vh;
+//   color: $color-dark;
+//   position: relative;
+//   // text-align: center; /* 가운데 정렬할건지 */
+//   display: flex; // 소제목타이틀 가운데로 할건지
+//   // align-items: center;
+
+//   h2 {
+//     margin-bottom: 3rem;
+//     color: $color-dark;
+//   }
+
+//   p {
+//     // max-width: 700px;
+//     // margin: 0 auto;
+//     // line-height: 1.8;
+//     font-size: 1.6rem;
+//     color: $color-dark-sub;
+
+//   }
+// }
+
+
+@import "../styles/index.scss";
+
+.about {
+  // padding: 8rem 0;
+  background: $color-light;
+
+  h2 {
+    // text-align: center;
+    // margin-bottom: 3rem;
+    // color: $color-dark;
+  }
+
+  // 탭 메뉴 영역
+  .tab-area {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin: 0 auto 3rem;
+  }
+
+  // 탭 메뉴 스타일
+  .tab-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border: 1px solid $color-blue;
+    border-radius: 50px;
+    padding: .6rem 1rem;
+    background: $color-white;
+
+    .tab {
+      background: transparent;
+      border: none;
+      font-size: 1.6rem;
+      color: $color-dark;
+      cursor: pointer;
+      padding: 1rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $color-blue;
+      }
+
+      &.active {
+        background: $color-blue;
+        color: $color-white;
+        // font-weight: 600;
+        // padding: 1rem 2rem;
+      }
+    }
+  }
+
+  // 탭 전환 콘텐츠 영역
+  .tab-content {
+    // max-width: 900px;
+    // margin: 0 auto;
+    font-size: 1.6rem;
+    // text-align: left;
+    color: $color-dark-sub;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+
+    p {
+      margin-bottom: 1.6rem;
+    }
+
+    h3 {
+      color: $color-dark;
+    }
+
+    .subtext {
+      font-size: $fs-16;
+      // margin-bottom: 2rem;
+      color: $color-dark-sub;
+    }
+
+    .summary {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      color: $color-dark;
+
+      &.highlight {
+        color: $color-blue;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // 표 기본 스타일 (활동 / 교육 / 자격증)
+  .activity-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+
+    th,
+    td {
+      border-bottom: 1px solid $color-gray;
+      padding: 1.5rem 1.2rem;
+      text-align: left;
+      font-size: $fs-16; // ? 16px
+      vertical-align: top;
+    }
+
+    th {
+      color: $color-blue;
+      font-weight: 700;
+      & {
+        padding-left: 0;
+      }
+    }
+
+    td {
+      color: $color-dark-sub;
+    & {
+        padding-left: 0;
+      }
+    }
+    
+  }
+
+  // 자격증 리스트
+  .license {
+    margin-top: 2rem;
+
+    h4 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      // color: $color-blue;
+      color: $color-dark;
+    }
+
+    ul {
+      list-style: disc;
+      // margin-left: 2rem;
+
+      li {
+        margin-bottom: 0.6rem;
+        font-size: 1.5rem;
+        color: $color-dark-sub;
+      }
+    }
+  }
+
+  // 반응형
+  @media (max-width: $breakpoint-tablet) {
+    .tab-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 3rem;
+    }
+
+      .tab-menu {
+      gap: 1rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 40px;
+
+      .tab {
+        font-size: 1.4rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+
+    .tab-content {
+      padding: 0 1.6rem;
+    }
+
+    .activity-table {
+      font-size: 1.3rem;
+
+      th,
+      td {
+        display: block;
+        padding: 0.6rem 0;
+        text-align: center;
+        border: none; // 작은 화면 일 때, 표 경계선 사라짐
+      }
+
+      thead {
+        display: none;
+      }
+
+      tbody tr {
+        margin-bottom: 1.6rem;
+        display: block;
+        // border-bottom: 1px solid $color-gray;
+        padding-bottom: 1rem;
+      }
+
+      td::before { // ???
+        content: attr(data-label);
+        font-weight: 600;
+        color: $color-blue;
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-mobile) {
+
+    // 탭 메뉴 영역
+    .tab-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 3rem;
+    }
+  }
+  
+  // 애니메이션
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+```
