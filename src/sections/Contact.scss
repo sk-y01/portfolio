@@ -43,7 +43,8 @@
       transition: color 0.3s ease, transform 0.3s ease;
 
       &:hover {
-        color: $color-blue;
+        // color: $color-blue;
+        transform: scale(1.1);
         // transform: translateY(-3px);
       }
     }

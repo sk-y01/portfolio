@@ -1,10 +1,6 @@
 import "./Skills.scss";
-import {
-  FaHtml5, FaCss3Alt, FaReact, FaGithub, FaFigma, FaNpm
-} from "react-icons/fa";
-import {
-  SiJavascript, SiVuedotjs, SiSass, SiNotion, SiVite, SiVercel, SiJquery, SiNodedotjs, SiGooglecolab, SiMysql
-} from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaReact, FaGithub, FaFigma, FaNpm } from "react-icons/fa";
+import { SiJavascript, SiVuedotjs, SiSass, SiNotion, SiVite, SiVercel, SiJquery, SiNodedotjs, SiGooglecolab, SiMysql } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 const Skills = () => {
@@ -39,7 +35,7 @@ const Skills = () => {
               <div className="skill-item">
                 <SiSass className="icon sass" />
                 <span>SCSS</span>
-                <p>#스타일모듈화 <br/> #변수활용 #유지보수성</p>
+                <p>#스타일모듈화 #변수활용 #유지보수성</p>
               </div>
 
               <div className="skill-item">
@@ -89,7 +85,7 @@ const Skills = () => {
               <div className="skill-item">
                 <SiVite className="icon vite" />
                 <span>Vite</span>
-                <p>#빠른빌드 #HMR #개발환경</p>
+                <p>#빌드 #개발환경</p>
               </div>
 
               <div className="skill-item">

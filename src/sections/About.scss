@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 3rem;
+    margin: 0 auto 5rem;
   }
 
   .tab-menu {
@@ -27,7 +27,7 @@
     .tab {
       background: transparent;
       border: none;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: $color-dark;
       cursor: pointer;
       padding: 0.8rem 1.6rem;
@@ -57,73 +57,71 @@
       margin-bottom: 1.6rem;
     }
 
-    h2 {
-      font-size: 2rem;
-      color: $color-dark;
-      margin-bottom: 1rem;
-    }
-
     .subtext {
-      font-size: 1.5rem;
+      // font-size: 1.5rem;
       color: $color-dark-sub;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.5rem;  
     }
 
     .summary {
-      font-size: 1.5rem;
+      // font-size: 1.5rem;
       margin-top: 2rem;
       color: $color-dark;
 
     }
   }
 
-  // -----------------------------
-  // 3️⃣ 표 (활동 / 교육 / 경력)
-  // -----------------------------
+  // 표 (활동 / 교육 / 경력)
   .activity-table {
     width: 100%;
+    border: none;
     border-collapse: collapse;
-    margin-bottom: 3rem;
 
-    th,
-    td {
-      border-bottom: 1px solid $color-gray;
-      padding: 1.2rem 0.8rem;
-      text-align: left;
-      vertical-align: top;
-      font-size: 1.5rem;
+    thead {
+      display: none; // 헤더 숨기기
     }
 
-    th {
-      color: $color-blue;
-      font-weight: 700;
+    tbody tr {
+      display: block;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding-bottom: 1rem;
     }
 
     td {
+      display: block;
+      width: 100%;
+      padding: 0.6rem 0;
+      border: none;
+      text-align:center;
+      // font-size: 1.5rem;
       color: $color-dark-sub;
+
+      // 모바일에서 data-label 표시 (텍스트 대신)
+      &::before {
+        content: attr(data-label);
+        display: inline-block;
+        margin: 0 1.5rem 0.5rem;
+        font-weight: 600;
+        // color: $color-blue;
+        
+      }
     }
   }
 
-  // -----------------------------
-  // 4️⃣ 자격증 리스트
-  // -----------------------------
+  // 자격증 리스트
   .license {
     margin-top: 2.5rem;
 
-    h2 {
-      font-size: 2rem;
-      color: $color-dark;
-      margin-bottom: 1rem;
-    }
-
     ul {
-      list-style: disc;
       margin-left: 2rem;
 
       li {
         margin-bottom: 0.6rem;
-        font-size: 1.5rem;
         color: $color-dark-sub;
+        span {
+          font-weight: 500;
+        }
       }
     }
   }
@@ -141,29 +139,71 @@
   }
 
   // 반응형
-
   // 태블릿 (≥768px)
   @media (min-width: $breakpoint-tablet) {
-    .tab-menu {
-      gap: 1.2rem;
-      padding: 0.8rem 1.2rem;
+  .inner {
+      text-align: left;
+    }
 
-      .tab {
-        font-size: 1.6rem;
-        padding: 1rem 2rem;
+    .tab-area {
+      justify-content: flex-start;
+    }
+    .activity-table {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed; // 셀 비율
+
+      thead {
+        display: table-header-group;
+      }
+
+      tbody tr {
+        display: table-row;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      th,
+      td {
+        display: table-cell;
+        padding: 1.2rem 0.8rem;
+        border-bottom: 1px solid $color-gray;
+        text-align: left;
+        vertical-align: top;
+        font-size: 1.5rem;
+        word-break: keep-all;      // 단어 단위로 줄바꿈
+        white-space: normal;       // 강제 줄바꿈 허용
+      }
+
+      // 열 비율 조정
+      th:nth-child(1),
+      td:nth-child(1) { width: 18%; } // 기간
+      th:nth-child(2),
+      td:nth-child(2) { width: 22%; } // 기관
+      th:nth-child(3),
+      td:nth-child(3) { width: 20%; } // 역할
+      th:nth-child(4),
+      td:nth-child(4) { width: 40%; } // 주요내용
+
+      th {
+        color: $color-blue;
+        font-weight: 700;
+        text-align: left;
+      }
+
+      td {
+        color: $color-dark-sub;
+
+        &::before {
+          content: none; // 모바일용 데이터(제목) 제거
+        }
       }
     }
-
-    .tab-content {
-      font-size: 1.7rem;
-    }
-
-    .activity-table th,
-    .activity-table td {
-      padding: 1.4rem 1rem;
-      // text-align: center;
-    }
   }
+
 
   // 노트북 (≥1100px)
   @media (min-width: $breakpoint-laptop) {
@@ -198,17 +238,18 @@
       padding: 1rem 1.6rem;
 
       .tab {
-        // font-size: 1.8rem;
+        font-size: 1.7rem;
       }
     }
 
     .tab-content {
-      // font-size: 1.9rem; // ?
+      font-size: 1.9rem; // ?
     }
 
     .activity-table th,
     .activity-table td {
       padding: 1.8rem 1.4rem;
+      font-size: 1.7rem;
     }
   }
 }
