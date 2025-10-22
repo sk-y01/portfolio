@@ -1,48 +1,44 @@
 @import "../styles/index.scss";
 
 // Home (모바일 퍼스트)
-// 로고랑 메모에 걸치게 안되나..
-
 .home {
-  height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: start;
   background: $color-white;
   color: $color-dark;
   position: relative;
   text-align: center; // 모바일 기본 가운데 정렬
 
   .inner {
-    display: flex;
+    @include flex-center; // index.scss 믹스인 사용
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 1.5rem;
+    width: 100%;         // ✅ 로고랑 맞춤 flex-direction: column :: 하면 마진 오토가 된다..?
+    // align-items: center;
+    // justify-content: center;
   }
 
+  // 부제목 (모바일 기준)
   .subtitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem; // ✅ 기준 폰트에서 키움
     color: $color-dark-sub;
     font-weight: 500;
-
-    strong {
-      color: $color-blue;
-    }
   }
 
+  // 아래 화살표 아이콘 테블릿부터 마우스말고 손으로 바꿀까
   .down {
     color: $color-blue;
-    font-size: 2.8rem;
+    font-size: 3rem;
     position: absolute;
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
     animation: bounce 1.5s ease-in-out infinite;
-    
+
     &:hover {
-      // transform: scale(1.1); // 적용x
-      color: darken($color-blue, 10%); // 잘 안보임
+      color: darken($color-blue, 10%);
     }
   }
 }
@@ -50,40 +46,41 @@
 // 태블릿 (≥768px)
 @media (min-width: $breakpoint-tablet) {
   .home {
-    h1 {
-      // font-size: 3.2rem; // 적용안됨
-    }
-
-    .subtitle {
-      font-size: 1.8rem;
-    }
-  }
-}
-
-// 노트북 (≥1100px)
-@media (min-width: $breakpoint-laptop) {
-  .home {
-    text-align: left; // inner 기준 왼쪽 정렬
+    text-align: left; // 태블릿부터 왼쪽 정렬... 아랫 줄이랑 안맞는데/.//
     .inner {
       align-items: flex-start;
     }
+    
 
     .subtitle {
-      font-size: 2rem;
+      font-size: 2.2rem;
+      // padding-right: 45rem;
     }
-
   }
 }
 
-// 데스크탑 (≥1400px)
+//  노트북 (≥1100px)
+@media (min-width: $breakpoint-laptop) {
+  .home {
+    .subtitle {
+      font-size: 2.8rem;
+      // font-weight: 400;
+    }
+  }
+}
+
+// ✅ 데스크탑 (≥1400px)
 @media (min-width: $breakpoint-desktop) {
   .home {
     .inner {
-      gap: 2rem;
-      min-width: 1200px;
+      // gap: 2rem;
+      padding: 0 4rem;
+      max-width: 1200px;
+      // margin: 0 auto;
     }
+
     .subtitle {
-      font-size: 2.2rem;
+      font-size: 2.8rem;
     }
   }
 }

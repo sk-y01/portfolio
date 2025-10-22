@@ -4,7 +4,7 @@
   background: $color-light;
 
   h2 {
-    margin-bottom: 3rem;
+    padding-bottom: 2rem;
     color: $color-dark;
     text-align: center;
   }
@@ -36,7 +36,7 @@
     }
 
     h4 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: $color-blue;
     }
 
@@ -105,7 +105,8 @@
         justify-content: start;
       }
       .project-image {
-        height: 260px;
+        height: 100%;
+        width: 100%;
       }
     }
   }

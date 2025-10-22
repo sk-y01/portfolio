@@ -60,12 +60,12 @@
     .subtext {
       // font-size: 1.5rem;
       color: $color-dark-sub;
-      margin-bottom: 1.5rem;  
+      margin-bottom: 2rem;  
     }
 
     .summary {
       // font-size: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 5rem;
       color: $color-dark;
 
     }
@@ -184,9 +184,9 @@
       th:nth-child(2),
       td:nth-child(2) { width: 22%; } // 기관
       th:nth-child(3),
-      td:nth-child(3) { width: 20%; } // 역할
+      td:nth-child(3) { width: 25%; } // 역할, 과정
       th:nth-child(4),
-      td:nth-child(4) { width: 40%; } // 주요내용
+      td:nth-child(4) { width: 35%; } // 주요내용
 
       th {
         color: $color-blue;

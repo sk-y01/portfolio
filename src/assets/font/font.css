@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+/* Remixicon */
+@import url(./remixicon/remixicon.css);
+
+/* Pretendard GOV */
+@font-face {
+	font-family: "Pretendard GOV";
+	src: url(./pretendard/PretendardGOV-Thin.woff) format('woff');
+	font-style: normal;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: "Pretendard GOV";
+	src: url(./pretendard/PretendardGOV-ExtraLight.woff) format('woff');
+	font-style: normal;
+	font-weight: 200;
+}
+
+@font-face {
+	font-family: "Pretendard GOV";
+	src: url(./pretendard/PretendardGOV-Light.woff) format('woff');
+	font-style: normal;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "Pretendard GOV";
+	src: url(./pretendard/PretendardGOV-Regular.woff) format('woff');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Pretendard GOV";
+	src: url(./pretendard/PretendardGOV-Medium.woff) format('woff');
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: "Pretendard GOV";
+	src: url(./pretendard/PretendardGOV-SemiBold.woff) format('woff');
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Pretendard GOV";
+	src: url(./pretendard/PretendardGOV-Bold.woff) format('woff');
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "Pretendard GOV";
+	src: url(./pretendard/PretendardGOV-ExtraBold.woff) format('woff');
+	font-style: normal;
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: "Pretendard GOV";
+	src: url(./pretendard/PretendardGOV-Black.woff) format('woff');
+	font-style: normal;
+	font-weight: 900;
+}
+
+/* INKLIPQUID */
+@font-face {
+	font-family: "Inklipquid";
+	font-style: normal;
+	font-weight: 400;
+	src: url(./inklipquid/inklipquid.ttf) format('truetype');
+}
+
+/* Chosun */
+@font-face {
+	font-family: "Chosunilbo_myungjo";
+	font-style: normal;
+	font-weight: 400;
+	src: url(./chosun/ChosunCentennial.ttf) format('truetype');
+}

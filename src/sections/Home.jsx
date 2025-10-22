@@ -15,7 +15,8 @@ const Home = () => {
     <section id="home" className="home">
       <div className="inner">
         {/* 한줄씩 나타나기 하면 좋을듯 */}
-        <h1>이름처럼, <br/> 더 넓은 <strong>하늘</strong>을 향해 배우며 나아갑니다.</h1>
+        <h1>이름처럼, <br/> 더 넓은<br/> <strong>하늘</strong>을 향해<br/> 배우며 나아갑니다.</h1>
+        {/* <h1>이름처럼, <br/> 더 넓은 <strong>하늘</strong>을 향해 배우며 나아갑니다.</h1> */}
         <p className="subtitle">
           배움으로 성장하는 프론트엔드 개발자 <strong>이하늘</strong>입니다.
         </p>

@@ -3,10 +3,7 @@
 // 모바일 기준으로 수정 완료
 .skills {
 
-  .inner { }
-
   h2 {
-    margin-bottom: 3rem;
     color: $color-dark;
     text-align: center; // 모바일은 가운데
   }
@@ -17,14 +14,14 @@
     margin-bottom: 3rem;
     text-align: center;
   }
-
+  
   // 모바일
   .skill-groups {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-
+  
   .skill-card {
     background: $color-white;
     border: 1px solid $color-gray;
@@ -33,14 +30,17 @@
     text-align: center; // 모바일은 가운데
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease;
-
+    // position: relative;
+    
     &:hover {
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
-
+    
     h3 {
       margin-bottom: 1.5rem;
       color: $color-blue;
+      // position: absolute;
+      // top: -3rem;
       span {
         font-size: $fs-14;
         color: $color-dark-sub;
@@ -90,7 +90,7 @@
     }
 
     p {
-      font-size: $fs-14;
+      // font-size: $fs-14;
       display: inline-block;
       padding: 1.5rem 0 .2rem;
       text-align: center;
@@ -121,6 +121,17 @@
 
   // 태블릿 (≥768px)
   @media (min-width: $breakpoint-tablet) {
+    h2 {
+      color: $color-dark;
+      text-align: left; // 모바일은 가운데
+    }
+
+    .desc {
+      font-size: $fs-16;
+      color: $color-dark-sub;
+      margin-bottom: 5rem;
+      text-align: left;
+    }
     .skill-card {
       padding: 4rem;
     }
@@ -133,7 +144,6 @@
   // 노트북 (≥1100px)
   @media (min-width: $breakpoint-laptop) {
     h2 {
-      margin-bottom: 3rem;
       color: $color-dark;
       text-align: left; // 모바일은 가운데
     }

@@ -24,7 +24,7 @@
 
   // 로고 (텍스트 로고)
   .logo {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 2rem;
     color: $color-blue;
   }
@@ -38,7 +38,7 @@
 
     li {
       cursor: pointer;
-      transition: color 0.2s;
+      transition: color 0.3s;
 
       &:hover {
         color: $color-blue;
@@ -52,10 +52,12 @@
   .navbar {
     padding: 1.5rem 0;
 
-    .inner {
-      flex-direction: column;
-      gap: 1rem;
-      text-align: center;
+    .inner { // 태블릿도 노트북처럼
+      flex-direction: row; // 가로 배치
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      gap: 0;
     }
 
     ul {
@@ -70,11 +72,11 @@
     padding: 2rem 0;
 
     .inner {
-      flex-direction: row; // 가로 배치
-      justify-content: space-between;
-      align-items: center;
-      text-align: left;
-      gap: 0;
+      // flex-direction: row; // 가로 배치
+      // justify-content: space-between;
+      // align-items: center;
+      // text-align: left;
+      // gap: 0;
     }
 
     ul {
@@ -105,7 +107,7 @@
       gap: 3.2rem;
 
       li {
-        font-size: 1.7rem;
+        // font-size: 1.7rem;
       }
     }
   }

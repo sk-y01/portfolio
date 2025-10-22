@@ -45,8 +45,8 @@
   }
 }
 
-.modal-title {
-}
+// .modal-title {
+// }
 
 .modal-icons {
   display: flex;
@@ -102,93 +102,3 @@
     transform: translateY(0);
   }
 }
-
-
-
-// 링크 없을 때 말풍선 나오게
-// @import "../styles/index.scss";
-
-// .modal-icons {
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 1rem;
-//   margin-bottom: 2rem;
-
-//   a {
-//     position: relative;
-//     background: $color-blue;
-//     color: $color-white;
-//     padding: 0.5rem 1.2rem;
-//     border-radius: 6px;
-//     text-decoration: none;
-//     font-size: $fs-14;
-//     transition: all 0.3s ease;
-
-//     &:hover {
-//       background: darken($color-blue, 10%);
-//       transform: translateY(-2px);
-//     }
-
-//     /* 툴팁 */
-//     .tooltip {
-//       position: absolute;
-//       bottom: 130%;
-//       left: 50%;
-//       transform: translateX(-50%);
-//       background: $color-dark-sub;
-//       color: $color-white;
-//       font-size: $fs-12;
-//       padding: 0.4rem 0.8rem;
-//       border-radius: 4px;
-//       opacity: 0;
-//       pointer-events: none;
-//       transition: opacity 0.3s ease, transform 0.3s ease;
-//       white-space: nowrap;
-//       z-index: 10;
-
-//       /* 작은 화면일 때 — 위치 조정 */
-//       @media (max-width: $breakpoint-tablet) {
-//         bottom: auto;
-//         top: 120%;
-//         font-size: 1.1rem;
-//       }
-//     }
-
-//     &:hover .tooltip {
-//       opacity: 1;
-//       transform: translate(-50%, -2px);
-//     }
-
-//     /* 화살표 */
-//     .tooltip::after {
-//       content: "";
-//       position: absolute;
-//       top: 100%;
-//       left: 50%;
-//       transform: translateX(-50%);
-//       border-width: 6px;
-//       border-style: solid;
-//       border-color: $color-dark-sub transparent transparent transparent;
-
-//       @media (max-width: $breakpoint-tablet) {
-//         top: auto;
-//         bottom: 100%;
-//         border-color: transparent transparent $color-dark-sub transparent;
-//       }
-//     }
-
-//     /* 비활성화 상태 */
-//     &.disabled {
-//       background: $color-gray;
-//       color: $color-white;
-//       cursor: not-allowed;
-//       pointer-events: none;
-//       position: relative;
-
-//       .tooltip {
-//         opacity: 1;
-//         transform: translate(-50%, -4px);
-//       }
-//     }
-//   }
-// }

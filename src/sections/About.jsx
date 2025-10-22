@@ -26,7 +26,7 @@ const About = () => {
       case "활동":
         return (
           <div className="activity-content">
-            <h2>💻 교내외 활동</h2>
+            <h2>교내외 활동</h2>
             <p className="subtext">프론트엔드 관련 실무 중심 경험</p>
 
             <table className="activity-table">
@@ -42,14 +42,14 @@ const About = () => {
                 <tr>
                   <td data-label="기간">2023.02 ~ 2024.02</td>
                   <td data-label="기관">한남대학교 시스템운영팀</td>
-                  <td data-label="역할">웹사이트 관리</td>
-                  <td data-label="내용">콘텐츠 업데이트, 디자인 개선, 데이터 백업, 사용자 문의 응대</td>
+                  <td data-label="역할">웹사이트 관리 / 사용자 문의 응대</td>
+                  <td data-label="내용">콘텐츠 업데이트, 사용자 중심의 디자인 및 기능 피드백, 데이터 백업, 전화 문의 응대</td>
                 </tr>
                 <tr>
                   <td data-label="기간">2023.04 ~ 2024.02</td>
                   <td data-label="기관">한남대학교 경영학과</td>
                   <td data-label="역할">홈페이지 운영 / 홍보</td>
-                  <td data-label="내용">학과 홈페이지 관리 및 홍보 콘텐츠 제작</td>
+                  <td data-label="내용">학과 홈페이지 관리(Wordpress), 콘텐츠 제작 및 홍보, 공모전 진행</td>
                 </tr>
                 <tr>
                   <td data-label="기간">2023.09 ~ 2023.12</td>
@@ -70,34 +70,35 @@ const About = () => {
       case "교육":
         return (
           <div className="education-content">
-            <h2>🎓 교육 / 연수 경력</h2>
-            
+            <h2>교육 / 연수 경력</h2>
+            <p className="subtext">프론트엔드 관련 교육 및 경험</p>
+
             <table className="activity-table">
               <thead>
                 <tr>
                   <th>기간</th>
-                  <th>과정</th>
                   <th>기관</th>
+                  <th>과정</th>
                   <th>내용</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td data-label="기간">2025.04.21 ~ 2025.11.07</td>
-                  <td data-label="과정">프론트엔드 개발자 양성과정</td>
                   <td data-label="기관">대전세잔직업전문학교</td>
+                  <td data-label="과정">프론트엔드 개발자 양성과정</td>
                   <td data-label="내용">HTML, CSS, JS, React, Node 등 실무 중심 프로젝트</td>
                 </tr>
                 <tr>
                   <td data-label="기간">2025.08.25 ~ 2025.08.28</td>
-                  <td data-label="과정">졸업생 특강: 구글 애널리틱스 실무</td>
                   <td data-label="기관">한남대학교</td>
-                  <td data-label="내용">데이터 기반 UX 분석 실습</td>
+                  <td data-label="과정">졸업생 특강: 구글 애널리틱스 실무</td>
+                  <td data-label="내용">데이터 기반 UX 분석 실습(GA4)</td>
                 </tr>
                 <tr>
                   <td data-label="기간">2024.03 ~ (학습 중)</td>
-                  <td data-label="과정">웹 프론트엔드를 위한 자바스크립트 첫 걸음</td>
                   <td data-label="기관">인프런 외</td>
+                  <td data-label="과정">웹 프론트엔드를 위한 자바스크립트 첫 걸음</td>
                   <td data-label="내용">JS 심화, 반응형, UI 인터랙션 학습</td>
                 </tr>
               </tbody>
