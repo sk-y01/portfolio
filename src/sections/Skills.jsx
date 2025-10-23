@@ -71,7 +71,7 @@ const Skills = () => {
             <h3 className='skill-title'>Environment</h3>
             <div className="skill-card">
               {/* <p className="category-desc">개발 환경 세팅부터 빌드, 배포까지 직접 경험했습니다.</p> */}
-              <div className="skill-grid">
+              <div className="skill-grid env">
 
                 <div className="skill-item">
                   <SiNodedotjs className="icon node" />

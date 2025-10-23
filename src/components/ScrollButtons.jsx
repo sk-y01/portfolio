@@ -9,13 +9,25 @@ const ScrollButtons = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const aboutSection = document.getElementById("about");
-      if (aboutSection) {
-        const aboutTop = aboutSection.offsetTop;
+      const introSection = document.querySelector("#intro");
+      console.log(introSection)
+      if (introSection) {
+        const introTop = introSection.offsetTop;
         // 🔹 About 섹션 아래로 스크롤 시 버튼 표시
-        setShowButtons(window.scrollY > aboutTop - 200);
+        setShowButtons(window.scrollY > introTop - 200);
       }
     };
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const aboutSection = document.getElementById("about");
+  //     if (aboutSection) {
+  //       const aboutTop = aboutSection.offsetTop;
+  //       // 🔹 About 섹션 아래로 스크롤 시 버튼 표시
+  //       setShowButtons(window.scrollY > aboutTop - 200);
+  //     }
+  //   };
+
 
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // 새로고침 시 사라지는 버튼들 이슈 해결

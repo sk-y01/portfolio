@@ -6,11 +6,13 @@
   // 아이콘 그리드
   .skill-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem 2rem;
-    // justify-items: center;
+    justify-items: center;
     margin-top: 1rem;
   }
+
   .skill-item {
     width: 100%;
     display: flex;
@@ -120,10 +122,15 @@
       .vscode { color: #0078D7; }
     }
 
-  
-  
 
   // 반응형
+
+  @media (max-width: 500px) {
+    // 아이콘 그리드
+    .skill-grid {
+      grid-template-columns: 100%;
+    }
+  }
 
   // 태블릿 (≥768px)
   @media (min-width: $breakpoint-tablet) {
@@ -135,7 +142,7 @@
     .desc {
       font-size: $fs-16;
       color: $color-dark-sub;
-      margin-bottom: 5rem;
+      // margin-bottom: 5rem; 안먹는다ㅡㅜ
       text-align: left;
     }
     .skill-card {
@@ -145,9 +152,9 @@
     // 아이콘 그리드
     .skill-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 3rem 2rem;
-      justify-items: center;
+      justify-items: left;
       margin-top: 1rem;
     }
   }
@@ -165,6 +172,14 @@
       margin-bottom: 5rem;
       text-align: left;
     }
+        // 아이콘 그리드
+    .skill-grid {
+      // display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      // gap: 3rem 2rem;
+      // justify-items: left;
+      // margin-top: 1rem;
+    }
 
     .skill-card {
       text-align: left; // 제목/설명 왼쪽 정렬
@@ -181,6 +196,15 @@
     .skill-card {
       text-align: left;
       padding: 5rem;
+    }
+
+    // 아이콘 그리드
+    .skill-grid {
+      grid-template-columns: repeat(5, 1fr);
+      
+      &.env {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 }

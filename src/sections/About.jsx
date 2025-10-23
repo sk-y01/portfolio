@@ -11,7 +11,7 @@ const About = () => {
     switch (activeTab) {
       case "소개":
         return (
-          <div className="intro">
+          <div className="aboutMe">
             <p>프론트엔드 개발자 <strong>이하늘</strong>입니다.</p>
             <p>새로운 것을 배우고 적용하는 과정을 즐깁니다.  
             작은 시도라도 꾸준히 쌓이는 경험이 저를 성장시킨다고 믿습니다.</p>
@@ -26,8 +26,8 @@ const About = () => {
       case "활동":
         return (
           <div className="activity-content">
-            <h3>교내외 활동</h3>
-            <p className="subtext">프론트엔드 관련 실무 중심 경험</p>
+            <h3>활동</h3>
+            <p className="subtext">프론트엔드 관련 교내, 교외 활동 경험</p>
 
             <table className="activity-table">
               <thead>
@@ -53,16 +53,15 @@ const About = () => {
                 </tr>
                 <tr>
                   <td data-label="기간">2023.09 ~ 2023.12</td>
-                  <td data-label="기관">㈜모노플랫폼 (휘슬 서포터즈 1기)</td>
+                  <td data-label="기관">㈜모노플랫폼</td>
                   <td data-label="역할">앱 모니터링단</td>
-                  <td data-label="내용">커뮤니티 버그 제보, 신규 기능 UX 피드백</td>
+                  <td data-label="내용">휘슬 서포터즈 1기 활동, 커뮤니티 버그 제보, 신규 기능 UX 피드백</td>
                 </tr>
               </tbody>
             </table>
 
             <p className="summary">
-              💬 세 활동 모두 웹과 사용자 경험을 직접 다루며 콘텐츠 구조와 UI 개선 과정을
-              경험한 실무형 활동입니다.
+              💬 세 활동 모두 웹과 관련되어 콘텐츠 구조와 UI 개선 과정의 실무를 경험할 수 있었던 활동입니다.
             </p>
           </div>
         );
@@ -145,9 +144,9 @@ const About = () => {
             <div className="license">
               <h3>자격증</h3>
               <ul>
-                <li>Google Analytics — <span>UX 데이터 분석 역량</span></li>
-                <li>개인정보관리사 1급, 네트워크전문가 1급 — <span>시스템 이해</span></li>
-                <li>전산회계운용사, 생활스포츠지도사 자격증 등 — <span>꾸준한 자기개발 활동</span></li>
+                <li>Google Analytics <span>— UX 데이터 분석 역량</span></li>
+                <li>개인정보관리사 1급, 네트워크전문가 1급 <span>— 시스템 이해</span></li>
+                <li>전산회계운용사, 생활스포츠지도사 자격증 등 <span>— 꾸준한 자기개발 활동</span></li>
               </ul>
             </div>
 
@@ -167,7 +166,7 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="inner">
-      <h2>introduction</h2>
+        <h2>introduction</h2>
         <div className="tab-area">
           <div className="tab-menu">
             {tabs.map((tab) => (

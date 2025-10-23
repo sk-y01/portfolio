@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 5rem;
+    margin: 0 auto 3rem;
   }
 
   .tab-menu {
@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
     background: $color-white;
     border: 1px solid $color-blue;
     border-radius: 50px;
@@ -110,14 +110,19 @@
   .license {
     margin-top: 2.5rem;
 
+    h3 {
+      // text-align: center;
+    }
     ul {
       margin-left: 2rem;
+      text-align: left;
 
       li {
         margin-bottom: 0.6rem;
         color: $color-dark-sub;
         span {
           font-weight: 500;
+          display: none;
         }
       }
     }
@@ -144,6 +149,7 @@
 
     .tab-area {
       justify-content: flex-start;
+      margin: 0 auto 5rem;
     }
     .activity-table {
       display: table;
@@ -179,11 +185,11 @@
       th:nth-child(1),
       td:nth-child(1) { width: 18%; } // 기간
       th:nth-child(2),
-      td:nth-child(2) { width: 22%; } // 기관
+      td:nth-child(2) { width: 20%; } // 기관
       th:nth-child(3),
       td:nth-child(3) { width: 25%; } // 역할, 과정
       th:nth-child(4),
-      td:nth-child(4) { width: 35%; } // 주요내용
+      td:nth-child(4) { width: 38%; } // 주요내용
 
       th {
         color: $color-blue;
@@ -196,6 +202,15 @@
 
         &::before {
           content: none; // 모바일용 데이터(제목) 제거
+        }
+      }
+    }
+    .license {
+      ul {
+        li {
+          span {
+            display: inline-block;
+          }
         }
       }
     }

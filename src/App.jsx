@@ -6,12 +6,14 @@ import About from "./sections/About";
 import Skills from './sections/Skills';
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
+import Introduction from './sections/Introduction';
 
 function App() {
   return (
     <>
       <Navbar />
         <Home />
+        <Introduction id="intro" />
         <About id="about" />
         <Skills />
         <Projects />

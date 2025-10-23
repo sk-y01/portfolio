@@ -73,7 +73,7 @@
       @extend .btn;
       background: $color-blue;
       color: $color-white;
-      padding: 1rem 1.8rem;
+      padding: .8rem 1.8rem;
       // padding: .8rem 8rem;
       // border: none; // 보더 안없애면 파란버튼이 커보이고 보더 없애면 하얀버튼이 커보임;;
 
@@ -171,8 +171,8 @@
       padding: 4rem;
 
       .white-b {
-          padding: .8rem 8.5rem;
-        }
+        padding: .8rem 8.5rem;
+      }
       .blue-b {
         padding: .8rem 8.5rem;
       }
