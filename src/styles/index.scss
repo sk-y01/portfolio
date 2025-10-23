@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6, p, form, figure, figcaption {
 	padding: 0; 
 	/* font: inherit; */
 }
+button { font: inherit; font-size: 1.6rem; }
 
 table { width: 100%; border-collapse: collapse; }
 
@@ -152,6 +153,50 @@ img.small { max-width: 20px; }
     color: $color-white;
   }
 }
+// // 버튼 (Blue / White) 프로젝트
+// .btn-groups {
+//   margin-top: .5rem;
+//   display: inline-flex;
+//   gap: 1.5rem;
+//   justify-content: center;
+//   align-items: center;
+//   border-radius: 6px;
+//   font-size: 1.6rem;
+//   font-weight: 500;
+//   cursor: pointer;
+//   border: 1px solid transparent;
+//   transition: 0.5s;
+//   user-select: none; // 버튼 글자 드래그 방지
+// }
+
+// // 파란 버튼
+// .blue-b {
+//   @extend .btn;
+//   background: $color-blue;
+//   color: $color-white;
+//   padding: .8rem 8.5rem;
+//   // padding: .8rem 8rem;
+//   // border: none; // 보더 안없애면 파란버튼이 커보이고 보더 없애면 하얀버튼이 커보임;;
+
+//   &:hover {
+//     background: darken($color-blue, 10%);
+//   }
+// }
+
+// // 흰색 버튼
+// .white-b {
+//   @extend .btn;
+//   background: $color-white;
+//   color: $color-blue;
+//   border: 1px solid $color-blue;
+//   // border: 2px solid $color-blue; // 2px로 수정하면 사이드 버튼(코멘트)이랑 통일된 느낌
+//   padding: .8rem 8.5rem;
+
+//   &:hover {
+//     background: $color-blue;
+//     color: $color-white;
+//   }
+// }
 
 // 비활성화 상태
 .btn:disabled,

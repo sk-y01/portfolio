@@ -96,9 +96,9 @@ const Projects = () => {
 
               <p>{proj.intro}</p>
 
-              <div className="btn">
+              <div className="btn-groups">
                 <button
-                  className="white-btn"
+                  className="white-b"
                   onClick={() => setSelectedProject(proj)}
                 >
                   상세보기
@@ -106,7 +106,7 @@ const Projects = () => {
 
                 {/* 바로가기 버튼 클릭 시 새 탭으로 이동 */}
                 <button
-                  className="blue-btn"
+                  className="blue-b"
                   onClick={() => openLink(proj.link)}
                 >
                   바로가기

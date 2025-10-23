@@ -167,8 +167,8 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="inner">
+      <h2>introduction</h2>
         <div className="tab-area">
-          <h2>introduction</h2>
           <div className="tab-menu">
             {tabs.map((tab) => (
               <button

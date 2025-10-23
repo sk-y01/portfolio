@@ -3,6 +3,22 @@
 // 모바일 기준으로 수정 완료
 .skills {
 
+  // 아이콘 그리드
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 3rem 2rem;
+    // justify-items: center;
+    margin-top: 1rem;
+  }
+  .skill-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
   h2 {
     color: $color-dark;
     text-align: center; // 모바일은 가운데
@@ -32,10 +48,11 @@
 
     .skill-card {
       background: $color-white;
-      // border: 1px solid $color-gray;
+      // border: 1px solid $color-light;
+      // border: 1px solid rgba(0, 0, 0, .08);
       border-radius: 8px;
       padding: 3rem;
-      // text-align: center; // 모바일은 가운데 전체 움직임
+      text-align: center; // 모바일은 가운데 전체 움직임
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
       transition: box-shadow 0.3s ease;
       // position: relative;
@@ -50,22 +67,7 @@
         margin-bottom: 1.5rem;
       }
   
-      // 아이콘 그리드
-      .skill-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-        gap: 3rem 2rem;
-        justify-items: center;
-        margin-top: 3rem;
-      }
     }
-  
-    .skill-item {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, color 0.2s ease;
-  
       svg {
         width: 3.5rem;
         height: 3.5rem;
@@ -117,7 +119,7 @@
       .colab { color: #F9AB00; }
       .vscode { color: #0078D7; }
     }
-  }
+
   
   
 
@@ -140,8 +142,13 @@
       padding: 4rem;
     }
 
+    // 아이콘 그리드
     .skill-grid {
-      grid-template-columns: repeat(3, 1fr); // 3개씩 정렬
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3rem 2rem;
+      justify-items: center;
+      margin-top: 1rem;
     }
   }
 
@@ -158,18 +165,14 @@
       margin-bottom: 5rem;
       text-align: left;
     }
-    .skill-groups {
-      grid-template-columns: 1fr; // 한 줄씩 쌓이는 구조
-    }
 
     .skill-card {
       text-align: left; // 제목/설명 왼쪽 정렬
       padding: 4.5rem;
     }
 
-    .skill-grid {
-      grid-template-columns: repeat(6, 1fr); // 한 줄 6개씩
-      justify-items: center;
+    .skill-item {
+      align-items: start;
     }
   }
 
@@ -178,10 +181,6 @@
     .skill-card {
       text-align: left;
       padding: 5rem;
-    }
-
-    .skill-grid {
-      grid-template-columns: repeat(6, 1fr);
     }
   }
 }
