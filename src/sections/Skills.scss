@@ -21,101 +21,105 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
-  .skill-card {
-    background: $color-white;
-    border: 1px solid $color-gray;
-    border-radius: 8px;
-    padding: 3rem;
-    text-align: center; // 모바일은 가운데
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
-    // position: relative;
-    
-    &:hover {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    }
-    
-    h3 {
-      margin-bottom: 1.5rem;
+
+  .skill-box {
+    text-align: left;
+    .skill-title {
+      margin-bottom: .5rem;
       color: $color-blue;
-      // position: absolute;
-      // top: -3rem;
-      span {
+      font-weight: normal;
+    }
+
+    .skill-card {
+      background: $color-white;
+      // border: 1px solid $color-gray;
+      border-radius: 8px;
+      padding: 3rem;
+      // text-align: center; // 모바일은 가운데 전체 움직임
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.3s ease;
+      // position: relative;
+      
+      &:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+      
+      .category-desc {
         font-size: $fs-14;
         color: $color-dark-sub;
         margin-bottom: 1.5rem;
-        font-weight: normal;
+      }
+  
+      // 아이콘 그리드
+      .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 3rem 2rem;
+        justify-items: center;
+        margin-top: 3rem;
       }
     }
-
-    .category-desc {
-      font-size: $fs-14;
-      color: $color-dark-sub;
-      margin-bottom: 1.5rem;
-    }
-
-    // 아이콘 그리드
-    .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 3rem 2rem;
-      justify-items: center;
-      margin-top: 3rem;
-    }
-  }
-
-  .skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.2s ease, color 0.2s ease;
-
-    .icon {
-      font-size: 4rem;
-      margin-bottom: 0.5rem;
+  
+    .skill-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
       transition: transform 0.2s ease, color 0.2s ease;
-    }
-
-    span {
-      font-size: $fs-14;
-      color: $color-dark-sub;
-      transition: color 0.2s ease;
-    }
-
-    &:hover {
-      .icon {
-        transform: scale(1.1);
+  
+      svg {
+        width: 3.5rem;
+        height: 3.5rem;
       }
-    }
 
-    p {
-      // font-size: $fs-14;
-      display: inline-block;
-      padding: 1.5rem 0 .2rem;
-      text-align: center;
-      word-break: normal;
+      .icon {
+        // font-size: 4rem;
+        margin-bottom: 0.5rem;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+  
+      span {
+        font-size: $fs-14;
+        color: $color-dark-sub;
+        transition: color 0.2s ease;
+      }
+  
+      &:hover {
+        .icon {
+          transform: scale(1.1);
+        }
+      }
+  
+      p {
+        // font-size: $fs-14;
+        display: inline-block;
+        padding: 1.5rem 0 .2rem;
+        // text-align: center;
+        word-break:  normal;
+        
+      }
+  
+      /* 브랜드 컬러 */
+      .html { color: #E34F26; }
+      .css { color: #1572B6; }
+      .sass { color: #CC6699; }
+      .js { color: #F7DF1E; }
+      .react { color: #61DAFB; }
+      .vue { color: #42B883; }
+      .jquery { color: #0769AD; }
+      .node { color: #83CD29; }
+      .npm { color: #CB3837; }
+      .vite { color: #646CFF; }
+      .vercel { color: #000000; }
+      .mysql { color: #4479A1; }
+      .github { color: #181717; }
+      .figma { color: #F24E1E; }
+      .notion { color: #000000; }
+      .colab { color: #F9AB00; }
+      .vscode { color: #0078D7; }
     }
-
-    /* 브랜드 컬러 */
-    .html { color: #E34F26; }
-    .css { color: #1572B6; }
-    .sass { color: #CC6699; }
-    .js { color: #F7DF1E; }
-    .react { color: #61DAFB; }
-    .vue { color: #42B883; }
-    .jquery { color: #0769AD; }
-    .node { color: #83CD29; }
-    .npm { color: #CB3837; }
-    .vite { color: #646CFF; }
-    .vercel { color: #000000; }
-    .mysql { color: #4479A1; }
-    .github { color: #181717; }
-    .figma { color: #F24E1E; }
-    .notion { color: #000000; }
-    .colab { color: #F9AB00; }
-    .vscode { color: #0078D7; }
   }
+  
+  
 
   // 반응형
 

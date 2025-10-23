@@ -50,7 +50,6 @@
   .tab-content {
     font-size: 1.6rem;
     color: $color-dark-sub;
-    line-height: 1.7;
     animation: fadeIn 0.5s ease forwards;
 
     p {
@@ -60,22 +59,21 @@
     .subtext {
       // font-size: 1.5rem;
       color: $color-dark-sub;
-      margin-bottom: 2rem;  
+      margin: 1rem 0 2rem;  
     }
 
     .summary {
       // font-size: 1.5rem;
-      margin-top: 5rem;
+      margin-top: 4rem;
       color: $color-dark;
 
     }
   }
 
   // 표 (활동 / 교육 / 경력)
-  .activity-table {
-    width: 100%;
+  .activity-table { 
+    text-align: left;
     border: none;
-    border-collapse: collapse;
 
     thead {
       display: none; // 헤더 숨기기
@@ -84,8 +82,8 @@
     tbody tr {
       display: block;
       margin-bottom: 2rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      padding-bottom: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 1.5rem;
     }
 
     td {
@@ -93,7 +91,6 @@
       width: 100%;
       padding: 0.6rem 0;
       border: none;
-      text-align:center;
       // font-size: 1.5rem;
       color: $color-dark-sub;
 
@@ -101,7 +98,7 @@
       &::before {
         content: attr(data-label);
         display: inline-block;
-        margin: 0 1.5rem 0.5rem;
+        margin:0 .8rem;
         font-weight: 600;
         // color: $color-blue;
         

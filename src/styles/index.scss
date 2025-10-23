@@ -5,7 +5,7 @@ $color-white: #ffffff;
 $color-light: #f9f9f9;
 $color-gray: #b4b4b4;
 // $color-blue: #2850bd; // 원래 파랑
-// $color-blue: #4e96ff;
+// $color-blue: #4e96ff; // 글
 $color-blue: #61c9ff;
 $color-dark: #282828;
 $color-dark-sub: #3e3e3e;
@@ -55,12 +55,27 @@ body {
 
 li { list-style: none; }
 a { color: inherit; text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
 strong { color: $color-blue; font-weight: 600; } // 텍스트 강조(blue)
 
 // 레이아웃 유틸리티
 section { padding: 8rem 0; min-height: 100vh; }
+header, footer, main, section, article, nav, aside { display: block; }
+ul, ol, li, dl, dt, dd { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, h4, h5, h6, p, form, figure, figcaption { 
+	margin: 0; 
+	padding: 0; 
+	/* font: inherit; */
+}
 
-img { max-width: 100%; }
+table { width: 100%; border-collapse: collapse; }
+
+img { max-width: 100%; vertical-align: middle; border: 0 none; }
+img.small { max-width: 20px; }
+
+.cursor-pointer { cursor: pointer; }
+
+*::before, *::after { box-sizing: inherit; -webkit-box-sizing: inherit; }
 
 .inner {
   max-width: 1200px;
@@ -88,10 +103,10 @@ img { max-width: 100%; }
   }
 }
 
-.mx-0 {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+// .mx-0 {
+//   margin-left: 0 !important;
+//   margin-right: 0 !important;
+// }
 
 // 버튼 (Blue / White)
 .btn {
@@ -149,7 +164,7 @@ img { max-width: 100%; }
 
 // 폰트 (pc기준)
 h1 { font-size: 4rem; font-weight: 500; } // 제목 (h1)
-h2 { font-size: 2.6rem; font-weight: 500; } // 제목 (h2)
+h2 { font-size: 2.6rem; font-weight: 500; margin-bottom: 1rem; } // 제목 (h2)
 h3 { font-size: 2.4rem; font-weight: 500; } // 제목 (h3)
 h4 { font-size: 2.2rem; font-weight: 500; } // 제목 (h4)
 h5 { font-size: 2rem; font-weight: 500; } // 제목 (h5)
@@ -172,16 +187,16 @@ p {
 @media (min-width: $breakpoint-tablet) {
   h1 { font-size: 4.4rem; line-height: 1.5; }
   h2 { font-size: 3rem; line-height: 1.5; margin-bottom: 1.5rem; }
-  // h3 { font-size: 2.6rem; line-height: 1.5; margin-bottom: 1rem; }
-  h3 { font-size: 2.6rem; line-height: 1.5; margin-bottom: -2rem; }
+  h3 { font-size: 2.6rem; line-height: 1.5; margin-bottom: 1rem; }
+  h4 { font-size: 2.2rem; line-height: 1.5; margin-bottom: -2rem; }
 }
 
 // 노트북 (≥1100px)
 @media (min-width: $breakpoint-laptop) {
   h1 { font-size: 5rem; line-height: 1.5; }
   h2 { font-size: 3.4rem; line-height: 1.5; margin-bottom: 2rem; }
-  // h3 { font-size: 2.8rem; line-height: 1.5; margin-bottom: 1rem; }
-  h3 { font-size: 2.8rem; line-height: 1.5; margin-bottom: -2rem; }
+  h3 { font-size: 2.8rem; line-height: 1.5; margin-bottom: 1rem; }
+  h4 { font-size: 2.4rem; line-height: 1.5; margin-bottom: -2rem; }
 }
 
 // 데스크탑 (≥1400px)
@@ -189,6 +204,6 @@ p {
   h1 { font-size: 5.4rem; line-height: 1.5; }
   // h1 { font-size: 6.4rem; line-height: 1.5; font-weight: 500; }
   h2 { font-size: 3.6rem; line-height: 1.6; margin-bottom: 2.5rem; }
-  // h3 { font-size: 3rem; line-height: 1.6; margin-bottom: 1.5rem; }
-  h3 { font-size: 3rem; line-height: 1.6; margin-bottom: -2rem; }
+  h3 { font-size: 3.2rem; line-height: 1.6; margin-bottom: 1.5rem; }
+  h4 { font-size: 2.6rem; line-height: 1.6; margin-bottom: -2rem; }
 }

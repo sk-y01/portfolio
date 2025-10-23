@@ -26,7 +26,7 @@ const About = () => {
       case "활동":
         return (
           <div className="activity-content">
-            <h2>교내외 활동</h2>
+            <h3>교내외 활동</h3>
             <p className="subtext">프론트엔드 관련 실무 중심 경험</p>
 
             <table className="activity-table">
@@ -70,7 +70,7 @@ const About = () => {
       case "교육":
         return (
           <div className="education-content">
-            <h2>교육 / 연수 경력</h2>
+            <h3>교육 / 연수 경력</h3>
             <p className="subtext">프론트엔드 관련 교육 및 경험</p>
 
             <table className="activity-table">
@@ -111,7 +111,7 @@ const About = () => {
       case "경력&자격증":
         return (
           <div className="career-content">
-            <h2><i></i>경력 및 자격증</h2>
+            <h3><i></i>경력</h3>
 
             <p className="subtext">
               민간자격증 등록 실무를 담당하며, 기획과 실행을 모두 경험
@@ -143,7 +143,7 @@ const About = () => {
             </table>
 
             <div className="license">
-              <h3>관련 자격증</h3>
+              <h3>자격증</h3>
               <ul>
                 <li>Google Analytics — <span>UX 데이터 분석 역량</span></li>
                 <li>개인정보관리사 1급, 네트워크전문가 1급 — <span>시스템 이해</span></li>
@@ -168,6 +168,7 @@ const About = () => {
     <section id="about" className="about">
       <div className="inner">
         <div className="tab-area">
+          <h2>introduction</h2>
           <div className="tab-menu">
             {tabs.map((tab) => (
               <button
