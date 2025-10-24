@@ -1,10 +1,96 @@
+// @import "../styles/index.scss";
+
+// // 모바일 우선 아님 버튼 크기 조금 키워야될듯
+// .scroll-buttons {
+//   position: fixed;
+//   right: 2.5rem;
+//   bottom: 3.5rem;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   gap: 1rem;
+//   z-index: 1000;
+
+//   button {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-end; // 텍스트 → 아이콘 순
+//     width: auto;
+//     height: 5rem;
+//     padding-right: 1rem;
+//     background: transparent;
+//     border: none;
+//     cursor: pointer;
+//     color: $color-blue;
+//     transition: all 0.3s ease;
+
+//     // 텍스트 라벨
+//     .label {
+//       margin-right: 0.8rem;
+//       opacity: 0;
+//       font-size: $fs-12;
+//       color: $color-white;
+//       background: $color-dark-sub;
+//       padding: 0.4rem 0.6rem;
+//       border-radius: 6px;
+//       transition: opacity 0.3s ease, transform 0.3s ease;
+//       transform: translateX(5px);
+//       white-space: nowrap;
+//     }
+
+//     &:hover .label {
+//       opacity: 1;
+//       transform: translateX(0);
+//     }
+
+//     // 아이콘 공통 스타일
+//     svg {
+//       width: 5rem;
+//       height: 5rem;
+//       border-radius: 50%;
+//       border: 2px solid $color-blue;
+//       padding: 1.5rem;
+//       background-color: $color-white;
+//       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+//       transition: all 0.2s ease;
+//       // outline: 1px solid red;
+//       path {
+//       }
+//     }
+    
+//     &:hover svg {
+//       background-color: $color-blue;
+//       color: $color-white;
+//       transform: translateY(-2px);
+//     }
+//   }
+  
+//   .comment-btn path {
+//     padding: 5rem;
+//     outline: 1px solid red;
+
+//   }
+
+//   // 최상단 이동 버튼
+//   .top-btn svg {
+//     background-color: $color-blue;
+//     color: $color-white;
+
+//     &:hover {
+//       background-color: darken($color-blue, 5%);
+//     }
+//   }
+// }
+
 @import "../styles/index.scss";
 
-// 모바일 우선 아님 버튼 크기 조금 키워야될듯
+// 꼬리 안잘림
+// Scroll Buttons (모바일 퍼스트 기준)
 .scroll-buttons {
   position: fixed;
-  right: 2.5rem;
-  bottom: 3.5rem;
+  right: 1.6rem;
+  bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -12,18 +98,13 @@
   z-index: 1000;
 
   button {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-end; // 텍스트 → 아이콘 순
-    width: auto;
-    height: 5rem;
-    padding-right: 1rem;
     background: transparent;
     border: none;
     cursor: pointer;
     color: $color-blue;
-    // font-size: 2.2rem;
     transition: all 0.3s ease;
 
     // 텍스트 라벨
@@ -37,6 +118,7 @@
       border-radius: 6px;
       transition: opacity 0.3s ease, transform 0.3s ease;
       transform: translateX(5px);
+      pointer-events: none; // 클릭 충돌 방지
       white-space: nowrap;
     }
 
@@ -45,32 +127,105 @@
       transform: translateX(0);
     }
 
-    // 아이콘 공통 스타일
-    svg {
-      width: 5rem;
+    // 아이콘 (꼬리 잘림 방지)
+    .icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 5rem;  // 모바일 기본 크기
       height: 5rem;
       border-radius: 50%;
       border: 2px solid $color-blue;
-      padding: 1.5rem;
       background-color: $color-white;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      transition: all 0.2s ease;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      overflow: visible; // 아이콘 잘림 방지
+      transition: all 0.25s ease;
+
+      svg {
+        font-size: 2rem; // border랑 아이콘 사이 여백
+        color: $color-blue;
+      }
     }
 
-    &:hover svg {
+    &:hover .icon-wrapper {
       background-color: $color-blue;
-      color: $color-white;
-      transform: translateY(-2px);
+
+      svg {
+        color: $color-white;
+      }
     }
   }
 
   // 최상단 이동 버튼 (활성 상태)
-  .top-btn svg {
+  .top-btn .icon-wrapper {
     background-color: $color-blue;
-    color: $color-white;
+
+    svg {
+      color: $color-white;
+    }
 
     &:hover {
-      background-color: darken($color-blue, 5%);
+      background-color: darken($color-blue, 10%);
+    }
+  }
+}
+
+/* 반응형 */
+// 태블릿 (≥768px)
+@media (min-width: $breakpoint-tablet) {
+  .scroll-buttons {
+    right: 2rem;
+    bottom: 3.5rem;
+    gap: 1.2rem;
+
+    button {
+      .icon-wrapper {
+        width: 5.5rem;
+        height: 5.5rem;
+
+        svg {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+}
+
+// 노트북 (≥1100px)
+@media (min-width: $breakpoint-laptop) {
+  .scroll-buttons {
+    right: 3rem;
+    bottom: 4rem;
+
+    button {
+      .icon-wrapper {
+        width: 6rem;
+        height: 6rem;
+
+        svg {
+          font-size: 2.6rem;
+        }
+      }
+    }
+  }
+}
+
+// 데스크탑 (≥1400px)
+@media (min-width: $breakpoint-desktop) {
+  .scroll-buttons {
+    right: 3.5rem;
+    bottom: 4.5rem;
+    // gap: 1.6rem;
+
+    button {
+      .icon-wrapper {
+        width: 6.5rem;
+        height: 6.5rem;
+
+        svg {
+          font-size: 2.8rem;
+        }
+      }
     }
   }
 }

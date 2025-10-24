@@ -10,7 +10,7 @@ const ScrollButtons = () => {
   useEffect(() => {
     const handleScroll = () => {
       const introSection = document.querySelector("#intro");
-      console.log(introSection)
+
       if (introSection) {
         const introTop = introSection.offsetTop;
         // 🔹 About 섹션 아래로 스크롤 시 버튼 표시
@@ -52,13 +52,17 @@ const ScrollButtons = () => {
       {/* 코멘트 버튼 */}
       <button className="comment-btn" onClick={goToComment}>
         <span className="label">코멘트 남기기</span>
-        <FaCommentDots />
+        <span className="icon-wrapper">
+          <FaCommentDots />
+        </span>
       </button>
 
       {/* 위로가기 버튼 */}
       <button className="top-btn" onClick={scrollToTop}>
         <span className="label">맨 위로 이동</span>
-        <FaArrowUp />
+        <span className="icon-wrapper">
+          <FaArrowUp />
+        </span>
       </button>
     </div>
   );
