@@ -166,7 +166,8 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="inner">
-        <h2>introduction</h2>
+        {/* <h2>introduction</h2> */}
+        <h2>About</h2>
         <div className="tab-area">
           <div className="tab-menu">
             {tabs.map((tab) => (
