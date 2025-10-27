@@ -6,7 +6,6 @@
   h2 {
     padding-bottom: 2rem;
     color: $color-dark;
-    text-align: center;
   }
 
   // 프로젝트 목록 — 모바일(기본): 1열
@@ -139,9 +138,6 @@
 
   // 노트북 (≥1100px)
   @media (min-width: $breakpoint-laptop) {
-    h2 {
-      text-align: left; // 텍스트 왼쪽 정렬
-    }
     .project-list {
       grid-template-columns: repeat(2, 1fr);
       gap: 3rem;

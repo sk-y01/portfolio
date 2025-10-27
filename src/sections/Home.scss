@@ -14,7 +14,7 @@
     @include flex-center; // index.scss 믹스인 사용
     flex-direction: column;
     gap: 1.5rem;
-    width: 100%;         // ✅ 로고랑 맞춤 flex-direction: column :: 하면 마진 오토가 된다..?
+    width: 100%;         // !!!!!✅ 로고랑 맞춤 flex-direction: column :: 하면 마진 오토가 된다..?
     // align-items: center;
     // justify-content: center;
   }
@@ -24,6 +24,13 @@
     font-size: 1.8rem; // ✅ 기준 폰트에서 키움
     color: $color-dark-sub;
     font-weight: 500;
+  }
+
+  .btn {
+    svg {
+      // outline: 1px solid red;
+      margin-right: .5rem;
+    }
   }
 
   // 아래 화살표 아이콘 테블릿부터 마우스말고 손으로 바꿀까
@@ -46,7 +53,7 @@
 // 태블릿 (≥768px)
 @media (min-width: $breakpoint-tablet) {
   .home {
-    text-align: left; // 태블릿부터 왼쪽 정렬... 아랫 줄이랑 안맞는데/.//
+    text-align: left; 
     .inner {
       align-items: flex-start;
     }

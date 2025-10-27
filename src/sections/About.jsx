@@ -43,7 +43,9 @@ const About = () => {
                   <td data-label="기간">2023.02 ~ 2024.02</td>
                   <td data-label="기관">한남대학교 시스템운영팀</td>
                   <td data-label="역할">웹사이트 관리 / 사용자 문의 응대</td>
-                  <td data-label="내용">콘텐츠 업데이트, 사용자 중심의 디자인 및 기능 피드백, 데이터 백업, 전화 문의 응대</td>
+                  <td data-label="내용">
+                    <span>콘텐츠 업데이트, 사용자 중심의 디자인 및 기능 피드백, 데이터 백업, 전화 문의 응대</span>
+                  </td>
                 </tr>
                 <tr>
                   <td data-label="기간">2023.04 ~ 2024.02</td>

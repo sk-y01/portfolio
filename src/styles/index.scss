@@ -100,7 +100,7 @@ img.small { max-width: 20px; }
 .btn {
   margin-top: .5rem;
   display: inline-flex;
-  gap: 1.5rem;
+  // gap: 1.5rem;
   justify-content: start;
   align-items: center;
   border-radius: 6px;
@@ -119,6 +119,7 @@ img.small { max-width: 20px; }
   color: $color-white;
   padding: 1rem 1.8rem;
   // padding: .8rem 8rem;
+  margin-right: 1.5rem;
   // border: none; // 보더 안없애면 파란버튼이 커보이고 보더 없애면 하얀버튼이 커보임;;
 
   &:hover {
@@ -138,6 +139,66 @@ img.small { max-width: 20px; }
   &:hover {
     background: $color-blue;
     color: $color-white;
+  }
+}
+
+.test-btn {
+  position: relative;
+  @extend .btn;
+  padding: .75rem 1.5rem;
+  border-radius: 0;
+  border-bottom: 1px solid $color-blue;
+  color: $color-blue;
+  transition: .5s;
+  z-index: 1;
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 0;
+  //   height: 1px;
+  //   background-color: $color-blue;
+  //   transition: .5s;
+  // }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: $color-blue;
+    transition: .35s;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '→';
+    position: absolute;
+    top: 50%;
+    right: .5rem;
+    transform: translate(0, -50%);
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+  }
+
+  &:hover {
+    padding-right: 3rem;
+    color: $color-white;
+
+    &::before {
+      width: 100%;
+    }
+
+    &::after {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 
