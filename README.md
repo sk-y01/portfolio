@@ -62,13 +62,14 @@ npm install react-icons
 - ~~폰트 적용~~
 1. **모달창 수정/ 프로젝트 수정**
 - `프로젝트 수정`
-  - 팀플/갠플(언더라인)이랑 프로젝트명 분류 + 색상 바꾸기
-    - 줄바꿈 |n json 파일에 넣어두고 프로젝트 jsx에서 split로 수정(강조도 가능)
-    - 이미지 넣기 public에서 하지말고...
+  - ~~팀플/갠플(언더라인)이랑 프로젝트명 분류 + 색상 바꾸기~~
+    - ~~줄바꿈 |n json 파일에 넣어두고 프로젝트 jsx에서 split로 수정(강조도 가능)~~ ~~utils에 빼둠~~
+    - ~~이미지 넣기 public에서 하지말고...~~ ~~src 로 수정~~
 - 모달 열면 배경 스크롤 x
 - 모달창 내용 채우기
   - 버튼들 깃허브, 엑셀, 파워포인트 아이콘으로 수정?>>
-  - 결과물
+  - 결과물(이미지)
+- 이미지 준비중입니다라고 써있는 이미지를 들어갈 이미지가 없을 때 대체하기
 
 - ~~스크롤 버튼 사이즈 키우기~~
 -~~ skills 디자인 수정(태그...)~~
@@ -82,13 +83,15 @@ npm install react-icons
 - ~~모바일 이상일 때 text랑 메뉴 같은 라인으로 수정~~
 - 푸터 맨 아래로 내리기
 
-4. `공통 버튼` - 호버효과 참고해서 사용
+4. `공통 버튼` - index.scss안에 있음
 
 5. home 에서 마우스 클릭하면 인트로로 가야하는데 어바웃으로 감
 
-6. 인트로 채우기 -> 카톡에 있음(bg 고민)
+6. 인트로 채우기 -> 카톡에 있음
 
-7. 링크들 다 연결
+7. Home 화면 bg에 곡선 고민
+
+8. 링크들 다 연결
 - ~~이메일 연결함~~
 - ~~코멘트~~
 - 블로그
@@ -233,27 +236,34 @@ hover effect 46
 ``` 
 src/
 ├── assets/
-│   ├── images/
-│   │   ├── no_image.png
-│   │   ├── project1_thumb.png
-│   │   ├── project1_1.png
-│   │   ├── project1_2.png
-│   │   ├── project2_thumb.png
-│   │   └── ...
-│   └── files/
-│       ├── project1_plan.xlsx
-│       ├── project1_design.pptx
-│       ├── project1_doc.hwp
-│       ├── project1_doc.docx
-│       └── project1_doc.pdf
+│   └── images/
+│       ├── no_image.png
+│       ├── project1_thumb.png
+│       ├── project1_1.png
+│       ├── project1_2.png
+│       ├── project2_thumb.png
+│       ├── project3_thumb.png
+│       ├── project4_thumb.png
+│       └── ...
 ├── components/
 │   └── ProjectModal.jsx
-├── data/
-│   └── project.js
 ├── sections/
 │   └── Projects.jsx
+├── data/
+│   └── project.js
 └── utils/
-    └── formatText.js
+    ├── formatText.js
+    ├── openLink.js
+    ├── scrollTo.js
+    └── index.js
+
+public/
+├── project1_plan.xlsx
+├── project1_design.pptx
+├── project1_doc.hwp
+├── project1_doc.docx
+└── project1_doc.pdf
+
 ```
 
 
