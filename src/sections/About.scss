@@ -74,6 +74,7 @@
   .activity-table { 
     text-align: left;
     border: none;
+    font-size: 1.5rem;
 
     thead {
       display: none; // 헤더 숨기기
@@ -180,20 +181,20 @@
         border-bottom: 1px solid $color-gray;
         text-align: left;
         vertical-align: top;
-        font-size: 1.5rem;
+        // font-size: 1.5rem;
         word-break: keep-all;      // 단어 단위로 줄바꿈
         white-space: normal;       // 강제 줄바꿈 허용
       }
 
       // 열 비율 조정
       th:nth-child(1),
-      td:nth-child(1) { width: 18%; } // 기간
+      td:nth-child(1) { width: 17%; } // 기간
       th:nth-child(2),
       td:nth-child(2) { width: 20%; } // 기관
       th:nth-child(3),
-      td:nth-child(3) { width: 25%; } // 역할, 과정
+      td:nth-child(3) { width: 23%; } // 역할, 과정
       th:nth-child(4),
-      td:nth-child(4) { width: 38%; } // 주요내용
+      td:nth-child(4) { width: 40%; } // 주요내용
 
       th {
         color: $color-blue;
@@ -238,7 +239,7 @@
 
     .tab-content {
       margin: 0 auto;
-      font-size: 1.8rem;
+      // font-size: 1.8rem;
     }
 
     .activity-table th,
@@ -254,18 +255,18 @@
       padding: 1rem 1.6rem;
 
       .tab {
-        font-size: 1.7rem;
+        // font-size: 1.7rem;
       }
     }
 
     .tab-content {
-      font-size: 1.9rem; // ?
+      // font-size: 1.9rem; // ?
     }
 
     .activity-table th,
     .activity-table td {
       padding: 1.8rem 1.4rem;
-      font-size: 1.7rem;
+      // font-size: 1.7rem;
     }
   }
 }

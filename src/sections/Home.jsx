@@ -23,7 +23,13 @@ const Home = () => {
         <div className="btn">
           <a href="https://github.com/sk-y01" target="_blank" className="blue-btn"><FaGithub /> github</a>
           {/* <a href="#" className="white-btn">Resume</a> */}
-          <a href="#" className="white-btn"><FaFileAlt /> 이력서</a>
+          <a 
+            href="/haneul_resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="white-btn"
+          >
+            <FaFileAlt /> 이력서</a>
           <a href="#" className="test-btn">이력서</a>
         </div>
       </div>

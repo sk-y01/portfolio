@@ -13,7 +13,7 @@ const ScrollButtons = () => {
 
       if (introSection) {
         const introTop = introSection.offsetTop;
-        // 🔹 About 섹션 아래로 스크롤 시 버튼 표시
+        // 🔹 인트로 섹션 아래로 스크롤 시 버튼 표시
         setShowButtons(window.scrollY > introTop - 200);
       }
     };
