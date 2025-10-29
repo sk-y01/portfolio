@@ -12,18 +12,18 @@
   }
 
   p {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: $color-gray;
     line-height: 1.6;
   }
 
   .contact-link {
     display: inline-block;
-    margin: 0rem 0 5rem;
+    margin: 2rem 0 4rem;
     color: $color-blue;
     font-weight: 700;
     font-size: 1.8rem;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    transition: 0.5s;
 
     &:hover {
       color: lighten($color-blue, 10%);
@@ -33,6 +33,7 @@
 
   .contact-closing {
     margin-top: 5rem;
+    // margin-top: 15rem;
     border-top: 1px solid $color-gray;
     padding: 3rem 0 0;
     text-align: center;
@@ -40,6 +41,9 @@
       margin-bottom: 2rem;
       color: $color-gray;
       line-height: 1.6;
+      &:last-child {
+        // margin-bottom: 10rem;
+      }
     }
   }
 
@@ -72,18 +76,9 @@
     text-align: center;
     padding: 4rem 0 1.5rem;
     color: $color-gray;
-    
-    small {
-      // font-size: $fs-14;
-    }
-    // .version {
-    //   font-size: $fs-14;
-    //   margin-top: 0.4rem;
-    //   opacity: 0.8;
-    // }
-  }
-  .version {
-    margin: 1rem 0;
+    // position: absolute;
+    // left: calc(50% - 150px);
+    // bottom: 0;
   }
 
   // 반응형
@@ -99,16 +94,26 @@
       }
       .menu {
         justify-content: flex-start;
-        gap: 3.5rem;
+        gap: 2.5rem;
         flex-direction: column;
         align-content: flex-end;
         align-items: flex-end;
       }
       .contact-link {
-        margin: 2.5rem 0;
+        margin: 2rem 0;
       }
       .contact-closing {
-        padding: 7rem 0 0;
+        padding: 6rem 0 0;
+      p {
+          margin-bottom: 2rem;
+          color: $color-gray;
+          line-height: 1.6;
+          &:last-child {
+            margin-bottom: 10rem;
+          }
+        }
+      }
+      .footer {
       }
     } 
   }

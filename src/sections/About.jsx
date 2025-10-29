@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./About.scss";
 import { FaZ } from 'react-icons/fa6';
+import { BsChatLeftDots } from "react-icons/bs";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("소개");
@@ -68,7 +69,7 @@ const About = () => {
             </table>
 
             <p className="summary">
-              💬 세 활동 모두 웹과 관련되어 콘텐츠 구조와 UI 개선 과정의 실무를 경험할 수 있었던 활동입니다.
+              <BsChatLeftDots/> 세 활동 모두 웹과 관련되어 콘텐츠 구조와 UI 개선 과정의 실무를 경험할 수 있었던 활동입니다.
             </p>
           </div>
         );
@@ -111,8 +112,8 @@ const About = () => {
                 </tr>
               </tbody>
             </table>
-            
-            <p className="summary">💬 멈추지 않고 꾸준히 배우며 성장하고 있습니다.</p>
+            {/* 💬 */}
+            <p className="summary"><BsChatLeftDots/> 멈추지 않고 꾸준히 배우며 성장하고 있습니다.</p>
           </div>
         );
 
@@ -160,7 +161,7 @@ const About = () => {
             </div>
 
             <p className="summary">
-              💬 행정·기획 경험과 기술적 이해를 함께 쌓으며, 체계적이고 책임감 있는 개발자로 성장 중입니다. <br/> 또한 다양한 분야의 자격증 취득을 통해 새로운 개념을 빠르게 습득하고 적용하는 학습력을 키워왔습니다. <br/> 
+              <BsChatLeftDots/>  행정·기획 경험과 기술적 이해를 함께 쌓으며, 체계적이고 책임감 있는 개발자로 성장 중입니다. <br/> 또한 다양한 분야의 자격증 취득을 통해 새로운 개념을 빠르게 습득하고 적용하는 학습력을 키워왔습니다. <br/> 
               이는 변화에 유연하게 대응하는 개발자로 성장하는 기반이 되고 있습니다.
             </p>
 

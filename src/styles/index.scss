@@ -17,7 +17,7 @@ $font-family: 'Pretendard GOV', sans-serif;
 $breakpoint-mobile: 0px;     // 기본 (모바일)
 $breakpoint-tablet: 768px;   // 태블릿
 $breakpoint-laptop: 1100px;  // 노트북
-$breakpoint-desktop: 1400px; // 데스크탑
+$breakpoint-desktop: 1440px; // 데스크탑
 
 // 믹스인 (Mixins)
 @mixin flex-center {
@@ -62,11 +62,11 @@ strong { color: $color-blue; font-weight: 500; } // 텍스트 강조(blue)
 section { padding: 8rem 0; min-height: 100vh; }
 header, footer, main, section, article, nav, aside { display: block; }
 ul, ol, li, dl, dt, dd { margin: 0; padding: 0; list-style: none; }
-h1, h2, h3, h4, h5, h6, p, form, figure, figcaption { 
-	margin: 0; 
-	padding: 0; 
-	/* font: inherit; */
-}
+// h1, h2, h3, h4, h5, h6, p, form, figure, figcaption { 
+// 	margin: 0; 
+// 	padding: 0; 
+// 	/* font: inherit; */
+// }
 button { font: inherit; font-size: 1.6rem; }
 
 table { width: 100%; border-collapse: collapse; }
@@ -81,26 +81,27 @@ img.small { max-width: 20px; }
 .inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 3rem;
   position: relative;
   text-align: center; // 기본(모바일): 가운데 정렬
-
   // 태블릿 이상에서는 왼쪽 정렬
   @media (min-width: $breakpoint-tablet) {
     text-align: left;
+    padding: 0 6rem;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0;
+  }
+
+  @media all and (min-width: 1921px) {
+    max-width: 192rem;
   }
 }
 
-// .mx-0 {
-//   margin-left: 0 !important;
-//   margin-right: 0 !important;
-// }
-
-// 버튼 (Blue / White)
 .btn {
   margin-top: .5rem;
   display: inline-flex;
-  // gap: 1.5rem;
+  gap: 1rem;
   justify-content: start;
   align-items: center;
   border-radius: 6px;
@@ -110,94 +111,85 @@ img.small { max-width: 20px; }
   border: 1px solid transparent;
   transition: 0.5s;
   user-select: none; // 버튼 글자 드래그 방지
-}
 
-// 파란 버튼
-.blue-btn {
-  @extend .btn;
-  background: $color-blue;
-  color: $color-white;
-  padding: 1rem 1.8rem;
-  // padding: .8rem 8rem;
-  margin-right: 1.5rem;
-  // border: none; // 보더 안없애면 파란버튼이 커보이고 보더 없애면 하얀버튼이 커보임;;
-
-  &:hover {
-    background: darken($color-blue, 10%);
-  }
-}
-
-// 흰색 버튼
-.white-btn {
-  @extend .btn;
-  background: $color-white;
-  color: $color-blue;
-  border: 1px solid $color-blue;
-  // border: 2px solid $color-blue; // 2px로 수정하면 사이드 버튼(코멘트)이랑 통일된 느낌
-  padding: 1rem 1.8rem;
-
-  &:hover {
-    background: $color-blue;
-    color: $color-white;
-  }
-}
-
-.test-btn {
-  position: relative;
-  @extend .btn;
-  padding: .75rem 1.5rem;
-  border-radius: 0;
-  border-bottom: 1px solid $color-blue;
-  color: $color-blue;
-  transition: .5s;
-  z-index: 1;
-
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 0;
-  //   height: 1px;
-  //   background-color: $color-blue;
-  //   transition: .5s;
-  // }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: $color-blue;
-    transition: .35s;
-    z-index: -1;
-  }
-
-  &::after {
-    content: '→';
-    position: absolute;
-    top: 50%;
-    right: .5rem;
-    transform: translate(0, -50%);
-    color: #fff;
-    opacity: 0;
-    visibility: hidden;
+  // border생기는 버튼
+  .line-btn {
+    position: relative;
+    @extend .btn;
+    padding: .8rem 1.8rem;
+    border-radius: 0;
+    // border-bottom: 1px solid $color-dark;
+    // color: $color-blue;
     transition: .5s;
-  }
-
-  &:hover {
-    padding-right: 3rem;
-    color: $color-white;
+    z-index: 1;
 
     &::before {
-      width: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: $color-white;
+      border: 1px solid $color-blue;
+      transition: .35s;
+      z-index: -1;
+    }
+    
+    &:hover {
+      color: $color-blue;
+      border-radius: none;
+      border-color: #fff;
+      
+      &::before {
+        width: 100%;
+        border-radius: 6px;
+      }
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  // 색상 채워지는 버튼
+  .color-btn {
+    position: relative;
+    @extend .btn;
+    padding: .8rem 1.8rem;
+    border-radius: 0;
+    border-bottom: 1px solid $color-blue;
+    color: $color-blue;
+    transition: .5s;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: $color-blue;
+      transition: .35s;
+      z-index: -1;
     }
 
-    &::after {
-      opacity: 1;
-      visibility: visible;
+    &:hover {
+      color: $color-white;
+      border-radius: none;
+      border-color: #fff;
+      
+      &::before {
+        width: 100%;
+        border-radius: 6px;
+      }
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 }
@@ -237,7 +229,7 @@ p {
   h1 { font-size: 4.4rem; line-height: 1.5; }
   h2 { font-size: 3rem; line-height: 1.5; margin-bottom: 1.5rem; }
   h3 { font-size: 2.6rem; line-height: 1.5; margin-bottom: 1rem; }
-  h4 { font-size: 2.4rem; line-height: 1.5; }
+  h4 { font-size: 2.2rem; line-height: 1.5; }
 }
 
 // 노트북 (≥1100px)

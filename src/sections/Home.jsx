@@ -3,13 +3,20 @@ import { FaChevronDown, FaFileAlt, FaGithub } from "react-icons/fa"
 import { BsMouse } from "react-icons/bs"
 
 const Home = () => {
-  // about로 스크롤 아이콘 클릭하면 이동 
+  // intro 스크롤 아이콘 클릭하면 이동 
   const scrollToAbout = () => {
-    const aboutSection = document.querySelector("#about");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
+    const introSection = document.querySelector("#intro");
+    if (introSection) {
+      introSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+  // // about로 스크롤 아이콘 클릭하면 이동 
+  // const scrollToAbout = () => {
+  //   const aboutSection = document.querySelector("#about");
+  //   if (aboutSection) {
+  //     aboutSection.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   return (
     <section id="home" className="home">
@@ -21,24 +28,40 @@ const Home = () => {
           배움으로 성장하는 프론트엔드 개발자 <strong>이하늘</strong>입니다.
         </p>
         <div className="btn">
-          <a href="https://github.com/sk-y01" target="_blank" className="blue-btn"><FaGithub /> github</a>
+          <a href="https://github.com/sk-y01" target="_blank" className="line-btn"><FaGithub /> github</a>
           {/* <a href="#" className="white-btn">Resume</a> */}
           <a 
             href="/haneul_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="white-btn"
+            className="color-btn"
           >
             <FaFileAlt /> 이력서</a>
-          <a href="#" className="test-btn">이력서</a>
+          
+          {/* 테스트 버튼 */}
+          {/* <a 
+            href="/haneul_resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="test-btn"
+          >
+            <FaFileAlt /> 이력서</a> */}
+        </div>
+        
+        {/* 버전 */}
+        <div className="version">
+          <p>React Portfolio v1.1.0</p>
         </div>
       </div>
+
 
         {/* 아래로 스크롤 아이콘 */}
         <div className="down" onClick={scrollToAbout} >
           {/* <FaChevronDown /> */}
           <BsMouse />
         </div>
+        
+        
     </section>
   );  
 };

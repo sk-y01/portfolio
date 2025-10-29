@@ -29,10 +29,22 @@
   .btn {
     svg {
       // outline: 1px solid red;
-      margin-right: .5rem;
+      // margin-right: .5rem;
     }
   }
+}
 
+  .version {
+    // text-align: right;
+    // position: absolute;
+    // top: 130px;
+    // right: 20%;    
+    // outline: 5px solid red;
+    p {
+      font-size: $fs-12;
+      color: $color-gray;
+    }
+  }
   // 아래 화살표 아이콘 테블릿부터 마우스말고 손으로 바꿀까
   .down {
     color: $color-blue;
@@ -48,7 +60,7 @@
       color: darken($color-blue, 10%);
     }
   }
-}
+  
 
 // 태블릿 (≥768px)
 @media (min-width: $breakpoint-tablet) {
@@ -81,7 +93,6 @@
   .home {
     .inner {
       // gap: 2rem;
-      padding: 0 4rem;
       max-width: 1200px;
       // margin: 0 auto;
     }

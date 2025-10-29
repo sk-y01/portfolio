@@ -14,14 +14,14 @@ const Contact = () => {
             <p>책임감 있게 주어진 일에 최선을 다하며,</p>
             <p>더 넓은 하늘을 향해 꾸준히 배우고 성장하는 개발자 이하늘입니다.</p>
             <p>프로젝트 협업이나 채용 문의는 언제든 아래 메일로 연락 주세요 :)</p>
-            <a href="mailto:sky0000000@example.com" className="contact-link">
+            <a href="mailto:djs000013@naver.com" className="contact-link">
               djs000013@naver.com
             </a>
           </div>
           
           <div className="menu">
             {/* memo : 메뉴를 텍스트 옆으로 이동 */}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/haneul_resume.pdf" target="_blank" rel="noopener noreferrer">
               <FaFileAlt /> Resume
             </a>
             <a href="https://github.com/sk-y01" target="_blank" rel="noopener noreferrer">
