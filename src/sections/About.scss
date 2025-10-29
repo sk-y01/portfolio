@@ -191,7 +191,7 @@
         text-align: left;
         vertical-align: top;
         // font-size: 1.5rem;
-        word-break: keep-all;      // 단어 단위로 줄바꿈
+        word-break: normal;      // 단어 단위로 줄바꿈 해제
         white-space: normal;       // 강제 줄바꿈 허용
       }
 
@@ -254,6 +254,7 @@
     .activity-table th,
     .activity-table td {
       padding: 1.6rem 1.2rem;
+      word-break: keep-all;      // 단어 단위로 줄바꿈
     }
   }
 

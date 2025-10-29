@@ -16,7 +16,7 @@ const Skills = () => {
 
           {/* Frontend */}
           <div className="skill-box">
-            <h3 className='skill-title'>Frontend</h3>
+            <h4 className='skill-title'>Frontend</h4>
             <div className="skill-card">
               {/* <p className="category-desc">UI를 구성하고 사용자 인터랙션을 구현했습니다.</p> */}
               <div className="skill-grid">
@@ -68,7 +68,7 @@ const Skills = () => {
 
           {/* Environment */}
           <div className="skill-box">
-            <h3 className='skill-title'>Environment</h3>
+            <h4 className='skill-title'>Environment</h4>
             <div className="skill-card">
               {/* <p className="category-desc">개발 환경 세팅부터 빌드, 배포까지 직접 경험했습니다.</p> */}
               <div className="skill-grid env">
@@ -108,7 +108,7 @@ const Skills = () => {
 
           {/* Tools */}
           <div className="skill-box">
-            <h3 className='skill-title'>Tools</h3>
+            <h4 className='skill-title'>Tools</h4>
             <div className="skill-card">
               {/* <p className="category-desc">협업과 작업 관리에 필요한 도구를 적극적으로 활용했습니다.</p> */}
               <div className="skill-grid">
