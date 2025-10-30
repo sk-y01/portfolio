@@ -13,7 +13,7 @@
   .inner {
     @include flex-center; // index.scss 믹스인 사용
     flex-direction: column;
-    gap: 1.5rem;
+    gap: .7rem;
     width: 100%;         // !!!!!✅ 로고랑 맞춤 flex-direction: column :: 하면 마진 오토가 된다..?
     // align-items: center;
     // justify-content: center;
@@ -23,7 +23,7 @@
   .subtitle {
     font-size: 1.8rem; // ✅ 기준 폰트에서 키움
     color: $color-dark-sub;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .btn {
@@ -72,7 +72,7 @@
     
 
     .subtitle {
-      font-size: 2.2rem;
+      // font-size: 2.2rem;
       // padding-right: 45rem;
     }
   }
@@ -95,10 +95,9 @@
       // gap: 2rem;
       max-width: 1200px;
       // margin: 0 auto;
-    }
-
-    .subtitle {
-      font-size: 2.8rem;
+    h2 {
+        font-size: 5.4rem;
+      }
     }
   }
 }

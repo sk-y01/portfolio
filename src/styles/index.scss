@@ -1,6 +1,4 @@
-// index.scss (모바일 퍼스트 기준) 
-
-// 1. 색상, 폰트, 변수 (Variables)
+// 색상, 폰트, 변수 (Variables)
 $color-white: #ffffff;
 $color-light: #f9f9f9;
 $color-gray: #b4b4b4;
@@ -26,95 +24,125 @@ $breakpoint-desktop: 1440px; // 데스크탑
   align-items: center;
 }
 
-// 기본 리셋
+// 리셋
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-// html 기준 폰트 고정 (본문 기준 유지)
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+li { list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; font-size: 1.6rem; }
+table { width: 100%; border-collapse: collapse; }
+img { max-width: 100%; vertical-align: middle; border: 0 none; }
+img.small { max-width: 20px; }
+.cursor-pointer { cursor: pointer; }
+
+// 기본 설정
 html {
-  font-size: 10px; // 1rem = 10px (모바일 ~ 데스크탑 동일)
+  font-size: 10px; // PC 기준
   max-width: 1920px;
   scroll-behavior: smooth;
 }
 
-// ✅ 본문 기본 설정
+@media (max-width: $breakpoint-laptop) { html { font-size: 9px; } }
+@media (max-width: $breakpoint-tablet) { html { font-size: 8px; } }
+@media (max-width: 480px) { html { font-size: 7.5px; } }
+
 body {
-  font-family: $font-family;
   background-color: $color-white;
   color: $color-dark;
   font-size: 1.6rem; // 16px (본문 고정)
   font-weight: 400;
   line-height: 1.5;
+  font-family: $font-family;
   word-break: keep-all;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-li { list-style: none; }
-a { color: inherit; text-decoration: none; }
-// a:hover, a:focus { text-decoration: underline; }
-strong { color: $color-blue; font-weight: 500; } // 텍스트 강조(blue)
-
-// 레이아웃 유틸리티
-section { padding: 8rem 0; min-height: 100vh; }
-header, footer, main, section, article, nav, aside { display: block; }
-ul, ol, li, dl, dt, dd { margin: 0; padding: 0; list-style: none; }
-// h1, h2, h3, h4, h5, h6, p, form, figure, figcaption { 
-// 	margin: 0; 
-// 	padding: 0; 
-// 	/* font: inherit; */
-// }
-button { font: inherit; font-size: 1.6rem; }
-
-table { width: 100%; border-collapse: collapse; }
-
-img { max-width: 100%; vertical-align: middle; border: 0 none; }
-img.small { max-width: 20px; }
-
-.cursor-pointer { cursor: pointer; }
-
-*::before, *::after { box-sizing: inherit; -webkit-box-sizing: inherit; }
-
+// ================================
+// 5. 공통 레이아웃
 .inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 4rem;
   position: relative;
-  text-align: center; // 기본(모바일): 가운데 정렬
-}
-  // 태블릿 이상에서는 왼쪽 정렬
+  text-align: center;
+
   @media (min-width: $breakpoint-tablet) {
-    .inner {
-      text-align: left;
-      padding: 0 6rem;
-    }
+    text-align: left;
+    padding: 0 6rem;
   }
 
-  // 1440px
   @media (min-width: $breakpoint-desktop) {
-    .inner {
-      padding: 0;
-    }
+    padding: 0;
   }
 
-  @media all and (min-width: 1921px) {
-    .inner {
-      max-width: 192rem;
-    }
+  @media (min-width: 1921px) {
+    max-width: 192rem;
   }
+}
 
+// 폰트(pc)
+h1 { font-size: 5.4rem; font-weight: 600; line-height: 1.4; margin-bottom: 2.4rem; }
+h2 { font-size: 4.4rem; font-weight: 500; line-height: 1.4; }
+h3 { font-size: 3.6rem; font-weight: 500; line-height: 1.5; /* margin-bottom: 3rem; */ }
+h4 { font-size: 2.8rem; font-weight: 500; line-height: 1.5; /* margin-bottom: 1.2rem; */ }
+h5 { font-size: 2.4rem; font-weight: 500; line-height: 1.5; /* margin-bottom: 1rem; */ }
+h6 { font-size: 2rem;  font-weight: 500; line-height: 1.4; /* margin-bottom: 0.8rem; */ }
 
+p {
+  font-size: 1.6rem;
+  color: $color-dark-sub;
+  line-height: 1.5;
+}
+
+// 본문용 폰트 크기 변수
+
+$fs-16: 1.6rem; // 기본 본문
+$fs-14: 1.4rem; // 작은 텍스트 (예: 스킬)
+$fs-12: 1.2rem; // 아주 작은 텍스트 (예: 푸터)
+
+// 유틸리티
+section { padding: 8rem 0; min-height: 100vh; }
+
+strong { color: $color-blue; font-weight: 500; } // 텍스트 강조(blue)
+
+// 버튼 스타일
 .btn {
-  margin-top: .5rem;
+  margin: 0.5rem .5rem 0 0;
   display: inline-flex;
-  gap: 1rem;
+  gap: .4rem;
   justify-content: start;
   align-items: center;
   border-radius: 6px;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 500;
   cursor: pointer;
   border: 1px solid transparent;
@@ -125,11 +153,9 @@ img.small { max-width: 20px; }
   .line-btn {
     position: relative;
     @extend .btn;
-    padding: .8rem 1.8rem;
+    padding: 0.8rem 1.8rem;
     border-radius: 0;
-    // border-bottom: 1px solid $color-dark;
-    // color: $color-blue;
-    transition: .5s;
+    transition: 0.5s;
     z-index: 1;
 
     &::before {
@@ -141,23 +167,17 @@ img.small { max-width: 20px; }
       height: 100%;
       background-color: $color-white;
       border: 1px solid $color-blue;
-      transition: .35s;
+      transition: 0.35s;
       z-index: -1;
     }
-    
+
     &:hover {
       color: $color-blue;
-      border-radius: none;
       border-color: #fff;
-      
+
       &::before {
         width: 100%;
         border-radius: 6px;
-      }
-
-      &::after {
-        opacity: 1;
-        visibility: visible;
       }
     }
   }
@@ -166,11 +186,11 @@ img.small { max-width: 20px; }
   .color-btn {
     position: relative;
     @extend .btn;
-    padding: .8rem 1.8rem;
+    padding: 0.8rem 1.8rem;
     border-radius: 0;
     border-bottom: 1px solid $color-blue;
     color: $color-blue;
-    transition: .5s;
+    transition: 0.5s;
     z-index: 1;
 
     &::before {
@@ -181,23 +201,17 @@ img.small { max-width: 20px; }
       width: 0;
       height: 100%;
       background-color: $color-blue;
-      transition: .35s;
+      transition: 0.35s;
       z-index: -1;
     }
 
     &:hover {
       color: $color-white;
-      border-radius: none;
       border-color: #fff;
-      
+
       &::before {
         width: 100%;
         border-radius: 6px;
-      }
-
-      &::after {
-        opacity: 1;
-        visibility: visible;
       }
     }
   }
@@ -210,53 +224,4 @@ img.small { max-width: 20px; }
   opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none; // hover 차단
-}
-
-// 폰트 (모바일 기준)
-h1 { font-size: 4rem; font-weight: 500; } // 제목 (h1)
-h2 { font-size: 3.6rem; font-weight: 500; margin-bottom: 1rem; } // 제목 (h2)
-h3 { font-size: 3.2rem; font-weight: 500; margin-bottom: 1rem; } // 제목 (h3)
-h4 { font-size: 2.8rem; font-weight: 500; } // 제목 (h4)
-h5 { font-size: 2.4rem; font-weight: 500; } // 제목 (h5)
-h6 { font-size: 2.0rem; font-weight: 500; } // 제목 (h6)
-
-// 본문용 폰트 크기 변수
-$fs-16: 1.6rem; // 기본 본문
-$fs-14: 1.4rem; // 작은 텍스트 (예: 스킬)
-$fs-12: 1.2rem; // 아주 작은 텍스트 (예: 푸터)
-
-// 폰트 — 모바일 퍼스트 기준
-p {
-  font-size: $fs-16; // 본문 16px 고정
-  line-height: 1.5;
-  color: $color-dark-sub;
-}
-
-// 반응형 폰트 크기 조정
-// 태블릿 (≥768px)
-// @media (min-width: $breakpoint-tablet) {
-//   h2 { font-size: 4.4rem; line-height: 1.5; }
-//   h3 { font-size: 3rem; line-height: 1.5; margin-bottom: 1.5rem; }
-//   h4 { font-size: 2.6rem; line-height: 1.5; margin-bottom: 1rem; }
-//   h5 { font-size: 2.2rem; line-height: 1.5; }
-// }
-
-// // 노트북 (≥1100px)
-@media (min-width: $breakpoint-laptop) {
-  h2 { font-size: 5rem; line-height: 1.5; }
-  h3 { font-size: 3.4rem; line-height: 1.5; margin-bottom: 2rem; }
-  h4 { font-size: 2.8rem; line-height: 1.5; margin-bottom: 1rem; }
-  h5 { font-size: 2.4rem; line-height: 1.5; margin-bottom: 1rem; }
-}
-
-// // 데스크탑 (≥1400px)
-@media (min-width: $breakpoint-desktop) {
-  // h2 { font-size: 6.4rem; line-height: 1.5; font-weight: 500; }
-  h2 { 
-    font-size: 5.4rem; 
-    line-height: 1.4; 
-  }
-  h3 { font-size: 3.6rem; line-height: 1.5; margin-bottom: 2.5rem; }
-  h4 { font-size: 3.0rem; line-height: 1.5; margin-bottom: 1.5rem; }
-  h5 { font-size: 2.6rem; margin-bottom: 1.5rem; }
 }

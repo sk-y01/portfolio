@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./About.scss";
 import { FaZ } from 'react-icons/fa6';
 import { BsChatLeftDots } from "react-icons/bs";
+import SectionTitle from '../components/SectionTitle';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("소개");
@@ -176,8 +177,9 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="inner">
-        {/* <h2>introduction</h2> */}
-        <h3>About</h3>
+        <SectionTitle
+          title="About"
+        />
         <div className="tab-area">
           <div className="tab-menu">
             {tabs.map((tab) => (

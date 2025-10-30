@@ -2,16 +2,14 @@ import "./Skills.scss";
 import { FaHtml5, FaCss3Alt, FaReact, FaGithub, FaFigma, FaNpm } from "react-icons/fa";
 import { SiJavascript, SiVuedotjs, SiSass, SiNotion, SiVite, SiVercel, SiJquery, SiNodedotjs, SiGooglecolab, SiMysql } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import SectionTitle from '../components/SectionTitle';
 
 const Skills = () => {
   return (
     <section id="skills" className="skills">
       <div className="inner">
-        <h2>Skills</h2>
-        <p className="desc">
-          주요 프론트엔드 기술과 개발 환경, 협업 도구를 정리했습니다.
-        </p>
-
+        <SectionTitle title="Skills" subtitle="주요 프론트엔드 기술과 개발 환경, 협업 도구를 정리했습니다." />
+        
         <div className="skill-groups">
 
           {/* Frontend */}

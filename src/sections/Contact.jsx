@@ -6,7 +6,8 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="inner">
-        <h2>Contact</h2>
+        <h3>Contact</h3>
+        
         <div className="con">
           {/* 연락 및 링크 */}
           <div className="con-text">
@@ -30,7 +31,7 @@ const Contact = () => {
             <a href="mailto:djs000013@naver.com">
               <FaEnvelope /> Email
             </a>
-            <a href="https://#blog-url.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://blog.naver.com/djs000013/223412616022" target="_blank" rel="noopener noreferrer">
               <FaBlogger /> Blog
             </a>
           </div>

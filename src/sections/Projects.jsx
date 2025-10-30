@@ -105,15 +105,15 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <div className="inner">
-        <h2>Projects</h2>
+        <h3>Projects</h3>
 
         <div className="project-list">
           {projectData.map((proj) => (
             <div key={proj.id} className="project-card">
               {/* 제목 구조 변경 */}
               <div className="project-title">
-                <h3>{proj.titleMain}</h3>
-                <h4>{proj.titleSub}</h4>
+                <h4>{proj.titleMain}</h4>
+                <h5>{proj.titleSub}</h5>
               </div>
 
               {/* 썸네일 이미지 */}
