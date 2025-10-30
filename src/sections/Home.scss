@@ -21,7 +21,7 @@
     // align-items: center;
     // justify-content: center;
   }
-
+  
   // 부제목 (모바일 기준)
   .subtext {
     font-size: 1.8rem; // ✅ 기준 폰트에서 키움
@@ -67,8 +67,9 @@
     .inner {
       align-items: flex-start;
     }
-    
-
+    h2 {
+      font-size: 4rem;
+    }
     .subtext {
       font-size: 2.2rem;
     }
@@ -78,6 +79,9 @@
 //  노트북 (≥1100px)
 @media (min-width: $breakpoint-laptop) {
   .home {
+    h2 {
+      font-size: 4.4rem; font-weight: 500; line-height: 1.4;
+    }
     .subtext {
         font-size: 2.6rem;
         // font-weight: 400;

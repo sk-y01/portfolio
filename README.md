@@ -60,7 +60,14 @@ npm install react-icons
 ---
 
 ## 해야할 일
-html 9px, 8px로 폰트 사이즈 수정
+html 9px, 8px로 폰트 사이즈 수정 - 너무 작아져서 하나씩 직접 수정 모바일 기준으로 잡아둠
+// 폰트(pc)
+h1 { font-size: 5.4rem; font-weight: 600; line-height: 1.4; margin-bottom: 2.4rem; }
+h2 { font-size: 4.4rem; font-weight: 500; line-height: 1.4; }
+h3 { font-size: 3.6rem; font-weight: 500; line-height: 1.5; /* margin-bottom: 3rem; */ }
+h4 { font-size: 2.8rem; font-weight: 500; line-height: 1.5; /* margin-bottom: 1.2rem; */ }
+h5 { font-size: 2.4rem; font-weight: 500; line-height: 1.5; /* margin-bottom: 1rem; */ }
+h6 { font-size: 2rem;  font-weight: 500; line-height: 1.4; /* margin-bottom: 0.8rem; */ }
 
 - ~~폰트 적용~~
 1. **모달창 수정/ 프로젝트 수정**
