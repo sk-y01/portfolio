@@ -1,0 +1,6 @@
+// 믹스인 (Mixins)
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

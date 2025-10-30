@@ -23,7 +23,7 @@ const Home = () => {
       <div className="inner">
         {/* 한줄씩 나타나기 하면 좋을듯 */}
         <h2>이름처럼, <br/> 더 넓은<br/> <strong>하늘</strong>을 향해<br/> 배우며 나아갑니다.</h2>
-        <p className="subtitle">
+        <p className="subtext">
           배움으로 성장하는 프론트엔드 개발자 <strong>이하늘</strong>입니다.
         </p>
         <div className="btn">
@@ -36,33 +36,24 @@ const Home = () => {
             className="color-btn"
           >
             <FaFileAlt /> 이력서</a>
-          
-          {/* 테스트 버튼 */}
-          {/* <a 
-            href="/haneul_resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="test-btn"
-          >
-            <FaFileAlt /> 이력서</a> */}
         </div>
         
         {/* 버전 */}
         <div className="version">
           <p>React Portfolio v1.1.0</p>
         </div>
+        
       </div>
-
 
         {/* 아래로 스크롤 아이콘 */}
         <div className="down" onClick={scrollToAbout} >
           {/* <FaChevronDown /> */}
           <BsMouse />
         </div>
-        
-        
+
     </section>
   );  
 };
 
 export default Home;
+

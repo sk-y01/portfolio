@@ -83,6 +83,7 @@ import project1_main from "../assets/images/project1_main.png";
 import project2_main from "../assets/images/project2_main.png";
 import project3_main from "../assets/images/project3_main.png";
 import project4_main from "../assets/images/project4_main.png";
+import SectionTitle from '../components/SectionTitle';
 
 const imageMap = {
   1: project1_main,
@@ -105,7 +106,7 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <div className="inner">
-        <h3>Projects</h3>
+        <SectionTitle title="Projects" /> 
 
         <div className="project-list">
           {projectData.map((proj) => (
@@ -136,13 +137,13 @@ const Projects = () => {
 
               <div className="btn-groups">
                 <button
-                  className="white-b"
+                  className="white-btn"
                   onClick={() => setSelectedProject(proj)}
                 >
                   상세보기
                 </button>
 
-                <button className="blue-b" onClick={() => openLink(proj.link)}>
+                <button className="blue-btn" onClick={() => openLink(proj.link)}>
                   바로가기
                 </button>
               </div>

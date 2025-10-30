@@ -1,28 +1,5 @@
-// 색상, 폰트, 변수 (Variables)
-$color-white: #ffffff;
-$color-light: #f9f9f9;
-$color-gray: #b4b4b4;
-// $color-blue: #2850bd; // 원래 파랑
-// $color-blue: #4e96ff; // 글
-$color-blue: #61c9ff;
-$color-dark: #282828;
-$color-dark-sub: #3e3e3e;
-
-// $font-family: 'Pretendard', sans-serif;
-$font-family: 'Pretendard GOV', sans-serif;
-
-// 반응형 기준 (모바일 퍼스트)
-$breakpoint-mobile: 0px;     // 기본 (모바일)
-$breakpoint-tablet: 768px;   // 태블릿
-$breakpoint-laptop: 1100px;  // 노트북
-$breakpoint-desktop: 1440px; // 데스크탑
-
-// 믹스인 (Mixins)
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@use './colors' as *;
+@use './variables' as *;
 
 // 리셋
 * {
@@ -70,9 +47,9 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (max-width: $breakpoint-laptop) { html { font-size: 9px; } }
-@media (max-width: $breakpoint-tablet) { html { font-size: 8px; } }
-@media (max-width: 480px) { html { font-size: 7.5px; } }
+// @media (max-width: $breakpoint-laptop) { html { font-size: 9px; } }
+// @media (max-width: $breakpoint-tablet) { 
+//   html { font-size: 8px; } }
 
 body {
   background-color: $color-white;
@@ -86,8 +63,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-// ================================
-// 5. 공통 레이아웃
+@media all and (max-width: 500px) {
+  body {
+    font-size: 1.4rem;
+  }
+} 
+
+// 공통 레이아웃
 .inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -118,110 +100,10 @@ h5 { font-size: 2.4rem; font-weight: 500; line-height: 1.5; /* margin-bottom: 1r
 h6 { font-size: 2rem;  font-weight: 500; line-height: 1.4; /* margin-bottom: 0.8rem; */ }
 
 p {
-  font-size: 1.6rem;
   color: $color-dark-sub;
   line-height: 1.5;
 }
 
-// 본문용 폰트 크기 변수
-
-$fs-16: 1.6rem; // 기본 본문
-$fs-14: 1.4rem; // 작은 텍스트 (예: 스킬)
-$fs-12: 1.2rem; // 아주 작은 텍스트 (예: 푸터)
-
 // 유틸리티
 section { padding: 8rem 0; min-height: 100vh; }
-
 strong { color: $color-blue; font-weight: 500; } // 텍스트 강조(blue)
-
-// 버튼 스타일
-.btn {
-  margin: 0.5rem .5rem 0 0;
-  display: inline-flex;
-  gap: .4rem;
-  justify-content: start;
-  align-items: center;
-  border-radius: 6px;
-  font-size: 1.5rem;
-  font-weight: 500;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: 0.5s;
-  user-select: none; // 버튼 글자 드래그 방지
-
-  // border생기는 버튼
-  .line-btn {
-    position: relative;
-    @extend .btn;
-    padding: 0.8rem 1.8rem;
-    border-radius: 0;
-    transition: 0.5s;
-    z-index: 1;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background-color: $color-white;
-      border: 1px solid $color-blue;
-      transition: 0.35s;
-      z-index: -1;
-    }
-
-    &:hover {
-      color: $color-blue;
-      border-color: #fff;
-
-      &::before {
-        width: 100%;
-        border-radius: 6px;
-      }
-    }
-  }
-
-  // 색상 채워지는 버튼
-  .color-btn {
-    position: relative;
-    @extend .btn;
-    padding: 0.8rem 1.8rem;
-    border-radius: 0;
-    border-bottom: 1px solid $color-blue;
-    color: $color-blue;
-    transition: 0.5s;
-    z-index: 1;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background-color: $color-blue;
-      transition: 0.35s;
-      z-index: -1;
-    }
-
-    &:hover {
-      color: $color-white;
-      border-color: #fff;
-
-      &::before {
-        width: 100%;
-        border-radius: 6px;
-      }
-    }
-  }
-}
-
-// 비활성화 상태
-.btn:disabled,
-.blue-btn:disabled,
-.white-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  pointer-events: none; // hover 차단
-}

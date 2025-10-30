@@ -1,6 +1,6 @@
 // About.scss — 모바일 퍼스트로 수정
-
-@import "../styles/index.scss";
+@use '../styles/colors' as *;
+@use '../styles/variables' as *;
 
 .about {
   background: $color-light;
@@ -280,3 +280,5 @@
     }
   }
 }
+
+// max-width

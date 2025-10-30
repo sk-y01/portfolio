@@ -1,4 +1,5 @@
 // 아이콘 포함 버전
+import SectionTitle from '../components/SectionTitle';
 import "./Contact.scss";
 import { FaGithub, FaEnvelope, FaBlogger, FaFileAlt } from "react-icons/fa";
 
@@ -6,7 +7,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="inner">
-        <h3>Contact</h3>
+        <SectionTitle title="Contact" />
         
         <div className="con">
           {/* 연락 및 링크 */}
