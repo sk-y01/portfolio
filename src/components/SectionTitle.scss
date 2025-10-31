@@ -7,6 +7,7 @@
   .title {
     color: $color-dark;
     margin-bottom: 2rem;
+    font-size: 3.2rem;
   }
   .subtitle {
     color: $color-dark-sub;
@@ -18,7 +19,20 @@
     text-align: center;
   }
 
-  &.right {
-    text-align: right;
+}
+
+// 태블릿 (≥768px)
+@media (min-width: $breakpoint-tablet) {
+  .section-title {
+  
+  .title {
+    color: $color-dark;
+    margin-bottom: 3rem;
+    font-size: 3.6rem;
   }
+  .subtitle {
+    margin-bottom: 2rem;
+  }
+}
+
 }

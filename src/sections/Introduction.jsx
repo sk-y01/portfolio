@@ -1,40 +1,57 @@
-import React from 'react'
-import "./Introduction.scss"
+import { useEffect, useRef, useState } from "react";
+import "./Introduction.scss";
 
 const Introduction = () => {
-  return (
-    <section id="intro" className="intro">
-      <div className="inner">
-        {/* <p>
-          "새로운 기술을 배우고 직접 구현해보는 과정을 좋아합니다. <br/> 작은 시도라도 결과로 이어질 때, 그 과정에서 배우는 즐거움을 느낍니다. <br/> 기능을 만드는 데서 멈추지 않고, 더 나은 코드를 고민하며 한 단계씩 성장하고 있습니다."
-        </p> */}
-        <p>하늘은 늘 같은 자리에 있지만,<br/> 그 안에서는 수많은 변화가 일어납니다. <br/> 저 역시 그런 하늘처럼 변화를 두려워하지 않고,<br/> 성장하는 프론트엔드 개발자 이하늘입니다.</p>
-        
-        {/* <p>하늘은 늘 같은 자리에 있지만,<br/> 그 안에서는 수많은 변화가 일어납니다. <br/> 저도 그런 하늘처럼,<br/> 변화를 두려워하지 않고 성장하는 프론트엔드 개발자 이하늘입니다.</p> */}
-        
-        {/* 변화 속에서도 꾸준히 배우며 성장하는 프론트엔드 개발자 이하늘입니다. */}
+  const [animate, setAnimate] = useState(false);
+  const introRef = useRef(null);
 
-        {/* <p>개발을 공부하면서 가장 재미있는 순간은  <br/> 배운 지식이 화면 위에서 ‘결과물’로 나타날 때입니다. <br/> 그 과정이 어렵더라도, 매번 새로운 시도를 하며 조금씩 더 나아지는 제 자신을 발견하는 게 즐겁습니다.  <br/> 꾸준히 배우고 시도하는 개발자, 그런 마음으로 성장해가고 있습니다.</p> */}
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => { // map은 배열 사용
+          if (entry.isIntersecting) {
+            setAnimate(true);
+            observer.disconnect(); // 한 번만 실행되도록 감시 중단
+          }
+        });
+      },
+      { threshold: 0.3 } // 30% 보일 때 실행
+    );
+
+    if (introRef.current) observer.observe(introRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="intro" className="intro" ref={introRef}>
+      <div className={`inner ${animate ? "animate" : ""}`}>
+
+        <p>하늘처럼 넓은 시야로</p>
+        <p><strong>사용자에게 더 나은 경험</strong>을 전하기 위해 노력합니다.</p>
+        <p>익숙함에 머무르지 않고 <strong>새로운 기술</strong>을 배우며,</p>
+        <p>작은 시도 속에서도 변화를 만들어가는 "프론트엔드 개발자" <strong>이하늘</strong>입니다.</p>
+
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Introduction
+export default Introduction;
+
 
 // 🌤 Introduce
 
-//  하늘은 늘 같은 자리에 있지만,  
-//     그 안에서는 수많은 변화가 일어납니다.  
-//     저 역시 그런 하늘처럼 배우며 성장하고 싶습니다.
+/* <p>"익숙함에 머무르기보다 새로운 기술을 배우며 나아가는 개발자"</p>
+<p>변화 속에서도 꾸준히 성장하며,</p>
+<p>하늘처럼 넓은 시야로 사용자에게 더 나은 경험을 전달하기 위해 노력하는  이하늘입니다.</p> */
 
-// 하늘은 늘 같은 자리에 있지만,
-// 그 안에서는 매일 조금씩 변화가 일어납니다.
+// 익숙함에 머무르기보다 배우며 나아가는 개발자, 
+// 변화 속에서도 꾸준히 성장하며 
+// 하늘처럼 넓은 시야로 더 나은 내일을 만들어갑니다. 
 
-// 저도 그런 하늘처럼,
-// 익숙함에 머무르기보다 배우며 나아가는 개발자가 되고 싶습니다.
-// 변화 속에서도 꾸준히 성장하며
-// 오늘보다 나은 내일을 만들기 위해 노력합니다.
+// 익숙함에 머무르기보다 새로운 기술을 배우며 나아가는 개발자,  
+// 변화 속에서도 꾸준히 성장하며  
+// 사용자에게 더 나은 경험을 전달하기 위해 노력합니다. 
 
 // ☁️ About
 

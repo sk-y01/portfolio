@@ -12,14 +12,17 @@
   color: $color-dark;
   position: relative;
   text-align: center; // 모바일 기본 가운데 정렬
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04); // 섹션 아래 살짝 그림자
 
   .inner {
     @include flex-center; // index.scss 믹스인 사용
     flex-direction: column;
     gap: .7rem;
     width: 100%;         // !!!!!✅ 로고랑 맞춤 flex-direction: column :: 하면 마진 오토가 된다..?
-    // align-items: center;
-    // justify-content: center;
+  }
+
+  h2 {
+    font-size: 3.6rem;
   }
   
   // 부제목 (모바일 기준)
@@ -41,6 +44,8 @@
     p {
       font-size: $fs-12;
       color: $color-gray;
+      text-align: left;
+      padding: .5rem 0;
     }
   }
   // 아래 화살표 아이콘 테블릿부터 마우스말고 손으로 바꿀까

@@ -8,8 +8,12 @@
   // 탭 메뉴 영역 (모바일 기본)
   .tab-area {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* 
+    * 모바일일 때 메뉴바 정렬방향
+    *
+     */
+    // justify-content: center;
+    // align-items: center;
     margin: 0 auto 3rem;
   }
 
@@ -55,13 +59,24 @@
     p {
       text-align: left;
       margin-bottom: 1.6rem;
+      line-height: 1.7;
+      font-size: 1.6;
+
+      strong {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
     }
 
     .subtext {
       // font-size: 1.5rem;
       color: $color-dark-sub;
       margin: 1rem 0 2rem;  
-      text-align: center;
+      /*
+      *
+      * 모바일일 때 타이틀 아래 설명 정렬
+       */
+      // text-align: center;
     }
 
     .summary {
@@ -131,15 +146,21 @@
       // text-align: center;
     }
     ul {
-      margin-left: 2rem;
+      // margin-left: 2rem;
       text-align: left;
+      margin-top: 1rem;
+      font-size: 1.5rem;
 
       li {
         margin-bottom: 0.6rem;
         color: $color-dark-sub;
         span {
           font-weight: 500;
-          display: none;
+          /*
+          * 모바일 환경에서 자격증 정보 정리 지움
+          *
+          */
+          display: none; 
         }
       }
     }
@@ -158,6 +179,24 @@
   }
 
   // 반응형
+  /* 440px 이하일 때 적용할 스타일 */
+  @media (max-width: $breakpoint-mobile) {
+  // 탭 메뉴 영역 (모바일 기본)
+  .tab-area {
+    margin: 0 auto 2rem;
+  }
+
+  .tab-menu {
+    gap: .8rem;
+    padding: 0.5rem .8rem;
+
+    .tab {
+      font-size: 1.4rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+}
+
   // 태블릿 (≥768px)
   @media (min-width: $breakpoint-tablet) {
   .inner {
@@ -166,11 +205,12 @@
 
     .tab-area {
       justify-content: flex-start;
-      margin: 0 auto 5rem;
     }
     .tab-menu {
+      gap: 1.5rem;
       .tab {
         font-size: 1.6rem;
+        padding: 0.8rem 1.8rem;
       }
     }
     // 탭 콘텐츠 영역
@@ -189,6 +229,7 @@
       width: 100%;
       border-collapse: collapse;
       table-layout: fixed; // 셀 비율
+      font-size: 1.6rem;
 
       thead {
         display: table-header-group;
@@ -240,6 +281,7 @@
     }
     .license {
       ul {
+        font-size: 1.6rem;
         li {
           span {
             display: inline-block;
@@ -252,22 +294,16 @@
 
   // 노트북 (≥1100px)
   @media (min-width: $breakpoint-laptop) {
-    .inner {
-      text-align: left;
-    }
-
     .tab-area {
-      justify-content: flex-start;
+      margin: 0 auto 3.5rem;
     }
 
     .tab-menu {
-      gap: 1.4rem;
       padding: .8rem 1.4rem;
-    }
-
-    .tab-content {
-      margin: 0 auto;
-      // font-size: 1.8rem;
+      .tab {
+        font-size: 1.6rem;
+        padding: 1rem 2.5rem;
+      }
     }
 
     .activity-table th,
@@ -283,21 +319,14 @@
       gap: 2.2rem;
       padding: 1rem 1.6rem;
 
-      .tab {
-        // font-size: 1.7rem;
+      .teb {
+        padding: 1rem 4rem;
       }
-    }
-
-    .tab-content {
-      // font-size: 1.9rem; // ?
     }
 
     .activity-table th,
     .activity-table td {
       padding: 1.8rem 1.4rem;
-      // font-size: 1.7rem;
     }
   }
 }
-
-// max-width

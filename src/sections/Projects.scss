@@ -4,12 +4,6 @@
 
 .projects {
   background: $color-light;
-  // word-break: normal;
-
-  h2 {
-    padding-bottom: 2rem;
-    color: $color-dark;
-  }
 
   // 프로젝트 목록 — 모바일(기본): 1열
   .project-list {
@@ -40,18 +34,23 @@
     h4 {
       margin-bottom: .5rem;
       color: $color-blue;
-      // padding: .2rem 0;
-      // border-bottom: 1px solid $color-gray;
+      font-size: 2.6rem;
+
     }
     h5 {
       margin-bottom: 1rem;
-      // color: $color-blue;
+      font-size: 2.0rem;
     }
 
     p {
       color: $color-dark-sub;
       margin: 1rem 0;
       line-height: 1.6;
+      /* 
+      * 프로젝트 설명글 모바일일 때 정렬
+      *
+      */
+      // text-align: left;
     }
 
     // .b {
