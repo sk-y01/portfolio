@@ -8,7 +8,7 @@ export const projectData = [
     period: "2025.08.18 - 2025.08.29",
     process: "개발 과정에서 겪은 문제와 해결 방법을 기록했습니다.|n",
     stack: "HTML5, CSS3, Javascript 를 사용했고, build는 parcel bundler, Vercel로 배포했습니다.",
-    result: "/images/project1_main.png",
+    result: "project1_main.png",
     link: "https://renewal-cezanne.vercel.app/",
     insight: "<strong>얻은 경험과 배운 점</strong>",
     github: "https://github.com/JeongJae1203/renewal-cezanne",
@@ -26,7 +26,7 @@ export const projectData = [
     process:
       "컴포넌트 설계 → 라우팅 구성 → SCSS 컴포넌트 스타일링.|nGitHub Pages와 Vercel을 통한 배포 자동화.",
     stack: "React, SCSS", 
-    result: "/images/project2_main.png",
+    result: "project2_main.png",
     insight: "<strong>지속적인 개선과 유지보수 경험을 쌓고 있습니다.</strong>",
     github: "#",
     design: "#",
@@ -43,7 +43,7 @@ export const projectData = [
     process:
       "원하는 빵을 검색하면 그 빵을 판매하는 빵집의 상호가 나오고 사용자가 찜을 해두고, 개인적으로 관리할 수 있는 사이트 입니다. |n 시맨틱 마크업 → SCSS 모듈화 → Intersection Observer로 애니메이션 구현.",
     stack: "HTML, SCSS, JavaScript",
-    result: "/images/project3_main.png",
+    result: "project3_main.png",
     insight: "<strong>시맨틱 마크업과 CSS 구조화의 중요성을 익혔습니다.</strong>",
     github: "#",
     design: "#",
