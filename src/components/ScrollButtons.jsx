@@ -41,9 +41,8 @@ const ScrollButtons = () => {
 
   // 구글 설문지로 이동
   const goToComment = () => {
-    window.open("https://forms.gle/HddtoyAzai8csUsA6", "_blank");
+    window.open("https://forms.gle/PnHpzCUjbtbkEMrw6", "_blank");
   };
-  // https://forms.gle/HddtoyAzai8csUsA6
 
   if (!showButtons) return null; // 스크롤 전엔 버튼 숨김
 

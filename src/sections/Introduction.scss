@@ -7,7 +7,8 @@
   align-items: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04); // 섹션 아래 살짝 그림자
   position: relative;
-  z-index: 1;
+  // z-index: 1;
+  overflow: hidden;
 
   .inner {
     width: 100%;
@@ -41,8 +42,54 @@
       p:nth-child(3) { transition-delay: 2.6s; }
       p:nth-child(4) { transition-delay: 3.6s; }
     }
+
+  }  
+}
+
+  .wave {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    width: 200vw;
+    height: 200vw;
+    margin-left: -100vw;
+    margin-bottom: -208vw;
+    border-radius: 40%;
+    z-index: -1;
+
+    &-one {
+    animation: waveAnimation 20000ms infinite linear;
+    opacity: 0.4;
+    // border: 4px solid $color-blue;
+    background: $color-blue;
+  }
+  &-two {
+    animation: waveAnimation 23500ms infinite linear;
+    opacity: 0.3;
+    // border: 2px solid $color-light;
+    background: $color-light;
+  }
+  
+  &-three {
+    animation: waveAnimation 21000ms infinite linear;
+    opacity: 0.2;
+    // border: 4px solid $color-blue;
+    background: $color-blue;
+    }
+  }
+
+  
+  @keyframes waveAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
+
+
+
 
 // 반응형 설정
 // 모바일

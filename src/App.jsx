@@ -14,7 +14,7 @@ function App() {
       <Navbar />
         <Home />
         <Introduction id="intro" />
-        <About id="about" />
+        <About />
         <Skills />
         <Projects />
         <Contact />

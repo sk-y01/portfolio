@@ -68,38 +68,41 @@
         margin-bottom: 1.5rem;
       }
   
-    }
-      svg {
-        width: 3.5rem;
-        height: 3.5rem;
-      }
+      .skill-item {
 
-      .icon {
-        // font-size: 4rem;
-        margin-bottom: 0.5rem;
-        transition: transform 0.2s ease, color 0.2s ease;
-      }
+        svg {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
   
-      span {
-        font-size: $fs-14;
-        color: $color-dark-sub;
-        transition: color 0.2s ease;
-      }
-  
-      &:hover {
         .icon {
-          transform: scale(1.1);
+          margin-bottom: 0.5rem;
+          // transition: transform 0.4s ease, color 0.2s ease;
+          transition: .3s;
+        }
+    
+        span {
+          font-size: $fs-14;
+          color: $color-dark-sub;
+          transition: color 0.2s ease;
+        }
+    
+        &:hover {
+          .icon {
+            transform: scale(1.1);
+          }
+        }
+    
+        p {
+          // font-size: $fs-14;
+          display: inline-block;
+          padding: 1.5rem 0 .2rem;
+          // text-align: center;
+          word-break:  normal;
+          
         }
       }
-  
-      p {
-        // font-size: $fs-14;
-        display: inline-block;
-        padding: 1.5rem 0 .2rem;
-        // text-align: center;
-        word-break:  normal;
-        
-      }
+    }
   
       /* 브랜드 컬러 */
       .html { color: #E34F26; }
@@ -124,12 +127,12 @@
 
   // 반응형
 
-  @media (max-width: 500px) {
-    // 아이콘 그리드
-    .skill-grid {
-      grid-template-columns: 100%;
-    }
-  }
+  // @media (max-width: 500px) {
+  //   // 아이콘 그리드
+  //   .skill-grid {
+  //     grid-template-columns: 100%; // 모바일보다 작을 때 하나
+  //   }
+  // }
 
   // 태블릿 (≥768px)
   @media (min-width: $breakpoint-tablet) {

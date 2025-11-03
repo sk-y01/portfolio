@@ -102,7 +102,7 @@
         gap: 2.5rem;
         flex-direction: column;
         align-content: flex-end;
-        align-items: flex-end;
+        // align-items: flex-end; // 메뉴기준 정렬(왼쪽 정렬)
       }
       .contact-link {
         margin: 2rem 0;

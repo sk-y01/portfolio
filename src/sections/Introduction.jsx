@@ -25,13 +25,19 @@ const Introduction = () => {
   return (
     <section id="intro" className="intro" ref={introRef}>
       <div className={`inner ${animate ? "animate" : ""}`}>
-
         <p>하늘처럼 넓은 시야로</p>
         <p><strong>사용자에게 더 나은 경험</strong>을 전하기 위해 노력합니다.</p>
         <p>익숙함에 머무르지 않고 <strong>새로운 기술</strong>을 배우며,</p>
         <p>작은 시도 속에서도 변화를 만들어가는 "프론트엔드 개발자" <strong>이하늘</strong>입니다.</p>
 
+
+      <div>
+        <div className="wave wave-one"></div>
+        <div className="wave wave-two"></div>
+        <div className="wave wave-three"></div>
       </div>
+      </div>
+
     </section>
   );
 };
