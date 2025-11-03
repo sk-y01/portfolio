@@ -12,8 +12,8 @@ export const projectData = [
     link: "https://renewal-cezanne.vercel.app/",
     insight: "<strong>얻은 경험과 배운 점</strong>",
     github: "https://github.com/JeongJae1203/renewal-cezanne",
-    design: "/project1_design.pptx",
-    plan: "/project1_report.pdf",
+    design: "project1_design.pdf",
+    plan: "project1_plan.pdf",
     image: "/images/project1_detail.png",
   },
   {
@@ -25,8 +25,8 @@ export const projectData = [
     period: "2025.10 ~ 진행 중",
     process:
       "컴포넌트 설계 → 라우팅 구성 → SCSS 컴포넌트 스타일링.|nGitHub Pages와 Vercel을 통한 배포 자동화.",
-    stack: "React, SCSS",
-    result: "/images/project4_main.png",
+    stack: "React, SCSS", 
+    result: "/images/project2_main.png",
     insight: "<strong>지속적인 개선과 유지보수 경험을 쌓고 있습니다.</strong>",
     github: "#",
     design: "#",
@@ -55,7 +55,7 @@ export const projectData = [
     titleMain: "개인 프로젝트",
     titleSub: "날씨앱 리뉴얼 (vue 버전)",
     intro:
-      "스터디 때 React로 만들어 본 날씨앱을 vue 기반으로 리뉴얼했습니다.|n추가로 사용자별 즐겨찾기 기능을 구현했습니다.",
+      "스터디 때 React로 만들어 본 날씨앱을 vue 버전으로 리뉴얼했습니다.|n추가로 사용자별 즐겨찾기 기능을 구현했습니다.",
     period: "2025.09.01 - 2025.09.14",
     process:
       "컴포넌트 구조 설계 → vue 적용 → API 데이터 관리 개선.|n상태 관리와 props 전달 방식을 효율적으로 구성했습니다.",

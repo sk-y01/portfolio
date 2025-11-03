@@ -10,12 +10,12 @@ import SectionTitle from "../components/SectionTitle";
 import noImage from "../assets/images/no-image.png"; // 👈 기본 이미지 추가
 import project1_main from "../assets/images/project1_main.png";
 import project2_main from "../assets/images/project2_main.png";
-import project3_main from "../assets/images/project3_main.png";
+// import project3_main from "../assets/images/project3_main.png";
 
 const imageMap = {
   1: project1_main,
   2: project2_main,
-  3: project3_main,
+  // 3: project3_main,
 };
 
 const Projects = () => {

@@ -1,0 +1,35 @@
+// // html, body {
+// //   overflow-x: hidden;
+// //   scroll-behavior: smooth; // 부드럽게 스크롤
+// //   height: auto; // 전체 높이에 맞게
+// // }
+
+// // section {
+// //   opacity: 0;
+// //   transform: translateY(0px);
+// //   transition: opacity 1s ease, transform 3s ease;
+// // }
+
+// // section.visible {
+// //   opacity: 1;
+// //   transform: translateY(0);
+// // }
+
+// /* === 전체 스크롤 설정 === */
+// html, body {
+//   // scroll-snap-type: y proximity; /* 가까울 때만 부드럽게 스냅 */
+//   // scroll-behavior: smooth; /* 부드러운 스크롤 */
+// }
+
+// /* === 섹션 애니메이션 기본 상태 === */
+// section {
+//   // scroll-snap-align: start;
+//   opacity: 0;
+//   transition: opacity 1s ease;
+//   will-change: opacity, transform; /* 렌더링 최적화? */
+// }
+
+// /* === 섹션이 뷰포트에 들어올 때 === */
+// section.visible {
+//   opacity: 1;
+// }

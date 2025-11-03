@@ -2,7 +2,6 @@ import "./ProjectModal.scss";
 import { CgClose } from "react-icons/cg";
 import { formatText } from "../utils/formatText";
 import noImage from "../assets/images/no-image.png";
-import project1_detail from "../assets/images/project1_detail.png"
 
 const ProjectModal = ({ project, onClose }) => {
   const openLink = (url) => {
@@ -23,7 +22,7 @@ const ProjectModal = ({ project, onClose }) => {
           <CgClose className="closeBtn" />
         </button>
 
-        {/* 프로젝트 구분 + 제목 */}
+        {/* ✅ 프로젝트 구분 + 제목 */}
         <div className="modal-header">
           <h2 className="project-type">{project.titleMain}</h2>
           <h3 className="modal-title">{project.titleSub}</h3>
@@ -34,17 +33,6 @@ const ProjectModal = ({ project, onClose }) => {
           <a onClick={() => openLink(project.github)}>GitHub</a>
           <a onClick={() => openLink(project.design)}>기능 정의서</a>
           <a onClick={() => openLink(project.plan)}>화면 설계서</a>
-
-          {/* 파일 없는 메뉴는 안나오게 함 */}
-          {/* {project.github && (
-            <a onClick={() => openLink(project.github)}>GitHub</a>
-          )}
-          {project.design && (
-            <a onClick={() => openLink(project.design)}>기능 정의서</a>
-          )}
-          {project.plan && (
-            <a onClick={() => openLink(project.plan)}>화면 설계서</a>
-          )} */}
         </div>
 
         {/* 본문 */}

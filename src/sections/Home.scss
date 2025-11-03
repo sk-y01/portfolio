@@ -18,7 +18,7 @@
     @include flex-center; // index.scss 믹스인 사용
     flex-direction: column;
     gap: .7rem;
-    width: 100%;         // !!!!!✅ 로고랑 맞춤 flex-direction: column :: 하면 마진 오토가 된다..?
+    width: 100%;  
   }
 
   h2 {
@@ -73,7 +73,7 @@
       align-items: flex-start;
     }
     h2 {
-      font-size: 4.4rem;
+      font-size: 4.8rem;
     }
     .subtext {
       font-size: 2.2rem;
@@ -85,7 +85,7 @@
 @media (min-width: $breakpoint-laptop) {
   .home {
     h2 {
-      font-size: 4.8rem; font-weight: 500; line-height: 1.4;
+      font-size: 5.4rem; font-weight: 500; line-height: 1.4;
     }
     .subtext {
         font-size: 2.6rem;
@@ -102,7 +102,7 @@
       max-width: 1200px;
       // margin: 0 auto;
     h2 {
-        font-size: 5.4rem;
+        font-size: 6.4rem;
       }
       .subtext {
         font-size: 3rem;
