@@ -63,6 +63,10 @@ npm install react-icons
 - 모달창 화면 정의서 등 파일 배포하니까 안나옴
 - 인터섹션 옵저버? 하니까 모달창이 섹센 가운데로 나와서 첫 번째 프로젝트 누르면 스크롤 내려야 모달창이 나옴
 
+- 프로젝트 1번 거의 완성
+  - 모달에서 이미지 자세히보기 할 때 화살표 가운데로 맞추기
+  - 반응형
+
 
 ~~html 9px, 8px로 폰트 사이즈 수정 - 너무 작아져서 하나씩 직접 수정 모바일 기준으로 잡아둠~~
 // 폰트(pc)
@@ -282,4 +286,442 @@ public/
 
 ```
 
+### 코드 수정 전 (프로젝트)
+```jsx
+import { useState } from "react";
+import ProjectModal from "../components/ProjectModal";
+import "./Projects.scss";
+import { projectData } from "../data/project";
+import { formatText } from "../utils/formatText";
 
+import SectionTitle from "../components/SectionTitle";
+
+// 이미지 import
+import noImage from "../assets/images/no-image.png"; // 👈 기본 이미지 추가
+import project1_main from "../assets/images/project1_main.png";
+import project2_main from "../assets/images/project2_main.png";
+// import project3_main from "../assets/images/project3_main.png";
+
+const imageMap = {
+  1: project1_main,
+  2: project2_main,
+  // 3: project3_main,
+};
+
+const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openLink = (url) => {
+    if (url && url !== "#") {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } else {
+      alert("링크 준비 중입니다 🙂");
+    }
+  };
+
+  return (
+    <section id="projects" className="projects">
+      <div className="inner">
+        <SectionTitle title="Projects" />
+
+        <div className="project-list">
+          {projectData.map((proj) => (
+            <div key={proj.id} className="project-card">
+              <div className="project-title">
+                <h4>{proj.titleMain}</h4>
+                <h5>{proj.titleSub}</h5>
+              </div>
+
+              {/* ✅ 이미지 fallback 처리 */}
+              <img
+                src={imageMap[proj.id] || noImage}
+                alt={`${proj.titleSub} 썸네일`}
+                className="project-image"
+                onError={(e) => (e.target.src = noImage)} // 이미지 깨질 때도 fallback
+              />
+
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: formatText(proj.intro),
+                }}
+              />
+
+              <div className="btn-groups">
+                <button
+                  className="white-btn"
+                  onClick={() => setSelectedProject(proj)}
+                >
+                  상세보기
+                </button>
+
+                <button
+                  className="blue-btn"
+                  onClick={() => openLink(proj.link)}
+                >
+                  바로가기
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 모달 */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+        noImage={noImage} // 👈 fallback 전달
+      />
+    </section>
+  );
+};
+
+export default Projects;
+```
+### 모달 수정전 (아이콘 없음)
+
+```jsx
+import "./ProjectModal.scss";
+import { useEffect } from "react";
+import { CgClose } from "react-icons/cg";
+import { formatText } from "../utils/formatText";
+import noImage from "../assets/images/no-image.png";
+
+const ProjectModal = ({ project, onClose }) => {
+  // ✅ 모달 열릴 때 스크롤 막기
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+  // ✅ 파일/링크 열기 (Vite 기준 수정)
+  const openLink = (url) => {
+    if (url && url !== "#") {
+      // 절대 URL이면 그대로 열고, 아니면 public 파일로 처리
+      const finalUrl = url.startsWith("http") ? url : `/${url}`;
+      window.open(finalUrl, "_blank", "noopener,noreferrer");
+    } else {
+      alert("파일 및 링크 준비 중입니다! 🙂");
+    }
+  };
+
+  // ✅ assets/images 폴더에서 파일명만으로 이미지 불러오기
+  const getImage = (fileName) => {
+    try {
+      return new URL(`../assets/images/${fileName}`, import.meta.url).href;
+    } catch {
+      return noImage;
+    }
+  };
+
+  if (!project) return null;
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        {/* 닫기 버튼 */}
+        <button className="closeBtn" onClick={onClose}>
+          <CgClose />
+        </button>
+
+        {/* 헤더 */}
+        <div className="modal-header">
+          <h2 className="project-type">{project.titleMain}</h2>
+          <h3 className="modal-title">{project.titleSub}</h3>
+        </div>
+
+        {/* 파일 링크 */}
+        <div className="modal-files">
+          {project.github && (
+            <a onClick={() => openLink(project.github)}>GitHub</a>
+          )}
+          {project.design && (
+            <a onClick={() => openLink(project.design)}>기능 정의서</a>
+          )}
+          {project.plan && (
+            <a onClick={() => openLink(project.plan)}>화면 설계서</a>
+          )}
+        </div>
+
+        {/* 본문 */}
+        <div className="modal-body">
+          <p className="period">
+            <span>기간: </span>
+            {project.period}
+          </p>
+
+          <h4>1. 프로젝트 소개</h4>
+          <p dangerouslySetInnerHTML={{ __html: formatText(project.intro) }} />
+
+          <h4>2. 개발 과정</h4>
+          <p dangerouslySetInnerHTML={{ __html: formatText(project.process) }} />
+
+          <h4>3. 기술 스택</h4>
+          <p dangerouslySetInnerHTML={{ __html: formatText(project.stack) }} />
+
+          <h4>4. 결과물</h4>
+          <img
+            src={getImage(project.image)}
+            alt={`${project.titleSub || "프로젝트"} 상세 이미지`}
+            className="project-image"
+            onError={(e) => (e.target.src = noImage)}
+          />
+
+          <h4>5. 인사이트</h4>
+          <p dangerouslySetInnerHTML={{ __html: formatText(project.insight) }} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectModal;
+
+```
+### 모달 수정전 (아이콘 있음)
+```jsx
+import "./ProjectModal.scss";
+import { useEffect } from "react";
+import { CgClose } from "react-icons/cg";
+import { FaGithub } from "react-icons/fa";
+import { HiOutlineDocumentText } from "react-icons/hi";
+import { formatText } from "../utils/formatText";
+import noImage from "../assets/images/no-image.png";
+
+const ProjectModal = ({ project, onClose }) => {
+  // ✅ 모달 열릴 때 스크롤 막기
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+  // ✅ 파일/링크 열기
+  const openLink = (url) => {
+    if (url && url !== "#") {
+      const finalUrl = url.startsWith("http") ? url : `/${url}`;
+      window.open(finalUrl, "_blank", "noopener,noreferrer");
+    } else {
+      alert("파일 및 링크 준비 중입니다! 🙂");
+    }
+  };
+
+  // ✅ assets/images 폴더에서 파일명만으로 이미지 불러오기
+  const getImage = (fileName) => {
+    try {
+      return new URL(`../assets/images/${fileName}`, import.meta.url).href;
+    } catch {
+      return noImage;
+    }
+  };
+
+  if (!project) return null;
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        {/* 닫기 버튼 */}
+        <button className="closeBtn" onClick={onClose}>
+          <CgClose />
+        </button>
+
+        {/* 헤더 */}
+        <div className="modal-header">
+          <h2 className="project-type">{project.titleMain}</h2>
+          <h3 className="modal-title">{project.titleSub}</h3>
+        </div>
+
+        {/* 파일 링크 */}
+        <div className="modal-files">
+          {project.github && (
+            <a
+              onClick={() => openLink(project.github)}
+              className="file-link"
+            >
+              <FaGithub className="file-icon" /> GitHub
+            </a>
+          )}
+          {project.design && (
+            <a
+              onClick={() => openLink(project.design)}
+              className="file-link"
+            >
+              <HiOutlineDocumentText className="file-icon" /> 기능 정의서
+            </a>
+          )}
+          {project.plan && (
+            <a
+              onClick={() => openLink(project.plan)}
+              className="file-link"
+            >
+              <HiOutlineDocumentText className="file-icon" /> 화면 설계서
+            </a>
+          )}
+        </div>
+
+        {/* 본문 */}
+        <div className="modal-body">
+          <p className="period">
+            <span>기간: </span>
+            {project.period}
+          </p>
+
+          <h4>1. 프로젝트 소개</h4>
+          <p dangerouslySetInnerHTML={{ __html: formatText(project.intro) }} />
+
+          <h4>2. 개발 과정</h4>
+          <p dangerouslySetInnerHTML={{ __html: formatText(project.process) }} />
+
+          <h4>3. 기술 스택</h4>
+          <p dangerouslySetInnerHTML={{ __html: formatText(project.stack) }} />
+
+          <h4>4. 결과물</h4>
+          <img
+            src={getImage(project.result)}
+            alt={`${project.titleSub || "프로젝트"} 상세 이미지`}
+            className="project-image"
+            onError={(e) => (e.target.src = noImage)}
+          />
+
+          <h4>5. 인사이트</h4>
+          <p dangerouslySetInnerHTML={{ __html: formatText(project.insight) }} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectModal;
+
+```
+
+### 모달 scss 수정전
+```scss
+@use '../styles/colors' as *;
+@use '../styles/variables' as *;
+
+.project-type {
+  color: $color-blue;
+}
+h3 {
+  margin-bottom: 2rem;
+}
+h4 {
+  margin: 2rem 0 1.5rem;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: $color-white;
+  width: 70%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 2rem 4rem 2rem 3rem;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  font-size: 2.4rem;
+  color: $color-dark-sub;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    color: $color-blue;
+    transform: scale(1.1);
+  }
+}
+
+// .modal-title {
+// }
+
+.modal-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  a {
+    background: $color-blue;
+    color: $color-white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: $fs-14;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; // 아이콘과 텍스트 간격
+    cursor: pointer; // ✅ 마우스 커서 변경
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: darken($color-blue, 10%);
+      transform: translateY(-2px);
+    }
+
+    .file-icon {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.modal-body {
+  .period { /* 기간 */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    margin-bottom: 0rem;
+    margin-top: 2rem;
+    color: $color-dark;
+  }
+
+  p {
+    margin-top: 0.8rem;
+    color: $color-dark-sub;
+  }
+}
+
+/* 모달 등장 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+```
