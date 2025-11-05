@@ -12,7 +12,7 @@
   color: $color-dark;
   position: relative;
   text-align: center; // 모바일 기본 가운데 정렬
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04); // 섹션 아래 살짝 그림자
+  // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04); // 섹션 아래 살짝 그림자
 
   .inner {
     @include flex-center; // index.scss 믹스인 사용
@@ -42,7 +42,7 @@
 
   .version {
     p {
-      font-size: $fs-12;
+      font-size: $fs-14;
       color: $color-gray;
       text-align: left;
       padding: .5rem 0;

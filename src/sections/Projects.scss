@@ -16,7 +16,8 @@
   // 프로젝트 카드
   .project-card {
     background: $color-white;
-    border: 1px solid $color-gray;
+    border: 1px solid rgba(0, 0, 0, .08);
+    // border: 1px solid $color-gray;
     border-radius: 12px;
     padding: 2rem;
     text-align: center; // 모바일은 중앙 정렬

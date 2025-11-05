@@ -1,35 +1,74 @@
-// // html, body {
-// //   overflow-x: hidden;
-// //   scroll-behavior: smooth; // 부드럽게 스크롤
-// //   height: auto; // 전체 높이에 맞게
-// // }
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth; // 부드럽게 스크롤
+  height: auto; // 전체 높이에 맞게
+}
 
-// // section {
-// //   opacity: 0;
-// //   transform: translateY(0px);
-// //   transition: opacity 1s ease, transform 3s ease;
-// // }
+section {
+  opacity: 0;
+  transform: translateY(0px);
+  transition: opacity 1s ease, transform 3s ease;
+}
 
-// // section.visible {
-// //   opacity: 1;
-// //   transform: translateY(0);
-// // }
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-// /* === 전체 스크롤 설정 === */
+/* === 전체 스크롤 설정 === */
+html, body {
+  scroll-snap-type: y proximity; /* 가까울 때만 부드럽게 스냅 */
+  scroll-behavior: smooth; /* 부드러운 스크롤 */
+}
+
+/* === 섹션 애니메이션 기본 상태 === */
+section {
+  scroll-snap-align: start;
+  opacity: 0;
+  transition: opacity 1s ease;
+  will-change: opacity, transform; /* 렌더링 최적화? */
+}
+
+/* === 섹션이 뷰포트에 들어올 때 === */
+section.visible {
+  opacity: 1;
+}
+
+
+
+// /* ==========================
+//    기본 세팅
+// ========================== */
 // html, body {
-//   // scroll-snap-type: y proximity; /* 가까울 때만 부드럽게 스냅 */
-//   // scroll-behavior: smooth; /* 부드러운 스크롤 */
+//   overflow-x: hidden;
+//   scroll-behavior: smooth;
+//   height: auto;
 // }
 
-// /* === 섹션 애니메이션 기본 상태 === */
+// /* ==========================
+//    섹션 전환 애니메이션
+// ========================== */
 // section {
-//   // scroll-snap-align: start;
 //   opacity: 0;
-//   transition: opacity 1s ease;
-//   will-change: opacity, transform; /* 렌더링 최적화? */
+//   transform: translateY(80px);     // 아래에서 위로 올라오는 느낌
+//   transition: opacity 0.8s ease-out, transform 1.4s ease-out;
+//   will-change: opacity, transform; // 렌더링 최적화
 // }
 
-// /* === 섹션이 뷰포트에 들어올 때 === */
 // section.visible {
 //   opacity: 1;
+//   transform: translateY(0);
+// }
+
+// /* ==========================
+//    스크롤 스냅 (선택 사항)
+// ========================== */
+// /* ❗ 부드러운 섹션 이동을 원하면 빼는 게 낫고,
+//    전체 페이지가 한 섹션씩 스냅되길 원하면 유지 */
+// html, body {
+//   scroll-snap-type: y proximity;
+// }
+
+// section {
+//   scroll-snap-align: start;
 // }

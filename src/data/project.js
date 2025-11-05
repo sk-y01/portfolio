@@ -25,7 +25,7 @@ export const projectData = [
       <span>Frontend</span> — HTML5, CSS3, SCSS, JavaScript|n
       <span>Library</span> — Swiper.js, Gsap ScrollMagic|n
       <span>Tools</span> — Figma, GitHub, Vercel|n
-      <strong>🛠 주요 기능</strong> — 인터랙션 스크롤 애니메이션, 이미지 슬라이드, 탭/검색/상세 전환 기능
+      ⚙🛠 <span>주요 기능</span> — 인터랙션 스크롤 애니메이션, 이미지 슬라이드, 탭/검색/상세 전환 기능
     `,
 
     insight: `
@@ -46,25 +46,6 @@ export const projectData = [
       "project1_detail3.png",
     ],
   },
-
-
-  // {
-  //   id: 1,
-  //   titleMain: "팀 프로젝트",
-  //   titleSub: "대전세잔직업전문학교 홈페이지 리뉴얼",
-  //   intro:
-  //     "대전세잔직업전문학교 홈페이지 리뉴얼을 팀 프로젝트로 진행했습니다.|n기존의 포인트 색상과 구조를 참고하여 중복되는 내용은 일관성 있게 진행하려 노력했습니다.",
-  //   period: "2025.08.18 - 2025.08.29",
-  //   process: "개발 과정에서 겪은 문제와 해결 방법을 기록했습니다.|n",
-  //   stack: "HTML5, CSS3, Javascript 를 사용했고, build는 parcel bundler, Vercel로 배포했습니다.",
-  //   result: "project1_main.png",
-  //   link: "https://renewal-cezanne.vercel.app/",
-  //   insight: "<strong>얻은 경험과 배운 점</strong>",
-  //   github: "https://github.com/JeongJae1203/renewal-cezanne",
-  //   design: "project1_design.pdf",
-  //   plan: "project1_plan.pdf",
-  //   image: "project1_detail.png",
-  // },
   {
     id: 2,
     titleMain: "개인 프로젝트",
@@ -77,10 +58,13 @@ export const projectData = [
     stack: "React, SCSS", 
     result: "project2_main.png",
     insight: "<strong>지속적인 개선과 유지보수 경험을 쌓고 있습니다.</strong>",
+    
     github: "#",
     design: "#",
     plan: "#",
-    image: "project2_detail.png",
+    images: [
+      "project2_main.png",   // 썸네일 대표 이미지
+    ],
   },
   {
     id: 3,

@@ -1,11 +1,11 @@
 // -----------------------------------------------------
+// ✅ ProjectModal.jsx
 // 포함 기능:
-// - 스크롤 시 둥근 모서리 안에서 움직임
-// - 이미지 클릭 시 라이트박스 확대 (zoom-overlay)
-// - 키보드 ← → 로 이미지 전환, ESC로 닫기(클릭 가능)
-// - 프로젝트 기간 박스 디자인
-// - 파일/깃허브 링크 아이콘 포함
-// - (옵션) 마우스 휠 → 가로 스크롤 이동 (현재 비활성화됨)
+// - 모달 오버레이 (App 최상단에서 화면 중앙 기준 표시)
+// - 이미지 클릭 시 확대 (zoom-overlay)
+// - 키보드 ← → 로 이미지 전환, ESC로 닫기
+// - 프로젝트 링크 / 깃허브 / 문서 링크
+// - 가로 스크롤 영역 (마우스 휠 주석 처리 상태 유지)
 // -----------------------------------------------------
 
 import "./ProjectModal.scss";
@@ -13,23 +13,21 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { CgClose } from "react-icons/cg";
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineDocumentText } from "react-icons/hi";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import { formatText } from "../utils/formatText";
 import noImage from "../assets/images/no-image.png";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 
 const ProjectModal = ({ project, onClose }) => {
   const [zoomedIndex, setZoomedIndex] = useState(null);
-  const scrollRef = useRef(null); // ✅ 가로 스크롤 영역 참조
+  const scrollRef = useRef(null);
 
   // ✅ 모달 열릴 때 스크롤 막기
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    return () => (document.body.style.overflow = "auto");
   }, []);
 
-  // ✅ 파일 링크 열기 함수
+  // ✅ 외부 링크 열기
   const openLink = (url) => {
     if (url && url !== "#") {
       const finalUrl = url.startsWith("http") ? url : `/${url}`;
@@ -39,7 +37,7 @@ const ProjectModal = ({ project, onClose }) => {
     }
   };
 
-  // ✅ 이미지 경로 로드 함수
+  // ✅ 이미지 로더
   const getImage = (fileName) => {
     if (!fileName || fileName.trim() === "" || fileName === ".png") return null;
     try {
@@ -49,20 +47,18 @@ const ProjectModal = ({ project, onClose }) => {
     }
   };
 
-  // 썸네일 제외 + 유효한 이미지 파일만 필터링
+  // ✅ 상세 이미지 (썸네일 제외 + 유효 파일만)
   const detailImages = (project.images || [])
     .slice(1)
     .filter((img) => img && img.trim() !== "" && img !== ".png");
 
-  // detailImages 길이 저장 (렌더 안정화용)
   const imageCount = detailImages.length;
 
-  // 키보드로 이미지 넘기기 (← →, ESC)
+  // ✅ 키보드 제어 (← →, ESC)
   const handleKeyDown = useCallback(
     (e) => {
       if (zoomedIndex === null) return;
-
-      if (e.key === "Escape") setZoomedIndex(null); // ESC 누르면 닫힘
+      if (e.key === "Escape") setZoomedIndex(null);
       if (e.key === "ArrowRight")
         setZoomedIndex((i) => (i + 1) % imageCount);
       if (e.key === "ArrowLeft")
@@ -71,7 +67,6 @@ const ProjectModal = ({ project, onClose }) => {
     [zoomedIndex, imageCount]
   );
 
-  // 확대 상태일 때만 키보드 이벤트 등록
   useEffect(() => {
     if (zoomedIndex !== null) {
       window.addEventListener("keydown", handleKeyDown);
@@ -79,7 +74,7 @@ const ProjectModal = ({ project, onClose }) => {
     }
   }, [zoomedIndex, handleKeyDown]);
 
-  // 마우스 휠 → 가로 스크롤 이동 (현재 비활성화)
+  // ✅ (비활성화) 마우스 휠 → 가로 스크롤
   /*
   useEffect(() => {
     const el = scrollRef.current;
@@ -100,7 +95,7 @@ const ProjectModal = ({ project, onClose }) => {
 
   return (
     <>
-      {/* 모달 오버레이 */}
+      {/* ✅ 모달 오버레이 */}
       <div className="modal-overlay" onClick={onClose}>
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <button className="closeBtn" onClick={onClose}>
@@ -108,13 +103,13 @@ const ProjectModal = ({ project, onClose }) => {
           </button>
 
           <div className="modal-scroll">
-            {/* 헤더 */}
+            {/* === 헤더 === */}
             <div className="modal-header">
               <h2 className="project-type">{project.titleMain}</h2>
               <h3 className="modal-title">{project.titleSub}</h3>
             </div>
 
-            {/* 파일 링크 */}
+            {/* === 파일 링크 === */}
             <div className="modal-files">
               {project.github && (
                 <a onClick={() => openLink(project.github)} className="file-link">
@@ -133,7 +128,7 @@ const ProjectModal = ({ project, onClose }) => {
               )}
             </div>
 
-            {/* 본문 영역 */}
+            {/* === 본문 === */}
             <div className="modal-body">
               <div className="period-box">
                 <span className="label">📅 프로젝트 기간</span>
@@ -156,7 +151,7 @@ const ProjectModal = ({ project, onClose }) => {
                   <dd dangerouslySetInnerHTML={{ __html: formatText(project.stack) }} />
                 </div>
 
-                {/* 결과물 이미지 리스트 */}
+                {/* === 결과물 이미지 (가로 스크롤 가능) === */}
                 <div>
                   <dt>결과물</dt>
                   <dd className="result-images" ref={scrollRef}>
@@ -168,7 +163,7 @@ const ProjectModal = ({ project, onClose }) => {
                           src={imageSrc || noImage}
                           alt={imageSrc ? `${project.titleSub} 이미지 ${idx + 1}` : "이미지 준비중입니다"}
                           className={`result-image ${!imageSrc ? "no-image" : ""}`}
-                          onClick={() => imageSrc && setZoomedIndex(idx)} // ✅ 클릭 시 확대
+                          onClick={() => imageSrc && setZoomedIndex(idx)}
                           onError={(e) => (e.target.src = noImage)}
                         />
                       );
@@ -186,7 +181,7 @@ const ProjectModal = ({ project, onClose }) => {
         </div>
       </div>
 
-      {/* 이미지 크게 보기 (확대 모드) */}
+      {/* === 이미지 확대 모드 === */}
       {zoomedIndex !== null && (
         <div className="zoom-overlay" onClick={() => setZoomedIndex(null)}>
           <img
@@ -198,7 +193,7 @@ const ProjectModal = ({ project, onClose }) => {
           {/* 좌우 이동 버튼 */}
           {imageCount > 1 && (
             <>
-              <button prev
+              <button
                 className="nav-btn prev"
                 onClick={(e) => {
                   e.stopPropagation();
