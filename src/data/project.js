@@ -5,43 +5,48 @@ export const projectData = [
     titleSub: "대전세잔직업전문학교 홈페이지 리뉴얼",
     period: "2025.08.18 - 2025.08.29",
     introShort: `
-    대전세잔직업전문학교 홈페이지 리뉴얼 팀 프로젝트로, 
-    사용자 친화적이고 반응형 웹 구조를 중심으로 사이트를 재구성했습니다.`,
+      대전세잔직업전문학교 홈페이지 리뉴얼 팀 프로젝트로, 
+      사용자 친화적이고 반응형 웹 구조를 중심으로 사이트를 재구성했습니다.
+    `,
 
     intro: `
-    대전세잔직업전문학교 홈페이지 리뉴얼은 기존 사이트의 디자인과 복잡한 정보 구조를 개선하기 위해 진행된 팀 프로젝트입니다.|n
-    사용자 친화적인 UI와 반응형 웹 구조를 통해 접근성과 <strong>시각적 일관성을 강화</strong>하는 것을 목표로 했습니다.|n
-    전체 페이지의 디자인 시스템을 통일하고, 주요 콘텐츠를 직관적으로 재배치하여 웹사이트 완성도를 높였습니다.`,
-    
+      대전세잔직업전문학교 홈페이지 리뉴얼은 기존 사이트의 디자인과 복잡한 정보 구조를 개선하기 위해 진행된 팀 프로젝트입니다.|n
+      사용자 친화적인 UI와 반응형 웹 구조를 통해 접근성과 <strong>시각적 일관성을 강화</strong>하는 것을 목표로 했습니다.|n
+      전체 페이지의 디자인 시스템을 통일하고, 주요 콘텐츠를 직관적으로 재배치하여 웹사이트 완성도를 높였습니다.
+    `,
+
     process: `
-    · <span>서브 레이아웃 개발</span> — 페이지 공통 구조 및 반응형 레이아웃 구성|n 
-    · 소개 페이지 개발 — 연혁·비전·시설정보 섹션 통합 구현,  Gsap ScrollMagic 인터랙션 적용, Swiper를 활용한 이미지 슬라이드 구현|n
-    · 포트폴리오 페이지 — 탭 메뉴 / 리스트 / 검색 / 상세 페이지 구조 설계 및 구현|n
-    · Footer — 학교소개 메뉴 링크 연결 처리|n`,
+      <span>서브 레이아웃 개발</span> — 페이지 공통 구조 및 반응형 레이아웃 구성|n
+      <span>소개 페이지 개발</span> — 연혁·비전·시설정보 섹션 통합 구현, Gsap ScrollMagic 인터랙션 적용, Swiper를 활용한 이미지 슬라이드 구현|n
+      <span>포트폴리오 페이지</span> — 탭 메뉴 / 리스트 / 검색 / 상세 페이지 구조 설계 및 구현|n
+    `,
 
     stack: `
-    Frontend — HTML5, CSS3, SCSS, JavaScript|n
-    Library — Swiper.js, Gsap ScrollMagic|n
-    Tools — Figma, GitHub, Vercel|n
-    <strong>🛠</strong> 주요 기능 — 인터랙션 스크롤 애니메이션, 이미지 슬라이드, 탭/검색/상세 전환 기능`,
+      <span>Frontend</span> — HTML5, CSS3, SCSS, JavaScript|n
+      <span>Library</span> — Swiper.js, Gsap ScrollMagic|n
+      <span>Tools</span> — Figma, GitHub, Vercel|n
+      <strong>🛠 주요 기능</strong> — 인터랙션 스크롤 애니메이션, 이미지 슬라이드, 탭/검색/상세 전환 기능
+    `,
 
     insight: `
-    실제 프로젝트를 통해 <strong>UI 구조 설계와 퍼블리싱의 효율성</strong>을 배우고, 
-    Gsap과 Swiper를 활용한 <strong>인터랙티브 페이지 구성 능력</strong>을 키웠습니다.|n
-    또한 공통 레이아웃을 기반으로 여러 페이지를 재사용하면서 
-    <strong>컴포넌트화와 유지보수성</strong>의 중요성을 체감했습니다.`,
+      실제 프로젝트를 통해 <strong>UI 구조 설계와 퍼블리싱의 효율성</strong>을 배우고, 
+      Gsap과 Swiper를 활용한 <strong>인터랙티브 페이지 구성 능력</strong>을 키웠습니다.|n
+      또한 공통 레이아웃을 기반으로 여러 페이지를 재사용하면서 
+      <strong>컴포넌트화와 유지보수성</strong>의 중요성을 체감했습니다.
+    `,
 
     github: "https://github.com/JeongJae1203/renewal-cezanne",
     design: "project1_design.pdf",
     plan: "project1_plan.pdf",
     link: "https://renewal-cezanne.vercel.app/",
     images: [
-      "project1_main.png", // 썸네일 대표 이미지
-      "project1_detailw1.png", // 상세페이지 1
-      "project1_detail2.png", 
+      "project1_main.png",   // 썸네일 대표 이미지
+      "project1_detail1.png", // 상세페이지 1
+      "project1_detail2.png",
       "project1_detail3.png",
     ],
-  }, 
+  },
+
 
   // {
   //   id: 1,
