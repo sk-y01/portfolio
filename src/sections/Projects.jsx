@@ -5,7 +5,7 @@ import SectionTitle from "../components/SectionTitle";
 import noImage from "../assets/images/no-image.png";
 
 const Projects = ({ onOpenModal }) => {
-  // ✅ 외부 링크 열기
+  // 외부 링크 열기
   const openLink = (url) => {
     if (url && url !== "#") {
       window.open(url, "_blank", "noopener,noreferrer");
@@ -14,7 +14,7 @@ const Projects = ({ onOpenModal }) => {
     }
   };
 
-  // ✅ 이미지 로더
+  // 이미지 로더
   const getImage = (fileName) => {
     try {
       return new URL(`../assets/images/${fileName}`, import.meta.url).href;
@@ -58,7 +58,7 @@ const Projects = ({ onOpenModal }) => {
                 <div className="btn-groups">
                   <button
                     className="white-btn"
-                    onClick={() => onOpenModal(proj)} // ✅ App으로 전달
+                    onClick={() => onOpenModal(proj)} // App으로 전달
                   >
                     상세보기
                   </button>
