@@ -25,8 +25,8 @@ export const projectData = [
       <span>Frontend</span> — HTML5, CSS3, SCSS, JavaScript|n
       <span>Library</span> — Swiper.js, Gsap ScrollMagic|n
       <span>Tools</span> — Figma, GitHub, Vercel|n
-      ⚙🛠 <span>주요 기능</span> — 인터랙션 스크롤 애니메이션, 이미지 슬라이드, 탭/검색/상세 전환 기능
-    `,
+      🛠 <span>주요 기능</span> — 인터랙션 스크롤 애니메이션, 이미지 슬라이드, 탭/검색/상세 전환 기능 
+    `, // ⚙️
 
     insight: `
       실제 프로젝트를 통해 <strong>UI 구조 설계와 퍼블리싱의 효율성</strong>을 배우고, 
