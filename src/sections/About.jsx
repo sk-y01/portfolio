@@ -118,6 +118,12 @@ const About = () => {
                   <td data-label="내용">데이터 기반 UX 분석 실습(GA4)</td>
                 </tr>
                 <tr>
+                  <td data-label="기간">2025.10 ~ 2025.10</td>
+                  <td data-label="기관">Coursera · Google</td>
+                  <td data-label="과정">Google AI Essentials</td>
+                  <td data-label="내용">AI 기반 업무혁신 및 프롬프트 작성 역량 강화 온라인 과정 수료</td>
+                </tr>
+                <tr>
                   <td data-label="기간">2024.03 ~ (학습 중)</td>
                   <td data-label="기관">인프런 외</td>
                   <td data-label="과정">웹 프론트엔드를 위한 자바스크립트 첫 걸음</td>
